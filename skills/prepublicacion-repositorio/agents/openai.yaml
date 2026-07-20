@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Prepublicacion Repositorio"
+  short_description: "Revisa secretos y riesgos antes de publicar"
+  default_prompt: "Use $prepublicacion-repositorio para revisar este repositorio antes de publicarlo en GitHub."

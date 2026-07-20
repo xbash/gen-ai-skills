@@ -1,4 +1,4 @@
-# Gen AI Skills
+﻿# Gen AI Skills
 
 Coleccion de instrucciones especializadas para asistentes de IA. Cada carpeta en `skills/` representa un dominio de conocimiento y contiene reglas, criterios de respuesta y checklists para usar con LLMs como ChatGPT, Claude, Gemini, Qwen, GLM, Copilot, Open WebUI, LM Studio u Ollama.
 
@@ -10,16 +10,16 @@ El repositorio busca mantener instrucciones reutilizables, modulares y auditable
 
 ```text
 gen-ai-skills/
-├── docs/
-├── examples/
-├── skills/
-│   └── <dominio>/
-│       ├── README.md
-│       ├── 00_instrucciones_base_*.md
-│       ├── 01_*_reglas.md
-│       ├── ...
-│       └── pack-chatgpt/
-└── templates/
+â”œâ”€â”€ docs/
+â”œâ”€â”€ examples/
+â”œâ”€â”€ skills/
+â”‚   â””â”€â”€ <dominio>/
+â”‚       â”œâ”€â”€ README.md
+â”‚       â”œâ”€â”€ 00_instrucciones_base_*.md
+â”‚       â”œâ”€â”€ 01_*_reglas.md
+â”‚       â”œâ”€â”€ ...
+â”‚       â””â”€â”€ pack-chatgpt/
+â””â”€â”€ templates/
 ```
 
 ## Uso recomendado
@@ -48,10 +48,14 @@ Los dominios principales viven en `skills/`:
 - `lenguaje-castellano`
 - `medicina`
 - `operaciones-tecnologia`
+- `prepublicacion-repositorio`
 - `seguridad-appsec`
 - `seguridad-opsec`
 - `vision-por-computadora`
 
+## Skills operacionales
+
+- `prepublicacion-repositorio`: revision previa a publicar repositorios en GitHub u otros remotos publicos, con foco en secretos, datos privados, artefactos locales, licencias y readiness documental.
 ## Convencion de dominios
 
 Cada dominio debe seguir, idealmente, este patron:
@@ -70,3 +74,4 @@ Cada dominio debe seguir, idealmente, este patron:
 - Declarar limites profesionales en areas sensibles.
 - Preferir reglas especificas y checklists sobre textos enciclopedicos.
 - Mantener los packs compactos alineados con los archivos raiz.
+
