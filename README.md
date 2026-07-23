@@ -42,6 +42,7 @@ Los dominios principales viven en `skills/`:
 - `economia-finanzas`
 - `filosofia`
 - `fotografias`
+- `geoespacial`
 - `historia`
 - `ingenieria-software`
 - `investigacion-ia`
