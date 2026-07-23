@@ -87,3 +87,26 @@ Sin cambios:
 - No se modificaron archivos bajo `skills/`.
 - No se completaron plantillas vacias bajo `templates/`.
 - No se creo commit.
+
+### Publicacion y correcciones posteriores
+
+Commits observados:
+
+```text
+8ca1545 docs: consolida trazabilidad del proyecto
+83ed193 docs: corrige arbol del readme
+ff60f19 docs: agrega dominio geoespacial al readme
+```
+
+Cambios verificados:
+
+- Se publico la documentacion de cierre inicial en `origin/main`.
+- Se corrigio el arbol de directorios del `README.md` para reemplazar mojibake por ASCII.
+- Se agrego `geoespacial` al listado de dominios del `README.md`.
+- `skills/geoespacial/stac.md` quedo versionado como placeholder vacio.
+
+Limitaciones:
+
+- `geoespacial` no esta formalizado como dominio reusable completo.
+- No se agrego `AGENTS.md`.
+- No se definio politica de codificacion/EOL.

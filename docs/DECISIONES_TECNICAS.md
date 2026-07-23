@@ -72,3 +72,17 @@ El archivo no versionado `skills/academia/prompt-tarea1-vision-nlp-redes.md` se 
 - Definir si `skills/geoespacial/` sera un dominio reutilizable formal.
 - Si `geoespacial` se formaliza, decidir si `stac.md.txt` debe renombrarse a Markdown convencional, completarse, moverse o eliminarse.
 - Definir si los templates vacios de `templates/` son placeholders intencionales o deuda documental.
+
+## Actualizacion 2026-07-23 - cierre posterior a publicacion
+
+### Decisiones registradas
+
+- Corregir el arbol del `README.md` usando caracteres ASCII para evitar mojibake en editores o terminales con codificacion ambigua.
+- Agregar `geoespacial` al listado de dominios del `README.md`, porque `skills/geoespacial/stac.md` ya fue versionado.
+- Mantener `skills/geoespacial/stac.md` como placeholder vacio por ahora; no se inventa contenido del dominio sin definicion del usuario.
+
+### Decisiones pendientes actualizadas
+
+- Definir si `skills/geoespacial/` sera un dominio formal y, si lo sera, completar su `README.md`, instrucciones base y criterios de uso.
+- Definir una politica explicita de codificacion y fin de linea, por ejemplo mediante `.gitattributes`, si se quiere eliminar la incertidumbre LF/CRLF.
+- Crear `AGENTS.md` raiz si las reglas metodologicas deben ser obligatorias para futuras sesiones.

@@ -46,8 +46,9 @@ Fecha de consolidacion: 2026-07-19
 ### Alta prioridad
 
 - [ ] Crear `AGENTS.md` raiz si se quiere que las reglas persistentes queden disponibles para futuras sesiones de Codex y agentes equivalentes.
-- [ ] Definir el destino de `skills/geoespacial/stac.md.txt`, actualmente no versionado y vacio.
-- [ ] Confirmar si `geoespacial` debe agregarse al listado de dominios del `README.md`.
+- [x] Corregir mojibake del arbol de directorios en `README.md`.
+- [x] Agregar `geoespacial` al listado de dominios del `README.md`.
+- [ ] Definir el destino de `skills/geoespacial/stac.md`, actualmente versionado y vacio.
 
 ### Media prioridad
 
@@ -68,3 +69,21 @@ Fecha de consolidacion: 2026-07-19
 - Alcance: Temporal para este checkout.
 - Riesgo si se guarda: Medio; puede quedar obsoleta cuando el usuario complete o elimine el dominio.
 - Alternativa si debe ir mejor en `AGENTS.md` o `docs/`: Mejor mantenerlo en `docs/CONTEXTO_PROYECTO.md` y `docs/PENDIENTES.md` hasta resolverlo.
+
+## Actualizacion 2026-07-23 - cierre posterior a publicacion
+
+### Pendientes principales
+
+- [ ] Crear `AGENTS.md` raiz si se quiere que las reglas persistentes queden disponibles para futuras sesiones de Codex y agentes equivalentes.
+- [ ] Formalizar `skills/geoespacial/` o eliminar el placeholder si no corresponde mantenerlo.
+- [ ] Si se formaliza `geoespacial`, crear al menos un `README.md` de dominio y una instruccion base antes de presentarlo como skill usable.
+- [ ] Completar o eliminar placeholders vacios en `docs/` y `templates/`.
+- [ ] Definir politica de codificacion y fin de linea para evitar advertencias LF/CRLF y riesgos de mojibake.
+
+### Memories propuestas pendientes de confirmacion
+
+- Memory propuesta: En `gen-ai-skills`, cuando se agregue un dominio bajo `skills/<dominio>/`, actualizar tambien el listado de dominios del `README.md` y evitar dejarlo como usable si solo contiene placeholders vacios.
+- Motivo: Evita inconsistencias de navegacion y expectativas falsas sobre dominios incompletos.
+- Alcance: Este repositorio.
+- Riesgo si se guarda: Bajo; puede quedar obsoleta solo si se automatiza el indice de dominios.
+- Alternativa si debe ir mejor en `AGENTS.md` o `docs/`: Debe ir en `AGENTS.md` como regla operativa si se crea ese archivo; por ahora queda aqui.

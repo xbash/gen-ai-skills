@@ -193,3 +193,53 @@ Get-ChildItem -LiteralPath docs -File
 - Formalizar o descartar el dominio `skills/geoespacial/`.
 - Completar o eliminar placeholders vacios en `docs/` y `templates/`.
 - Revisar codificacion y politica de fin de linea.
+
+## 2026-07-23 - Cierre posterior a publicacion
+
+### Objetivo
+
+Aplicar nuevamente `$cerrar-sesion-proyecto` despues de publicar correcciones del `README.md` y registrar el estado actualizado.
+
+### Archivos actualizados
+
+- `README.md`
+- `docs/CONTEXTO_PROYECTO.md`
+- `docs/DECISIONES_TECNICAS.md`
+- `docs/PENDIENTES.md`
+- `docs/REGISTRO_CAMBIOS.md`
+- `docs/BITACORA_CODEX.md`
+- `docs/BITACORA_AGENTES.md`
+
+### Comandos ejecutados
+
+```powershell
+git status --short --branch
+git log --oneline -5
+Get-Content -Path README.md
+Get-Content -Path docs\CONTEXTO_PROYECTO.md
+Get-Content -Path docs\DECISIONES_TECNICAS.md
+Get-Content -Path docs\PENDIENTES.md
+Get-Content -Path docs\REGISTRO_CAMBIOS.md
+Get-Content -Path docs\BITACORA_CODEX.md
+Get-Content -Path docs\BITACORA_AGENTES.md
+Get-ChildItem -Path skills\geoespacial -Force -Recurse
+Get-ChildItem -Path docs -File
+Get-ChildItem -Path templates -File
+```
+
+### Resultados observados
+
+- Rama reportada antes de esta consolidacion: `main...origin/main`.
+- Ultimo commit observado: `ff60f19 docs: agrega dominio geoespacial al readme`.
+- `README.md` contiene arbol ASCII legible.
+- `README.md` lista `geoespacial` como dominio.
+- `skills/geoespacial/stac.md` existe con longitud 0.
+- No existe `AGENTS.md`, `GEMINI.md` ni `.template/` en la raiz.
+- Persisten placeholders vacios en `docs/` y `templates/`.
+
+### Pendientes principales
+
+- Crear `AGENTS.md` raiz si se confirma como regla persistente del repositorio.
+- Formalizar `skills/geoespacial/` con contenido reusable o eliminar el placeholder.
+- Definir politica de codificacion y fin de linea.
+- Completar o eliminar placeholders vacios en `docs/` y `templates/`.

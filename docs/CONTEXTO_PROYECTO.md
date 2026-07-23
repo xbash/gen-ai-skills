@@ -103,3 +103,27 @@ Despues de la primera escritura de estos documentos, `git status --short -- docs
 
 - No se inspeccionaron en profundidad todos los dominios bajo `skills/`.
 - No se modificaron archivos de dominios ni plantillas vacias.
+
+## Actualizacion de contexto 2026-07-23 - cierre posterior a publicacion
+
+### Hechos verificados
+
+- Ruta del proyecto cargada: `C:\rutinas-local\gen-ai-skills`.
+- `git status --short --branch` reporto `## main...origin/main` antes de esta consolidacion.
+- Los ultimos commits locales observados fueron:
+  - `ff60f19 docs: agrega dominio geoespacial al readme`
+  - `83ed193 docs: corrige arbol del readme`
+  - `8ca1545 docs: consolida trazabilidad del proyecto`
+- `README.md` ya contiene un arbol ASCII legible bajo `## Estructura`.
+- `README.md` ya lista `geoespacial` en la seccion `## Dominios`.
+- `skills/geoespacial/stac.md` existe y tiene longitud 0.
+- No existe `AGENTS.md` en la raiz.
+- No existe `GEMINI.md` en la raiz.
+- No existe metadata `.template/` en la raiz.
+- Persisten placeholders vacios en `docs/` y `templates/`.
+
+### Limitaciones
+
+- No se completo contenido funcional para el dominio `skills/geoespacial/`.
+- No se reviso ni definio una politica de codificacion y fin de linea.
+- No se creo `AGENTS.md` raiz.
