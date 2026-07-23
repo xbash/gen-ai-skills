@@ -5,7 +5,7 @@ Fecha de consolidacion: 2026-07-19
 ## Alta prioridad
 
 - Crear o actualizar `AGENTS.md` en la raiz si se quiere que las instrucciones persistentes queden disponibles para futuras sesiones.
-- Revisar `README.md` raiz por mojibake en el arbol de directorios.
+- Revisar y definir una politica de codificacion/EOL para evitar nuevos problemas de mojibake.
 - Decidir el destino de `skills/academia/prompt-tarea1-vision-nlp-redes.md`, actualmente no versionado.
 - Confirmar si se deben guardar las memories propuestas en `docs/BITACORA_CODEX.md`.
 
@@ -28,7 +28,7 @@ Fecha de consolidacion: 2026-07-19
 
 ## Problemas encontrados
 
-- `README.md` raiz muestra caracteres mojibake en el arbol de directorios.
+- `README.md` raiz tuvo caracteres mojibake en el arbol de directorios; fue corregido el 2026-07-23 con un arbol ASCII.
 - `git diff --stat` emitio muchas advertencias de fin de linea: `LF will be replaced by CRLF the next time Git touches it`.
 - No hay `AGENTS.md` en la raiz al momento de esta consolidacion.
 - `docs/architecture.md`, `docs/best-practices.md`, `docs/getting-started.md`, `docs/prompt-design.md` y `docs/roadmap.md` existen con longitud 0.
@@ -64,7 +64,7 @@ Fecha de consolidacion: 2026-07-19
 - Riesgo si se guarda: Bajo; es una regla operacional estable.
 - Alternativa si debe ir mejor en `AGENTS.md` o `docs/`: Debe ir en `AGENTS.md` si se crea; por ahora queda en `docs/PENDIENTES.md`.
 
-- Memory propuesta: `skills/geoespacial/` aparecio el 2026-07-23 como directorio no versionado con `stac.md.txt` vacio; su formalizacion esta pendiente.
+- Memory propuesta: `skills/geoespacial/` contiene `stac.md` versionado y vacio; su formalizacion esta pendiente.
 - Motivo: Ayuda a no confundirlo con dominio completo.
 - Alcance: Temporal para este checkout.
 - Riesgo si se guarda: Medio; puede quedar obsoleta cuando el usuario complete o elimine el dominio.
