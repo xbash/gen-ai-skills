@@ -10,16 +10,16 @@ El repositorio busca mantener instrucciones reutilizables, modulares y auditable
 
 ```text
 gen-ai-skills/
-â”œâ”€â”€ docs/
-â”œâ”€â”€ examples/
-â”œâ”€â”€ skills/
-â”‚   â””â”€â”€ <dominio>/
-â”‚       â”œâ”€â”€ README.md
-â”‚       â”œâ”€â”€ 00_instrucciones_base_*.md
-â”‚       â”œâ”€â”€ 01_*_reglas.md
-â”‚       â”œâ”€â”€ ...
-â”‚       â””â”€â”€ pack-chatgpt/
-â””â”€â”€ templates/
+|-- docs/
+|-- examples/
+|-- skills/
+|   `-- <dominio>/
+|       |-- README.md
+|       |-- 00_instrucciones_base_*.md
+|       |-- 01_*_reglas.md
+|       |-- ...
+|       `-- pack-chatgpt/
+`-- templates/
 ```
 
 ## Uso recomendado
@@ -56,6 +56,7 @@ Los dominios principales viven en `skills/`:
 ## Skills operacionales
 
 - `prepublicacion-repositorio`: revision previa a publicar repositorios en GitHub u otros remotos publicos, con foco en secretos, datos privados, artefactos locales, licencias y readiness documental.
+
 ## Convencion de dominios
 
 Cada dominio debe seguir, idealmente, este patron:
