@@ -58,3 +58,17 @@ El archivo no versionado `skills/academia/prompt-tarea1-vision-nlp-redes.md` se 
 - Decidir si los archivos vacios de `docs/` deben completarse, eliminarse o mantenerse como placeholders.
 - Definir una politica de fin de linea y codificacion para evitar advertencias recurrentes de Git y mojibake.
 - Confirmar si alguna memory propuesta debe guardarse para futuras sesiones de Codex/ChatGPT.
+
+## Actualizacion 2026-07-23
+
+### Decisiones registradas
+
+- Crear `docs/BITACORA_AGENTES.md` para alinear este repositorio con el esquema de trazabilidad multiagente usado en otros proyectos locales.
+- Mantener `skills/geoespacial/` sin cambios en esta consolidacion porque aparece como trabajo no versionado y contiene solo un archivo vacio.
+- Mantener el criterio de no convertir observaciones de memoria en hechos del checkout sin verificacion local.
+
+### Decisiones pendientes nuevas
+
+- Definir si `skills/geoespacial/` sera un dominio reutilizable formal.
+- Si `geoespacial` se formaliza, decidir si `stac.md.txt` debe renombrarse a Markdown convencional, completarse, moverse o eliminarse.
+- Definir si los templates vacios de `templates/` son placeholders intencionales o deuda documental.

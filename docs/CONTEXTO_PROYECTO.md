@@ -77,3 +77,29 @@ Despues de la primera escritura de estos documentos, `git status --short -- docs
 - Confirmar si `skills/academia/prompt-tarea1-vision-nlp-redes.md` debe moverse fuera de `skills/academia` hacia una biblioteca de prompts concretos.
 - Revisar codificacion de `README.md`, porque el arbol de directorios muestra caracteres mojibake.
 - Confirmar si el cambio de `docs/roadmap.md.txt` a `docs/roadmap.md` fue intencional.
+
+## Actualizacion de contexto 2026-07-23
+
+### Hechos verificados
+
+- Ruta del proyecto cargada: `C:\rutinas-local\gen-ai-skills`.
+- `git status --short --branch` reporto rama `main...origin/main`.
+- El unico cambio no versionado reportado antes de esta consolidacion fue `?? skills/geoespacial/`.
+- No existe `AGENTS.md` en la raiz al momento de esta revision.
+- No existe `GEMINI.md` en la raiz.
+- No existe metadata `.template/` en la raiz.
+- No existia `docs/BITACORA_AGENTES.md`; se crea en esta consolidacion.
+- `skills/geoespacial/` contiene solo `stac.md.txt` con longitud 0 y no contiene `README.md`.
+- `templates/chatgpt.md`, `templates/claude.md`, `templates/gemini.md`, `templates/lmstudio.md`, `templates/ollama.md` y `templates/openwebui.md` existen con longitud 0.
+- `docs/architecture.md`, `docs/best-practices.md`, `docs/getting-started.md`, `docs/prompt-design.md` y `docs/roadmap.md` existen con longitud 0.
+
+### Supuestos vigentes
+
+- `skills/geoespacial/` parece ser una estructura iniciada pero no completada; su proposito exacto queda `pendiente-de-verificacion`.
+- La separacion entre skills reutilizables y prompts concretos sigue siendo una regla de organizacion recomendada.
+- La ausencia de `AGENTS.md` significa que las reglas persistentes dependen de `README.md`, `docs/` y de instrucciones entregadas en la sesion.
+
+### Limitaciones
+
+- No se inspeccionaron en profundidad todos los dominios bajo `skills/`.
+- No se modificaron archivos de dominios ni plantillas vacias.

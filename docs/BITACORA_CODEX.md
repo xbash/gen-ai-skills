@@ -145,3 +145,51 @@ Estas son propuestas para futuras sesiones de Codex/ChatGPT. No fueron guardadas
 4. Completar los documentos vacios de `docs/` o eliminarlos si no cumplen funcion.
 5. Definir politica de codificacion y fin de linea para el repositorio.
 6. Confirmar cuales, si alguna, de las memories propuestas deben guardarse como memoria durable.
+
+## 2026-07-23 - Cierre con skill
+
+### Objetivo
+
+Aplicar `$cerrar-sesion-proyecto` al repositorio `gen-ai-skills` para dejar continuidad auditable despues de cargar contexto.
+
+### Archivos actualizados
+
+- `docs/CONTEXTO_PROYECTO.md`
+- `docs/DECISIONES_TECNICAS.md`
+- `docs/PENDIENTES.md`
+- `docs/REGISTRO_CAMBIOS.md`
+- `docs/BITACORA_CODEX.md`
+- `docs/BITACORA_AGENTES.md`
+
+### Comandos ejecutados
+
+```powershell
+git status --short --branch
+Get-Content -LiteralPath README.md
+Get-Content -LiteralPath docs\CONTEXTO_PROYECTO.md
+Get-Content -LiteralPath docs\DECISIONES_TECNICAS.md
+Get-Content -LiteralPath docs\PENDIENTES.md
+Get-Content -LiteralPath docs\REGISTRO_CAMBIOS.md
+Get-Content -LiteralPath docs\BITACORA_CODEX.md
+Get-ChildItem -LiteralPath skills\geoespacial -Force -Recurse
+Get-ChildItem -LiteralPath templates -File
+Get-ChildItem -LiteralPath docs -File
+```
+
+### Resultados observados
+
+- Rama reportada: `main...origin/main`.
+- Cambio no versionado previo a esta consolidacion: `skills/geoespacial/`.
+- `skills/geoespacial/stac.md.txt` existe con longitud 0.
+- No existe `AGENTS.md` raiz.
+- No existe `GEMINI.md` raiz.
+- No existe metadata `.template/` raiz.
+- `docs/BITACORA_AGENTES.md` no existia antes de esta consolidacion.
+- El `README.md` raiz sigue mostrando mojibake en el arbol de directorios.
+
+### Pendientes principales
+
+- Crear `AGENTS.md` raiz si se confirma como regla persistente del repositorio.
+- Formalizar o descartar el dominio `skills/geoespacial/`.
+- Completar o eliminar placeholders vacios en `docs/` y `templates/`.
+- Revisar codificacion y politica de fin de linea.
