@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cerrar sesion de proyecto"
+  short_description: "Consolida cierre y bitacoras"
+  default_prompt: "Use $cerrar-sesion-proyecto to consolidate this session into the project's continuity docs."

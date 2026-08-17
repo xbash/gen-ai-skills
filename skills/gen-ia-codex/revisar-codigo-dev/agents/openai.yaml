@@ -1,0 +1,4 @@
+interface:
+  display_name: "Chequear codigo de desarrollo"
+  short_description: "Chequear codigo de desarrollo"
+  default_prompt: "Usa $checklist-codigo-dev para chequear el codigo desarrollado."
