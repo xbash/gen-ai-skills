@@ -5,11 +5,11 @@
 - Dominio: `skills/geoespacial/`
 - Plan: `docs/plan_creacion_geoespacial_luna_20260909.md`
 - Inicio: 2026-09-09
-- Acciones ejecutadas: A002, A003, A004, A005, A006, A007
-- PASS: 7 (incluye A001 previamente PASS)
+- Acciones ejecutadas: A002, A003, A004, A005, A006, A007, A008, A009, A010, A011, A012
+- PASS: 12 (incluye A001 previamente PASS)
 - FAIL: 0
 - BLOCKED: 0
-- Acciones no ejecutadas por instrucción: A008, A009, A010, A011, A012, A013
+- Acciones no ejecutadas por instrucción: A013
 
 ## Dependencias
 
@@ -89,6 +89,44 @@
 - Arquitectura coincide con plan: PASS — 5 CORE + 3 SPECIALIZED, sin creación de SPECIALIZED en este tramo.
 - Dominio: los 59 placeholders permanecen; no se eliminó ni reinterpretó `cr2.md`.
 
+## A008-A010
+
+### A008
+
+- Tipo: CREATE
+- Nivel: LUNA_MEDIUM
+- Estado: PASS
+- Files cargados: `docs/diseno_geoespacial_terra_20260909.md`
+- Archivo afectado: `skills/geoespacial/catalogos-stac/SKILL.md`
+- Validaciones: contrato completo; catálogo, colección, AOI, tiempo, filtros y assets preservados; no se inventan endpoints/colecciones; descubrimiento separado de procesamiento: PASS.
+- Desviaciones: ninguna.
+
+### A009
+
+- Tipo: CREATE
+- Nivel: LUNA_MEDIUM
+- Estado: PASS
+- Files cargados: `docs/diseno_geoespacial_terra_20260909.md`
+- Archivo afectado: `skills/geoespacial/analisis-espaciotemporal/SKILL.md`
+- Validaciones: contrato completo; frecuencia, período, unión, desfase y procedencia preservados; se prohíbe información futura y se evita inventar fuentes/períodos: PASS.
+- Desviaciones: ninguna.
+
+### A010
+
+- Tipo: CREATE
+- Nivel: LUNA_MEDIUM
+- Estado: PASS
+- Files cargados: `docs/diseno_geoespacial_terra_20260909.md`
+- Archivo afectado: `skills/geoespacial/deep-learning-geoespacial/SKILL.md`
+- Validaciones: contrato completo; datos, partición, baseline, métricas, recursos y parada preservados; no se creó skill SAR/radar ni se inventaron benchmarks, costos o hiperparámetros: PASS.
+- Desviaciones: ninguna.
+
+## Estado tras A010
+
+- Las cinco CORE no fueron modificadas.
+- Las tres SPECIALIZED aprobadas existen y cumplen sus contratos.
+- A012 y A013 no fueron ejecutadas.
+
 ## Archivos afectados
 
 - Modificado: `skills/geoespacial/README.md`
@@ -98,5 +136,50 @@
   - `skills/geoespacial/analisis-terreno-proximidad/SKILL.md`
   - `skills/geoespacial/modelamiento-geoespacial/SKILL.md`
   - `skills/geoespacial/reproducibilidad-geoespacial/SKILL.md`
+- Creados:
+  - `skills/geoespacial/catalogos-stac/SKILL.md`
+  - `skills/geoespacial/analisis-espaciotemporal/SKILL.md`
+  - `skills/geoespacial/deep-learning-geoespacial/SKILL.md`
 - Actualizado: `docs/execution_report_geoespacial_20260909.md`
 
+## A011
+
+- Tipo: VALIDATE
+- Nivel: LUNA_LOW
+- Estado: PASS
+- Files cargados exclusivamente según el plan: README del dominio, los ocho SKILL.md aprobados y docs/diseno_geoespacial_terra_20260909.md.
+- Dependencias: A002-A010 PASS.
+- Validaciones:
+  - Las nueve rutas aprobadas existen y los ocho SKILL.md contienen las secciones obligatorias: PASS.
+  - ALOS no se presenta como óptico sin producto identificado: PASS.
+  - cr2.md existe, permanece vacío, no fue incorporado ni interpretado: PASS.
+  - La matriz de trazabilidad contiene 59 candidatos: PASS.
+  - Existen ocho directorios de skills, sin skills adicionales por concepto: PASS.
+  - Las ocho referencias del README resuelven a rutas existentes: PASS.
+- Criterios de aceptación: todos PASS.
+- Archivos modificados: ninguno del dominio.
+- Desviaciones: ninguna.
+
+## Estado tras A011
+
+- A011: PASS.
+- A012: PASS.
+- A013: no ejecutada.
+
+## A012
+
+- Tipo: DELETE
+- Nivel: LUNA_LOW
+- Estado: PASS
+- Dependencia: A011 figuraba PASS antes de eliminar.
+- Verificaciones previas:
+  - Los 58 archivos enumerados explícitamente en A012 existían: PASS.
+  - Cada uno de los 58 archivos tenía 0 bytes: PASS.
+  - cr2.md no estaba en la lista de eliminación: PASS.
+  - README y los ocho SKILL.md no estaban en la lista de eliminación: PASS.
+- Eliminados: exactamente los 58 placeholders enumerados en A012.
+- Preservados: skills/geoespacial/cr2.md, skills/geoespacial/README.md y los ocho SKILL.md.
+- Omitidos: cr2.md por ambigüedad y todos los archivos no enumerados.
+- Errores: ninguno.
+- Criterios de aceptación: todos PASS.
+- Desviaciones: ninguna.
