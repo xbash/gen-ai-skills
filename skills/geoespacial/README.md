@@ -29,9 +29,11 @@ condicionales, no skills independientes.
 
 ## Carga y límites de evidencia
 
-Carga este README y solo la skill aplicable, más dependencias concretas que su
-contrato solicite. No cargues todo el dominio por defecto. Distingue hechos,
-supuestos, resultados, recomendaciones y límites; no inventes CRS, fuentes,
-endpoints, disponibilidad, benchmarks, hiperparámetros, costos ni resultados.
-Los formatos, sensores y algoritmos se eligen según el caso y evidencia
-disponible. `cr2.md` no tiene significado asignado; no se interpreta.
+Carga este README y una skill primaria; añade solo dependencias concretas.
+
+- Si la tarea crea un dataset derivado, análisis, modelo o entregable que deba repetirse o auditarse, carga además `reproducibilidad-geoespacial/SKILL.md`.
+- Para seleccionar, comparar o evaluar familias generales de modelos supervisados, usa `modelamiento-geoespacial/SKILL.md` como skill primaria.
+- Si una red neuronal ya está justificada por datos, recursos y baseline, usa `deep-learning-geoespacial/SKILL.md` como skill primaria; carga modelamiento solo si también se requiere comparación o diseño de familias generales fuera de su contrato.
+- Carga otras skills solo cuando su trigger sea necesario para la tarea.
+
+Distingue hechos, supuestos, resultados, recomendaciones y límites; no inventes CRS, fuentes, endpoints, disponibilidad, benchmarks, hiperparámetros, costos ni resultados. Los formatos, sensores y algoritmos se eligen según el caso y evidencia disponible. `cr2.md` no tiene significado asignado; no se interpreta.

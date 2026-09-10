@@ -168,6 +168,30 @@
 
 ## A012
 
+## Corrección post-refactor P001-P002
+
+### P001
+
+- Tipo: EDIT
+- Nivel: LUNA_LOW
+- Estado: PASS
+- Archivo cargado y modificado: skills/geoespacial/README.md.
+- Se aplicó literalmente el replacement_content del plan.
+- Se preservaron el mapa de 5 CORE + 3 SPECIALIZED, los ocho enlaces, la carga selectiva, la no invención y cr2.md sin interpretación.
+- No se modificaron SKILL.md ni se crearon, eliminaron o renombraron skills.
+- Criterios de aceptación: todos PASS.
+
+### P002
+
+- Tipo: VALIDATE
+- Nivel: LUNA_LOW
+- Estado: PASS
+- Files cargados exclusivamente: skills/geoespacial/README.md, skills/geoespacial/modelamiento-geoespacial/SKILL.md, skills/geoespacial/deep-learning-geoespacial/SKILL.md y skills/geoespacial/reproducibilidad-geoespacial/SKILL.md.
+- Validaciones: ocho enlaces internos existentes; reproducibilidad para artefactos repetibles/auditables; modelamiento como primaria para familias generales; deep-learning como primaria cuando la red neuronal está justificada; modelamiento condicional para comparación/diseño general; cr2.md sin significado asignado; ninguna skill creada, eliminada o renombrada.
+- Criterios de aceptación: todos PASS.
+- Archivos modificados durante P002: ninguno.
+- Desviaciones: ninguna.
+
 - Tipo: DELETE
 - Nivel: LUNA_LOW
 - Estado: PASS
