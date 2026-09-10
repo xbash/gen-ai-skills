@@ -9,23 +9,23 @@ Sirve para explicar conceptos, comparar autores, analizar argumentos, leer texto
 
 | Archivo | Uso principal |
 |---|---|
-| `00_instrucciones_base_pensamiento.md` | Base, rigor, estilo, argumentacion y formato. |
-| `01_filosofia_antigua_griego_platon_aristoteles_reglas.md` | Filosofia antigua, griegos, Platon, Aristoteles y escuelas helenisticas. |
-| `02_filosofia_medieval_latin_santo_tomas_reglas.md` | Medieval, latin filosofico, escolastica, patristica y Tomas de Aquino. |
-| `03_problemas_fundamentales_metafisica_antropologia_valores_reglas.md` | Metafisica, persona, libertad, valores, mente y realidad. |
-| `04_etica_filosofia_politica_social_historia_reglas.md` | Etica, politica, justicia, sociedad, historia y filosofia practica. |
-| `05_logica_argumentacion_razonamiento_reglas.md` | Logica, falacias, argumentos, inferencia y analisis critico. |
-| `06_epistemologia_conocimiento_lenguaje_ciencia_reglas.md` | Conocimiento, lenguaje, ciencia, verdad, justificacion y metodo. |
-| `07_filosofia_moderna_descartes_kant_hegel_reglas.md` | Filosofia moderna, racionalismo, empirismo, Kant, idealismo y Hegel. |
-| `08_filosofia_contemporanea_husserl_wittgenstein_heidegger_reglas.md` | Fenomenologia, analitica, hermeneutica, existencialismo y critica contemporanea. |
-| `09_estetica_filosofia_arte_reglas.md` | Estetica, arte, juicio, experiencia, interpretacion y cultura. |
-| `10_iberoamerica_chile_latam_educacion_dialogos_reglas.md` | Filosofia iberoamericana, Chile/LatAm, educacion, colonialidad y dialogos. |
-| `11_lectura_escritura_investigacion_filosofica_reglas.md` | Lectura, comentario, ensayo, investigacion y escritura filosofica. |
-| `12_checklist_analisis_filosofico.md` | Checklist de analisis filosofico. |
-| `00_instrucciones_completa_pensamiento.md` | Referencia historica/extendida; no usar como instruccion activa. |
+| `instrucciones_base_pensamiento.md` | Base, rigor, estilo, argumentacion y formato. |
+| `filosofia_antigua_griego_platon_aristoteles_reglas.md` | Filosofia antigua, griegos, Platon, Aristoteles y escuelas helenisticas. |
+| `filosofia_medieval_latin_santo_tomas_reglas.md` | Medieval, latin filosofico, escolastica, patristica y Tomas de Aquino. |
+| `problemas_fundamentales_metafisica_antropologia_valores_reglas.md` | Metafisica, persona, libertad, valores, mente y realidad. |
+| `etica_filosofia_politica_social_historia_reglas.md` | Etica, politica, justicia, sociedad, historia y filosofia practica. |
+| `logica_argumentacion_razonamiento_reglas.md` | Logica, falacias, argumentos, inferencia y analisis critico. |
+| `epistemologia_conocimiento_lenguaje_ciencia_reglas.md` | Conocimiento, lenguaje, ciencia, verdad, justificacion y metodo. |
+| `filosofia_moderna_descartes_kant_hegel_reglas.md` | Filosofia moderna, racionalismo, empirismo, Kant, idealismo y Hegel. |
+| `filosofia_contemporanea_husserl_wittgenstein_heidegger_reglas.md` | Fenomenologia, analitica, hermeneutica, existencialismo y critica contemporanea. |
+| `estetica_filosofia_arte_reglas.md` | Estetica, arte, juicio, experiencia, interpretacion y cultura. |
+| `iberoamerica_chile_latam_educacion_dialogos_reglas.md` | Filosofia iberoamericana, Chile/LatAm, educacion, colonialidad y dialogos. |
+| `lectura_escritura_investigacion_filosofica_reglas.md` | Lectura, comentario, ensayo, investigacion y escritura filosofica. |
+| `checklist_analisis_filosofico.md` | Checklist de analisis filosofico. |
+| `instrucciones_completa_pensamiento.md` | Referencia historica/extendida; no usar como instruccion activa. |
 
 ## Recomendacion de uso
-El dominio supera 10 archivos activos. Para ChatGPT, usar `pack-chatgpt`, que fusiona el contenido en 8 archivos. El archivo `00_instrucciones_completa_pensamiento.md` queda como respaldo, no como archivo activo recomendado.
+El dominio supera 10 archivos activos. El archivo `instrucciones_completa_pensamiento.md` queda como respaldo, no como archivo activo recomendado.
 
 ## Principios
 - Distinguir tesis, argumento, objecion, ejemplo, definicion, contexto y evaluacion.

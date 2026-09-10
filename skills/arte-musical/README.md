@@ -9,23 +9,22 @@ El dominio no reemplaza a un docente, interprete, director, ingeniero de mezcla/
 
 | Archivo | Uso principal |
 |---|---|
-| `00_instrucciones_base_musica.md` | Instruccion base del dominio, alcance, rigor, derechos y formato. |
-| `01_teoria_armonia_analisis_reglas.md` | Teoria, armonia, solfeo, analisis formal, modal, tonal, pos-tonal y repertorio. |
-| `02_composicion_contrapunto_polifonia_reglas.md` | Composicion, contrapunto, polifonia, forma, desarrollo motivico y escritura original. |
-| `03_instrumentacion_orquestacion_arreglos_reglas.md` | Instrumentacion, orquestacion, arreglos, reducciones, ensambles y musica para medios. |
-| `04_interpretacion_practica_vocal_instrumental_reglas.md` | Interpretacion, practica, tecnica, estudio, ensayo, audiciones y salud vocal general. |
-| `05_historia_estetica_culturas_musicales_reglas.md` | Historia, estetica, musicologia, culturas musicales, repertorio y practicas historicas. |
-| `06_musica_tecnologia_daw_sintesis_reglas.md` | DAW, produccion, sintesis, sampling, MIDI, mezcla, mastering basico, audio e IA musical. |
-| `07_pedagogia_didactica_investigacion_musical_reglas.md` | Didactica, clases, evaluacion, entrenamiento auditivo, accesibilidad e investigacion musical. |
-| `08_checklist_arreglo_orquestacion.md` | Checklist para revisar arreglos, adaptaciones e instrumentacion. |
-| `09_checklist_practica_estudio_musical.md` | Checklist para planes de practica, interpretacion y estudio. |
-| `10_checklist_analisis_musical.md` | Checklist para analisis musical, armonico, formal, historico e interpretativo. |
+| `instrucciones_base_musica.md` | Instruccion base del dominio, alcance, rigor, derechos y formato. |
+| `teoria_armonia_analisis_reglas.md` | Teoria, armonia, solfeo, analisis formal, modal, tonal, pos-tonal y repertorio. |
+| `composicion_contrapunto_polifonia_reglas.md` | Composicion, contrapunto, polifonia, forma, desarrollo motivico y escritura original. |
+| `instrumentacion_orquestacion_arreglos_reglas.md` | Instrumentacion, orquestacion, arreglos, reducciones, ensambles y musica para medios. |
+| `interpretacion_practica_vocal_instrumental_reglas.md` | Interpretacion, practica, tecnica, estudio, ensayo, audiciones y salud vocal general. |
+| `historia_estetica_culturas_musicales_reglas.md` | Historia, estetica, musicologia, culturas musicales, repertorio y practicas historicas. |
+| `musica_tecnologia_daw_sintesis_reglas.md` | DAW, produccion, sintesis, sampling, MIDI, mezcla, mastering basico, audio e IA musical. |
+| `pedagogia_didactica_investigacion_musical_reglas.md` | Didactica, clases, evaluacion, entrenamiento auditivo, accesibilidad e investigacion musical. |
+| `checklist_arreglo_orquestacion.md` | Checklist para revisar arreglos, adaptaciones e instrumentacion. |
+| `checklist_practica_estudio_musical.md` | Checklist para planes de practica, interpretacion y estudio. |
+| `checklist_analisis_musical.md` | Checklist para analisis musical, armonico, formal, historico e interpretativo. |
 
 ## Recomendacion de uso
 
-El dominio completo tiene 11 archivos activos, por lo que supera el limite de 10 archivos de algunos proyectos. Para ChatGPT u otros entornos con limite reducido, usar `pack-chatgpt`, que fusiona el dominio en 8 archivos.
 
-Para uso granular, cargar siempre `00_instrucciones_base_musica.md` y luego los archivos especificos segun tarea.
+Para uso granular, cargar siempre `instrucciones_base_musica.md` y luego los archivos especificos segun tarea.
 
 ## Principios del dominio
 

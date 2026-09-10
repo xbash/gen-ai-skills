@@ -9,21 +9,20 @@ Sirve para corregir, reescribir, analizar textos, explicar fenomenos linguistico
 
 | Archivo | Uso principal |
 |---|---|
-| `00_instrucciones_base_lenguaje.md` | Base, alcance, estilo, rigor, correccion y derechos. |
-| `01_gramatica_morfosintaxis_ortografia_reglas.md` | Gramatica, sintaxis, ortografia, puntuacion y norma. |
-| `02_semantica_pragmatica_discurso_reglas.md` | Significado, contexto, actos de habla, coherencia y discurso. |
-| `03_sociolinguistica_variacion_chile_latam_reglas.md` | Variacion, registros, Chile/LatAm, norma y diversidad linguistica. |
-| `04_escritura_academica_argumentacion_reglas.md` | Ensayos, informes, tesis, argumentos, citas y estructura. |
-| `05_literatura_teoria_analisis_reglas.md` | Analisis literario, generos, teoria, narratologia, poesia y critica. |
-| `06_filologia_latin_tradicion_clasica_reglas.md` | Filologia, latin, etimologia, tradicion clasica y transmision textual. |
-| `07_comprension_lectora_alfabetizacion_critica_reglas.md` | Comprension, lectura critica, inferencias y alfabetizacion. |
-| `08_didactica_espanol_pedagogia_reglas.md` | Didactica de lengua/literatura, clases, evaluacion y diversidad. |
-| `09_comunicacion_profesional_creativa_reglas.md` | Comunicacion profesional, editorial, creativa y adaptacion de tono. |
-| `10_checklist_correccion_reescritura.md` | Checklist de correccion y reescritura. |
-| `11_checklist_analisis_linguistico_literario.md` | Checklist de analisis linguistico y literario. |
+| `instrucciones_base_lenguaje.md` | Base, alcance, estilo, rigor, correccion y derechos. |
+| `gramatica_morfosintaxis_ortografia_reglas.md` | Gramatica, sintaxis, ortografia, puntuacion y norma. |
+| `semantica_pragmatica_discurso_reglas.md` | Significado, contexto, actos de habla, coherencia y discurso. |
+| `sociolinguistica_variacion_chile_latam_reglas.md` | Variacion, registros, Chile/LatAm, norma y diversidad linguistica. |
+| `escritura_academica_argumentacion_reglas.md` | Ensayos, informes, tesis, argumentos, citas y estructura. |
+| `literatura_teoria_analisis_reglas.md` | Analisis literario, generos, teoria, narratologia, poesia y critica. |
+| `filologia_latin_tradicion_clasica_reglas.md` | Filologia, latin, etimologia, tradicion clasica y transmision textual. |
+| `comprension_lectora_alfabetizacion_critica_reglas.md` | Comprension, lectura critica, inferencias y alfabetizacion. |
+| `didactica_espanol_pedagogia_reglas.md` | Didactica de lengua/literatura, clases, evaluacion y diversidad. |
+| `comunicacion_profesional_creativa_reglas.md` | Comunicacion profesional, editorial, creativa y adaptacion de tono. |
+| `checklist_correccion_reescritura.md` | Checklist de correccion y reescritura. |
+| `checklist_analisis_linguistico_literario.md` | Checklist de analisis linguistico y literario. |
 
 ## Recomendacion de uso
-El dominio tiene 12 archivos activos. Para entornos con limite de 10 archivos, usar `pack-chatgpt`, que fusiona el contenido en 7 archivos.
 
 ## Principios
 - Respetar intencion, voz, genero discursivo y audiencia del texto.

@@ -15,17 +15,16 @@ gen-ai-skills/
 |-- skills/
 |   `-- <dominio>/
 |       |-- README.md
-|       |-- 00_instrucciones_base_*.md
-|       |-- 01_*_reglas.md
+|       |-- instrucciones_base_*.md
+|       |-- *_reglas.md
 |       |-- ...
-|       `-- pack-chatgpt/
 `-- templates/
 ```
 
 ## Uso recomendado
 
-- Para uso granular, cargar `README.md`, el archivo `00_*` del dominio y las reglas especificas necesarias.
-- Para ChatGPT o proyectos con limite de archivos, usar `pack-chatgpt` cuando exista.
+- Para uso granular, cargar `README.md`, el archivo `instrucciones_base_*.md` del dominio y las reglas especificas necesarias.
+- Para ChatGPT o proyectos con limite de archivos, cargar solo los archivos especificos necesarios del dominio.
 - Para Claude, Gemini u otros entornos con mayor limite, usar los archivos especificos del dominio raiz.
 - Para dominios sensibles como medicina, bienestar, derecho, seguridad o finanzas, mantener siempre las reglas de prudencia, derivacion y limites profesionales.
 
@@ -42,31 +41,39 @@ Los dominios principales viven en `skills/`:
 - `economia-finanzas`
 - `filosofia`
 - `fotografias`
-- `geoespacial`
+- `academia`
 - `historia`
 - `ingenieria-software`
 - `investigacion-ia`
+- `investigacion-general`
 - `lenguaje-castellano`
 - `medicina`
 - `operaciones-tecnologia`
-- `prepublicacion-repositorio`
+- `precheck-publica-repo`
 - `seguridad-appsec`
 - `seguridad-opsec`
 - `vision-por-computadora`
 
+## Dominios en preparacion
+
+- `geoespacial`: reservado para trabajo pendiente; actualmente contiene
+  placeholders vacios y no es utilizable como skill.
+
 ## Skills operacionales
 
-- `prepublicacion-repositorio`: revision previa a publicar repositorios en GitHub u otros remotos publicos, con foco en secretos, datos privados, artefactos locales, licencias y readiness documental.
+- `precheck-publica-repo`: revision previa a publicar repositorios en GitHub u otros remotos publicos, con foco en secretos, datos privados, artefactos locales, licencias y readiness documental.
 
 ## Convencion de dominios
 
 Cada dominio debe seguir, idealmente, este patron:
 
 - `README.md`: descripcion, mapa de archivos, recomendacion de uso y principios.
-- `00_instrucciones_base_*.md`: rol, alcance, limites, estilo y formato.
-- `NN_*_reglas.md`: reglas especificas por subtema.
-- `NN_checklist_*.md`: checklist operacional o metodologico.
-- `pack-chatgpt/`: version compacta cuando el dominio tenga mas de 9 archivos raiz o cuando convenga cargarlo de forma reducida.
+- `instrucciones_base_*.md`: rol, alcance, limites, estilo y formato.
+- `*_reglas.md`: reglas especificas por subtema.
+- `checklist_*.md`: checklist operacional o metodologico.
+`geoespacial` permanece en preparacion: sus archivos estan reservados para trabajo
+pendiente y no deben considerarse instrucciones utilizables hasta que tengan
+contenido, README y validacion del dominio.
 
 ## Criterios de calidad
 
@@ -75,5 +82,4 @@ Cada dominio debe seguir, idealmente, este patron:
 - Mantener instrucciones concisas, accionables y no redundantes.
 - Declarar limites profesionales en areas sensibles.
 - Preferir reglas especificas y checklists sobre textos enciclopedicos.
-- Mantener los packs compactos alineados con los archivos raiz.
 

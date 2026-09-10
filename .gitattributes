@@ -1,0 +1,10 @@
+# Texto portable entre Windows, Linux y agentes LLM.
+* text=auto eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.py text eol=lf
+*.ps1 text eol=lf
+*.sh text eol=lf

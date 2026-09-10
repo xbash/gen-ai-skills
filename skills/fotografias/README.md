@@ -9,13 +9,13 @@ No esta pensado para redisenar escenas, alterar identidades, crear personas nuev
 
 | Archivo | Uso principal |
 |---|---|
-| `00_instruccion_base_mejora_fotografica.md` | Base conservadora de mejora fotografica, fidelidad, permisos y restricciones. |
-| `01_retrato_personas_reglas.md` | Retratos, identidad, anatomia, piel, expresion y preservacion humana. |
-| `02_producto_objetos_reglas.md` | Producto, objetos, materiales, geometria, color, marca y uso comercial. |
-| `03_restauracion_fotografia_antigua_reglas.md` | Restauracion, danos, grano, deterioro, colorizacion prudente y memoria visual. |
-| `04_color_luz_textura_reglas.md` | Color, luz, contraste, textura, ruido, nitidez y consistencia visual. |
-| `05_fondo_composicion_integridad_visual_reglas.md` | Fondo, encuadre, composicion, perspectiva, integridad y no manipulacion engañosa. |
-| `06_checklist_mejora_fotografica.md` | Checklist operativo antes de entregar o pedir una edicion. |
+| `instruccion_base_mejora_fotografica.md` | Base conservadora de mejora fotografica, fidelidad, permisos y restricciones. |
+| `retrato_personas_reglas.md` | Retratos, identidad, anatomia, piel, expresion y preservacion humana. |
+| `producto_objetos_reglas.md` | Producto, objetos, materiales, geometria, color, marca y uso comercial. |
+| `restauracion_fotografia_antigua_reglas.md` | Restauracion, danos, grano, deterioro, colorizacion prudente y memoria visual. |
+| `color_luz_textura_reglas.md` | Color, luz, contraste, textura, ruido, nitidez y consistencia visual. |
+| `fondo_composicion_integridad_visual_reglas.md` | Fondo, encuadre, composicion, perspectiva, integridad y no manipulacion engañosa. |
+| `checklist_mejora_fotografica.md` | Checklist operativo antes de entregar o pedir una edicion. |
 | `proyecto_mejora_fotografica_archivos_md.md` | Archivo maestro largo de referencia. No cargar como instruccion activa salvo necesidad. |
 
 ## Recomendacion de uso

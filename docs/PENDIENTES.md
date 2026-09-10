@@ -5,7 +5,6 @@ Fecha de consolidacion: 2026-07-19
 ## Alta prioridad
 
 - Crear o actualizar `AGENTS.md` en la raiz si se quiere que las instrucciones persistentes queden disponibles para futuras sesiones.
-- Revisar y definir una politica de codificacion/EOL para evitar nuevos problemas de mojibake.
 - Decidir el destino de `skills/academia/prompt-tarea1-vision-nlp-redes.md`, actualmente no versionado.
 - Confirmar si se deben guardar las memories propuestas en `docs/BITACORA_CODEX.md`.
 
@@ -19,7 +18,7 @@ Fecha de consolidacion: 2026-07-19
   - `docs/roadmap.md`
 - Evaluar si corresponde crear una biblioteca separada para prompts concretos, por ejemplo `prompts-academicos/`.
 - Revisar si el listado de dominios del `README.md` raiz esta completo respecto del contenido actual de `skills/`.
-- Revisar consistencia entre archivos raiz de cada dominio y sus `pack-chatgpt/`.
+- Revisar consistencia entre los archivos de cada dominio.
 
 ## Baja prioridad
 
@@ -78,7 +77,15 @@ Fecha de consolidacion: 2026-07-19
 - [ ] Formalizar `skills/geoespacial/` o eliminar el placeholder si no corresponde mantenerlo.
 - [ ] Si se formaliza `geoespacial`, crear al menos un `README.md` de dominio y una instruccion base antes de presentarlo como skill usable.
 - [ ] Completar o eliminar placeholders vacios en `docs/` y `templates/`.
-- [ ] Definir politica de codificacion y fin de linea para evitar advertencias LF/CRLF y riesgos de mojibake.
+- [x] Definir politica de codificacion y fin de linea: UTF-8 sin BOM y LF; ver `.gitattributes` y `.editorconfig`.
+
+## Actualizacion 2026-09-09
+
+- [x] Retirar la convencion de packs compactos `chatgpt` tras eliminar esos directorios.
+- [x] Separar los paquetes nativos de Codex en `examples/gen-ia-codex/` y documentar esa ubicacion.
+- [x] Incorporar `academia` e `investigacion-general` al indice raiz.
+- [x] Declarar `geoespacial` como dominio en preparacion y preservar sus placeholders sin renombrarlos ni eliminarlos.
+- [ ] Completar y validar el contenido de `geoespacial` antes de declararlo utilizable.
 
 ### Memories propuestas pendientes de confirmacion
 
@@ -87,3 +94,19 @@ Fecha de consolidacion: 2026-07-19
 - Alcance: Este repositorio.
 - Riesgo si se guarda: Bajo; puede quedar obsoleta solo si se automatiza el indice de dominios.
 - Alternativa si debe ir mejor en `AGENTS.md` o `docs/`: Debe ir en `AGENTS.md` como regla operativa si se crea ese archivo; por ahora queda aqui.
+
+## Corte 2026-09-09
+
+- Refactorizacion de `ingenieria-software` completada en dos iteraciones; falta validacion funcional con prompts.
+- Quedan dos warnings de linea en blanco final reportados por `git diff --check`.
+- Una release posterior a `v0.2` queda pendiente y requiere solicitud explicita.
+- Los pendientes de `geoespacial` y placeholders generales siguen vigentes; la politica de codificacion/EOL ya fue definida el 2026-09-09.
+
+## Actualizacion 2026-09-09 - continuidad de refactorizacion
+
+- [x] Registrar nombres descriptivos como convencion canonica.
+- [x] Registrar eliminacion intencional de `pack-chatgpt/`.
+- [x] Consolidar `docs/CONTEXT.md`, `docs/DECISIONS.md` y `docs/HANDOFF.md`.
+- [ ] Ejecutar validacion funcional con LLM para los dominios refactorizados.
+- [ ] Medir reduccion efectiva de contexto y tokens antes/despues.
+- [ ] Crear una release posterior solo si el usuario la solicita.

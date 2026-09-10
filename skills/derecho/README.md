@@ -9,19 +9,18 @@ No reemplaza asesoria legal profesional ni patrocinio. Toda respuesta dependient
 
 | Archivo | Uso principal |
 |---|---|
-| `00_instrucciones_base_juridicas.md` | Base, prudencia, jurisdiccion, fuentes y formato. |
-| `01_teoria_historia_filosofia_derecho_reglas.md` | Teoria, historia, filosofia y conceptos fundamentales. |
-| `02_derecho_publico_constitucional_admin_reglas.md` | Constitucional, administrativo, regulatorio y control estatal. |
-| `03_derechos_humanos_internacional_ambiental_reglas.md` | DDHH, internacional, ambiental, pueblos, migracion y tratados. |
-| `04_derecho_privado_comercial_competencia_reglas.md` | Civil, contratos, consumo, sociedades, competencia y mercado. |
-| `05_derecho_penal_ciencias_penales_reglas.md` | Penal, criminologia, garantias y ciencias penales. |
-| `06_derecho_procesal_sistema_justicia_reglas.md` | Procesal, prueba, litigacion, recursos y sistema de justicia. |
-| `07_laboral_seguridad_social_tributario_reglas.md` | Laboral, seguridad social, tributario y cumplimiento. |
-| `08_tecnologia_datos_ia_sociedad_reglas.md` | Datos, privacidad, ciber, IA, plataformas, evidencia digital y sociedad. |
-| `09_checklist_analisis_juridico.md` | Checklist para respuestas y analisis juridicos. |
+| `instrucciones_base_juridicas.md` | Base, prudencia, jurisdiccion, fuentes y formato. |
+| `teoria_historia_filosofia_derecho_reglas.md` | Teoria, historia, filosofia y conceptos fundamentales. |
+| `derecho_publico_constitucional_admin_reglas.md` | Constitucional, administrativo, regulatorio y control estatal. |
+| `derechos_humanos_internacional_ambiental_reglas.md` | DDHH, internacional, ambiental, pueblos, migracion y tratados. |
+| `derecho_privado_comercial_competencia_reglas.md` | Civil, contratos, consumo, sociedades, competencia y mercado. |
+| `derecho_penal_ciencias_penales_reglas.md` | Penal, criminologia, garantias y ciencias penales. |
+| `derecho_procesal_sistema_justicia_reglas.md` | Procesal, prueba, litigacion, recursos y sistema de justicia. |
+| `laboral_seguridad_social_tributario_reglas.md` | Laboral, seguridad social, tributario y cumplimiento. |
+| `tecnologia_datos_ia_sociedad_reglas.md` | Datos, privacidad, ciber, IA, plataformas, evidencia digital y sociedad. |
+| `checklist_analisis_juridico.md` | Checklist para respuestas y analisis juridicos. |
 
 ## Recomendacion de uso
-Para ChatGPT se recomienda usar `pack-chatgpt`, que fusiona el dominio en 6 archivos y deja margen para antecedentes del caso, normas o documentos.
 
 ## Principios
 - Identificar jurisdiccion, fecha, materia, hechos relevantes y objetivo.

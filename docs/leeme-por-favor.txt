@@ -1,0 +1,508 @@
+
+Resumen de la sesión
+
+# 1. Problema que estás intentando resolver
+
+Después de meses trabajando con distintos modelos y agentes, el problema ya no es solamente:
+
+	<<Qué modelo es mejor?>>
+
+Sino algo bastante más interesante:
+
+	<<Cómo estructuro mi conocimiento, instrucciones, herramientas y contexto para utilizar distintos modelos eficientemente, sin tener que reconstruir el contexto en cada interacción?>>
+
+Esto conecta directamente con tu estrategia anterior de reducción de tokens, selección de modelos según complejidad y continuidad entre agentes.
+
+La hipótesis que está tomando forma es:
+
+modelo potente + contexto desordenado ≠ necesariamente mejor resultado
+
+mientras que:
+
+modelo adecuado + contexto mínimo relevante + skill especializada + estado persistente del proyecto → mejor relación calidad/tokens.
+
+# 2. Claude Skills fue el punto de partida
+
+Las imágenes que mostraste de Claude Skills llevaron a analizar cuál sería el equivalente conceptual para:
+
+ChatGPT;
+Codex CLI;
+VSCode + Codex;
+Gemini;
+Claude;
+Cursor/Windsurf;
+eventualmente modelos locales.
+
+La conclusión fue que no conviene atarse al mecanismo particular de un proveedor.
+
+En su lugar, puedes construir una capa propia de conocimiento e instrucciones reutilizables.
+
+# 3. La arquitectura que comenzó a emerger
+
+Propusimos evolucionar gen-ai-skills hacia algo conceptualmente parecido a:
+
+gen-ai-skills/
+│
+├── README.md
+├── CHANGELOG.md
+│
+├── docs/
+│
+├── skills/
+│   ├── academia/
+│   ├── desarrollo/
+│   ├── datos/
+│   ├── negocios/
+│   ├── geoespacial/
+│   ├── productividad/
+│   └── ...
+│
+├── prompts/
+├── workflows/
+├── templates/
+├── checklists/
+├── agents/
+└── examples/
+
+Aquí aparece una distinción importante.
+
+Skills contienen conocimiento y comportamiento especializado.
+
+Prompts representan solicitudes reutilizables.
+
+Workflows describen procesos de múltiples pasos.
+
+Checklists verifican calidad y cumplimiento.
+
+Templates normalizan artefactos.
+
+Agents definen roles o comportamientos especializados.
+
+Examples muestran implementaciones de referencia.
+
+AGENTS.md conecta todo esto con un proyecto concreto.
+
+# 4. Tres capas de contexto
+
+También apareció una separación arquitectónica que considero particularmente importante para el ahorro de tokens:
+
+┌─────────────────────────────────────┐
+│  CAPA 1 — Framework global          │
+│  gen-ai-skills                      │
+│                                     │
+│  Conocimiento reutilizable          │
+│  Skills / workflows / checklists    │
+└──────────────────┬──────────────────┘
+                   │
+                   ▼
+┌─────────────────────────────────────┐
+│  CAPA 2 — Instrucciones proyecto    │
+│  AGENTS.md                          │
+│                                     │
+│  Qué reglas/skills aplicar aquí     │
+└──────────────────┬──────────────────┘
+                   │
+                   ▼
+┌─────────────────────────────────────┐
+│  CAPA 3 — Estado del proyecto       │
+│                                     │
+│  README / ROADMAP / CHANGELOG       │
+│  decisiones / resultados / docs     │
+└─────────────────────────────────────┘
+
+Esto evita poner todo el conocimiento dentro de cada prompt.
+
+Y ese principio está directamente relacionado con tu objetivo de eficiencia.
+
+# 5. Las skills deberían ser modulares
+
+También descartamos implícitamente una estrategia como:
+
+mega-skill-de-programacion.md
+mega-skill-de-investigacion.md
+mega-skill-geoespacial.md
+
+porque terminarían introduciendo mucho contexto irrelevante.
+
+Es preferible algo como:
+
+skills/
+├── desarrollo/
+│   ├── python/
+│   ├── testing/
+│   ├── seguridad/
+│   └── contenedores/
+│
+├── academia/
+│   ├── deep-research/
+│   ├── paper-review/
+│   └── reproducibilidad/
+│
+└── geoespacial/
+    ├── raster/
+    ├── sentinel-2/
+    ├── era5/
+    ├── stac/
+    └── validacion-espacial/
+
+El agente carga únicamente aquello necesario para resolver la tarea.
+
+Eso introduce un concepto que convendría convertir explícitamente en principio del framework:
+
+	<< Progressive disclosure: entregar al modelo únicamente el contexto necesario en el momento en que lo necesita.>>
+
+6. El descubrimiento importante: las skills geoespaciales
+
+La conversación llegó finalmente al objetivo que estabas preparando: tu tesis.
+
+Ahí apareció la posibilidad de construir una familia completa:
+
+skills/geoespacial/
+
+
+00_fundamentos/
+10_datos/
+20_fuentes/
+30_preprocesamiento/
+40_feature_engineering/
+50_modelado/
+60_validacion/
+70_reproducibilidad/
+
+Con componentes especializados en:
+
+Sentinel-2
+ERA5
+DEM
+STAC
+COG
+GeoParquet
+
+
+Raster / Vector
+
+
+CRS
+reproyección
+resampling
+alineamiento
+
+
+NDVI
+NDMI
+NBR
+pendiente
+orientación
+
+
+validación espacial
+validación temporal
+data leakage
+
+
+reproducibilidad
+lineage
+versionado
+
+Esto tiene una conexión especialmente fuerte con tu tesis porque trabajarás precisamente con datos multifuente, satelitales, meteorológicos, topográficos e históricos para construir unidades espaciales/temporales destinadas posteriormente al modelamiento de ignición.
+
+7. Una skill particularmente interesante
+
+De todas las propuestas, probablemente una de las primeras que convendría construir es algo equivalente a:
+
+geospatial-project-review/
+    SKILL.md
+
+Su función no sería ejecutar una operación específica.
+
+Sería actuar como revisor metodológico geoespacial.
+
+Por ejemplo, comprobar:
+
+CRS
+ ↓
+resolución espacial
+ ↓
+resolución temporal
+ ↓
+alineamiento
+ ↓
+resampling
+ ↓
+integración multifuente
+ ↓
+feature engineering
+ ↓
+partición train/validation/test
+ ↓
+leakage espacial/temporal
+ ↓
+modelo
+ ↓
+evaluación
+ ↓
+reproducibilidad
+
+Podría convertirse en una especie de quality gate permanente para el desarrollo de la tesis.
+
+8. La idea ya es mayor que gen-ai-skills
+
+La conclusión que sacaría de toda la sesión es esta.
+
+Inicialmente estabas pensando en:
+
+una colección de skills para Codex.
+
+La conversación evolucionó hacia:
+
+una biblioteca portable de skills para diferentes LLM.
+
+Pero tu objetivo general apunta todavía más lejos:
+
+un framework reproducible para trabajar con IA de manera eficiente, portable y trazable.
+
+Conceptualmente:
+
+                   TU FRAMEWORK
+                        │
+       ┌────────────────┼────────────────┐
+       │                │                │
+   Conocimiento     Ejecución        Control
+       │                │                │
+    Skills          Workflows        Checklists
+    Docs            Agents           Evaluación
+    Templates       Tools            Trazabilidad
+       │                │                │
+       └────────────────┼────────────────┘
+                        │
+                     Proyecto
+                        │
+                    AGENTS.md
+                        │
+             ┌──────────┼───────────┐
+             ▼          ▼           ▼
+           Codex      Claude      Gemini
+             │          │           │
+             └──────────┼───────────┘
+                        ▼
+                Modelo apropiado
+                para cada tarea
+9. Y esto conecta con tu estrategia de tokens
+
+Hay dos dimensiones complementarias que has venido explorando.
+
+La primera es optimización del modelo: utilizar modelos más económicos para tareas rutinarias y reservar modelos más capaces para problemas difíciles. Ya habías establecido una política explícita de distribución de modelos según complejidad.
+
+La segunda, que estamos desarrollando ahora, es optimización del contexto.
+
+Podemos representarlo como:
+
+Eficiencia IA≈
+Tokens×Costo×Tiempo
+Calidad 
+u
+ˊ
+til del resultado
+	​
+
+
+No basta con reducir tokens. Hay que maximizar el valor producido por token.
+
+Y ahí las skills tienen mucho sentido.
+
+10. El principio rector que está apareciendo
+
+Yo resumiría todo el camino que has recorrido en estos meses mediante una arquitectura:
+
+MODELO
+   +
+INSTRUCCIONES BASE
+   +
+SKILL ESPECIALIZADA
+   +
+CONTEXTO MÍNIMO DEL PROYECTO
+   +
+HERRAMIENTAS
+   +
+MEMORIA / ESTADO
+   ↓
+RESPUESTA
+   ↓
+EVALUACIÓN
+   ↓
+ARTEFACTO / DECISIÓN
+   ↓
+ACTUALIZACIÓN DEL ESTADO
+
+Y repetir.
+
+Eso transforma la interacción con un LLM desde:
+
+prompt → respuesta
+
+hacia:
+
+sistema → contexto → agente → ejecución → evaluación → conocimiento persistente.
+
+Ese cambio conceptual me parece el resultado más importante de esta sesión.
+
+Próximo paso que propondría
+
+Antes de crear decenas de skills, convendría diseñar formalmente la v0.1 de tu framework.
+
+No comenzar por el contenido, sino por su especificación:
+
+gen-ai-skills/
+
+
+README.md
+
+
+docs/
+    architecture.md
+    principles.md
+    token-efficiency.md
+    portability.md
+    skill-specification.md
+
+
+skills/
+prompts/
+workflows/
+templates/
+checklists/
+agents/
+examples/
+
+Y definir primero qué diferencia exactamente una skill, un workflow, un agent, un prompt, un template y un checklist.
+
+Después crearíamos quizá solo 5–10 skills piloto, incluyendo una o dos geoespaciales, y las probaríamos con Codex, Claude y Gemini.
+
+Así no construirías simplemente un repositorio de archivos Markdown: estarías diseñando una metodología portable y reproducible para ingeniería asistida por IA, con la eficiencia de tokens como uno de sus principios arquitectónicos fundamentales.
+
+
+
+
+
+
+............................
+
+(base) C:\rutinas-local\gen-ai-skills-v0.2>tree /F
+Listado de rutas de carpetas para el volumen Windows
+El número de serie del volumen es 0000000D F83B:A5AF
+C:.
+│   AGENTS.md
+│   CHANGELOG.md
+│   CONTRIBUTING.md
+│   leeme-por-favor.txt
+│   LICENSE
+│   README.md
+│
+├───agents
+│       startup-founder.md
+│
+├───checklists
+│       validar_mvp.md
+│
+├───docs
+│       architecture.md
+│       portability.md
+│       principles.md
+│       roadmap.md
+│       skill-specification.md
+│       token-efficiency.md
+│
+├───examples
+├───prompts
+├───skills
+│   ├───academia
+│   │   │   notebook-review.md
+│   │   │   paper-review.md
+│   │   │   reproducibilidad.md
+│   │   │   thesis-review.md
+│   │   │
+│   │   └───deep-research
+│   │           CHECKLIST.md
+│   │           EXAMPLES.md
+│   │           README.md
+│   │           SKILL.md
+│   │           TEMPLATE.md
+│   │
+│   ├───datos
+│   │       computer-vision.md
+│   │       deep-learning.md
+│   │       evaluacion.md
+│   │       exploratory-data-analysis.md
+│   │       feature-engineering.md
+│   │       machine-learning.md
+│   │       natural-language-processing.md
+│   │       retrieval-augmented-generation.md
+│   │
+│   ├───desarrollo
+│   │       arquitectura.md
+│   │       backend.md
+│   │       checklist.md
+│   │       devops.md
+│   │       frontend.md
+│   │       python.md
+│   │       security.md
+│   │       sql.md
+│   │       testing.md
+│   │
+│   ├───geoespacial
+│   │   ├───00_fundamentos
+│   │   ├───10_datos
+│   │   ├───20_fuentes
+│   │   ├───30_preprocesamiento
+│   │   ├───40_feature_engineering
+│   │   ├───50_modelado
+│   │   ├───60_validacion
+│   │   ├───70_reproducibilidad
+│   │   └───geospatial-project-review
+│   │           CHECKLIST.md
+│   │           EXAMPLES.md
+│   │           README.md
+│   │           SKILL.md
+│   │           TEMPLATE.md
+│   │
+│   ├───multimedia
+│   ├───negocios
+│   │   │   business-model-canvas.md
+│   │   │   competitor-analysis.md
+│   │   │   customer-persona.md
+│   │   │   jobs-to-be-done.md
+│   │   │   lean-startup.md
+│   │   │   market-research.md
+│   │   │   mvp.md
+│   │   │   pricing.md
+│   │   │
+│   │   └───business-discovery
+│   │           CHECKLIST.md
+│   │           EXAMPLES.md
+│   │           README.md
+│   │           SKILL.md
+│   │           TEMPLATE.md
+│   │
+│   └───productividad
+├───templates
+└───workflows
+
+(base) C:\rutinas-local\gen-ai-skills-v0.2>
+
+
+AGENTS.md
+   ↓
+docs/                 ← reglas y arquitectura del framework
+   ↓
+agents/               ← roles especializados
+   ↓
+skills/               ← capacidades/conocimiento
+   ↓
+workflows/            ← secuencias de ejecución
+   ↓
+templates/            ← estructuras de salida
+   ↓
+checklists/           ← validación
+   ↓
+examples/             ← casos de referencia
+

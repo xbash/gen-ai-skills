@@ -192,6 +192,33 @@ Get-ChildItem -LiteralPath docs -File
 - Crear `AGENTS.md` raiz si se confirma como regla persistente del repositorio.
 - Formalizar o descartar el dominio `skills/geoespacial/`.
 - Completar o eliminar placeholders vacios en `docs/` y `templates/`.
+
+## Actualizacion 2026-09-09 - continuidad de refactorizacion
+
+### Hechos verificados
+
+- Se consolidaron los artefactos solicitados en `docs/CONTEXT.md`, `docs/DECISIONS.md` y `docs/HANDOFF.md`.
+- Se actualizaron `docs/DECISIONES_TECNICAS.md` y `docs/PENDIENTES.md` con las decisiones de nombres, packs y codificacion.
+- Quedan como trabajo tecnico la validacion funcional con LLM y la medicion de contexto/tokens.
+- No se hizo staging, commit, push ni release.
+
+### Comandos y verificaciones de esta sesion
+
+```powershell
+Get-Content -Raw docs/CONTEXT.md
+Get-Content -Raw docs/DECISIONS.md
+Get-Content -Raw docs/HANDOFF.md
+```
+
+Se uso la evidencia local de los archivos y del trabajo realizado en la sesion; modelo/version: `pendiente-de-verificacion`.
+
+## 2026-09-09 - Refactorizacion y cierre
+
+- Se compacto `skills/ingenieria-software`, agregando routing en su README y activacion `USAR CUANDO` / `NO USAR CUANDO` en sus 9 instrucciones.
+- Se actualizaron referencias raiz a nombres sin numeracion.
+- Se generaron `docs/CONTEXT.md`, `docs/DECISIONS.md` y `docs/HANDOFF.md` como snapshot canonico de continuidad.
+- Verificacion disponible: 0 numerados, 0 `.md.md`, 0 directorios `chatgpt/` bajo `skills/`; `git diff --check` dejo dos warnings de linea final.
+- No se hizo commit, push ni release nueva. Se preservo el estado sucio y los cambios intencionales del usuario.
 - Revisar codificacion y politica de fin de linea.
 
 ## 2026-07-23 - Cierre posterior a publicacion

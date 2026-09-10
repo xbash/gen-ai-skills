@@ -9,36 +9,42 @@ No reemplaza al dominio `desarrollo-ia`: aqui el centro son los datos, la eviden
 
 | Archivo | Uso principal |
 |---|---|
-| `00_instrucciones_base_cied.md` | Instruccion base del dominio, rol, alcance, rigor y formato de respuesta. |
-| `01_fundamentos_matematicos_estadisticos_reglas.md` | Algebra lineal, probabilidad, inferencia, optimizacion, simulacion y metodos numericos. |
-| `02_programacion_algoritmos_software_reglas.md` | Programacion, algoritmos, estructura de codigo, notebooks, scripts y calidad de software para datos. |
-| `03_bases_datos_almacenamiento_recuperacion_reglas.md` | SQL/NoSQL, modelamiento, almacenamiento, recuperacion, lakehouse, catalogos e indices. |
-| `04_analisis_estadistico_modelamiento_reglas.md` | EDA, regresion, series de tiempo, inferencia, pronostico, causalidad y experimentacion. |
-| `05_ml_dl_ia_reglas.md` | ML, deep learning, modelos probabilisticos, recomendadores, IA generativa aplicada a datos y evaluacion. |
-| `06_big_data_sistemas_distribuidos_reglas.md` | Spark, streaming, Kafka, procesamiento distribuido, orquestacion, escalabilidad y costos. |
-| `07_mineria_analitica_pipeline_reglas.md` | Limpieza, transformaciones, feature engineering, data quality, contratos, ELT/dbt y data products. |
-| `08_nlp_vision_audiovisual_reglas.md` | Analitica de texto, imagen, audio, video, documentos, embeddings y datos multimodales. |
-| `09_visualizacion_comunicacion_datos_reglas.md` | Dashboards, storytelling, visualizacion, comunicacion de incertidumbre y decision analytics. |
-| `10_metodologia_experimentos_reproducibilidad_reglas.md` | Protocolo experimental, reproducibilidad, versionado, evaluacion, A/B testing y auditoria. |
-| `11_etica_privacidad_gobernanza_datos_reglas.md` | Privacidad, gobernanza, linaje, catalogos, acceso, sesgos, cumplimiento y uso responsable. |
-| `12_checklist_ciencia_ingenieria_datos.md` | Checklist operativo para revisar analisis, pipelines, modelos, reportes y gobernanza. |
+| `instrucciones_base_cied.md` | Instruccion base del dominio, rol, alcance, rigor y formato de respuesta. |
+| `fundamentos_matematicos_estadisticos_reglas.md` | Algebra lineal, probabilidad, inferencia, optimizacion, simulacion y metodos numericos. |
+| `programacion_algoritmos_software_reglas.md` | Programacion, algoritmos, estructura de codigo, notebooks, scripts y calidad de software para datos. |
+| `bases_datos_almacenamiento_recuperacion_reglas.md` | SQL/NoSQL, modelamiento, almacenamiento, recuperacion, lakehouse, catalogos e indices. |
+| `analisis_estadistico_modelamiento_reglas.md` | EDA, regresion, series de tiempo, inferencia, pronostico, causalidad y experimentacion. |
+| `ml_dl_ia_reglas.md` | ML, deep learning, modelos probabilisticos, recomendadores, IA generativa aplicada a datos y evaluacion. |
+| `big_data_sistemas_distribuidos_reglas.md` | Spark, streaming, Kafka, procesamiento distribuido, orquestacion, escalabilidad y costos. |
+| `mineria_analitica_pipeline_reglas.md` | Limpieza, transformaciones, feature engineering, data quality, contratos, ELT/dbt y data products. |
+| `nlp_vision_audiovisual_reglas.md` | Analitica de texto, imagen, audio, video, documentos, embeddings y datos multimodales. |
+| `visualizacion_comunicacion_datos_reglas.md` | Dashboards, storytelling, visualizacion, comunicacion de incertidumbre y decision analytics. |
+| `metodologia_experimentos_reproducibilidad_reglas.md` | Protocolo experimental, reproducibilidad, versionado, evaluacion, A/B testing y auditoria. |
+| `etica_privacidad_gobernanza_datos_reglas.md` | Privacidad, gobernanza, linaje, catalogos, acceso, sesgos, cumplimiento y uso responsable. |
+| `checklist_ciencia_ingenieria_datos.md` | Checklist operativo para revisar analisis, pipelines, modelos, reportes y gobernanza. |
+| `reglas_transversales_cied.md` | Controles comunes de problema, calidad, leakage, evaluacion, reproducibilidad y privacidad. |
 
 ## Recomendacion de uso
 
-Para asistentes con limite amplio de archivos, usar `00_instrucciones_base_cied.md` junto con los archivos especificos que correspondan a la tarea.
+Carga siempre `instrucciones_base_cied.md`, normalmente tambien `reglas_transversales_cied.md`, y selecciona un solo modulo principal. Agrega un modulo complementario solo si la tarea lo necesita. Carga el checklist al cierre o durante una auditoria.
 
-Para ChatGPT u otros entornos con limite de 10 archivos por proyecto, usar el directorio `pack-chatgpt`, que fusiona el dominio en 8 archivos:
+Los nombres descriptivos actuales son la convención canónica del dominio. Los subdirectorios `pack-chatgpt/` fueron eliminados intencionalmente y no deben recrearse.
 
-| Archivo pack | Equivalencia |
+### Seleccion rapida
+
+| Tarea principal | Modulo principal |
 |---|---|
-| `00_base_ciencia_ingenieria_datos.md` | Base del dominio. |
-| `01_fundamentos_estadistica_modelamiento.md` | Archivos 01 y 04. |
-| `02_programacion_bases_datos_pipelines.md` | Archivos 02, 03 y parte de 07. |
-| `03_ml_dl_ia_experimentos.md` | Archivos 05 y 10. |
-| `04_big_data_sistemas_distribuidos.md` | Archivo 06. |
-| `05_mineria_analitica_multimodal.md` | Archivos 07 y 08. |
-| `06_visualizacion_gobernanza_etica.md` | Archivos 09 y 11. |
-| `07_checklist_cied.md` | Archivo 12. |
+| Analisis, inferencia, causalidad o series de tiempo | `analisis_estadistico_modelamiento_reglas.md` |
+| Modelo predictivo, deep learning o embeddings | `ml_dl_ia_reglas.md` |
+| Limpieza, transformaciones, dbt o producto de datos | `mineria_analitica_pipeline_reglas.md` |
+| Experimento, benchmark o reproducibilidad | `metodologia_experimentos_reproducibilidad_reglas.md` |
+| SQL, almacenamiento o recuperacion | `bases_datos_almacenamiento_recuperacion_reglas.md` |
+| Streaming, Spark o sistemas distribuidos | `big_data_sistemas_distribuidos_reglas.md` |
+| Texto, OCR, imagen, audio o video | `nlp_vision_audiovisual_reglas.md` |
+| Codigo, notebook, algoritmo o pruebas | `programacion_algoritmos_software_reglas.md` |
+| Dashboard, BI o comunicacion | `visualizacion_comunicacion_datos_reglas.md` |
+| Privacidad, acceso, sesgo o gobernanza | `etica_privacidad_gobernanza_datos_reglas.md` |
+| Supuestos matematicos, simulacion u optimizacion | `fundamentos_matematicos_estadisticos_reglas.md` |
 
 ## Principios del dominio
 

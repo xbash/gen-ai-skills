@@ -10,9 +10,8 @@ Fecha de consolidacion: 2026-07-19
 
 - `skills/`: dominios de instrucciones.
 - `skills/<dominio>/README.md`: descripcion, mapa de archivos, recomendacion de uso y principios del dominio.
-- `skills/<dominio>/00_*`: instrucciones base del dominio.
-- `skills/<dominio>/NN_*`: reglas y checklists especificos.
-- `skills/<dominio>/pack-chatgpt/`: version compacta cuando exista.
+- `skills/<dominio>/instrucciones_base_*.md`: instrucciones base del dominio.
+- `skills/<dominio>/*_reglas.md` y `skills/<dominio>/checklist_*.md`: reglas y checklists especificos.
 - `templates/`: plantillas para distintos entornos.
 - `docs/`: documentacion del proyecto.
 
@@ -24,9 +23,9 @@ Hechos verificados en `skills/academia/README.md`:
 
 - El dominio es deliberadamente transversal.
 - No asume IA, programacion, estadistica, matematicas o seguridad salvo que el material lo indique.
-- El uso recomendado es cargar siempre `00_instrucciones_base_academia.md`.
-- Luego se selecciona `01_analisis_tecnico_conceptual.md` o una especializacion `02` a `06`.
-- `07_checklist_revision_notebook.md` funciona como checklist transversal.
+- El uso recomendado es cargar siempre `instrucciones_base_academia.md`.
+- Luego se selecciona `analisis_tecnico_conceptual.md` o una especializacion `02` a `06`.
+- `checklist_revision_notebook.md` funciona como checklist transversal.
 
 ## Estado del arbol de trabajo
 

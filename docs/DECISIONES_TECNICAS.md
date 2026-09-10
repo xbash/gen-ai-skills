@@ -6,7 +6,7 @@ Fecha de consolidacion: 2026-07-19
 
 ### 1. Organizacion por dominios
 
-El repositorio organiza instrucciones en `skills/<dominio>/`. Cada dominio mantiene su propio `README.md`, instrucciones base, reglas especificas, checklists y, cuando aplica, un `pack-chatgpt/` compacto.
+El repositorio organiza instrucciones en `skills/<dominio>/`. Cada dominio mantiene su propio `README.md`, instrucciones base, reglas especificas y checklists.
 
 Evidencia: `README.md` y los directorios bajo `skills/`.
 
@@ -14,9 +14,9 @@ Evidencia: `README.md` y los directorios bajo `skills/`.
 
 La convencion documentada en `README.md` separa:
 
-- `00_instrucciones_base_*.md`: rol, alcance, limites, estilo y formato.
-- `NN_*_reglas.md`: reglas especificas por subtema.
-- `NN_checklist_*.md`: checklist operacional o metodologico.
+- `instrucciones_base_*.md`: rol, alcance, limites, estilo y formato.
+- `*_reglas.md`: reglas especificas por subtema.
+- `checklist_*.md`: checklist operacional o metodologico.
 
 Esta decision reduce mezcla de contexto y permite cargar solo lo necesario.
 
@@ -26,10 +26,10 @@ Esta decision reduce mezcla de contexto y permite cargar solo lo necesario.
 
 Decision vigente:
 
-- Mantener `00_instrucciones_base_academia.md` como base obligatoria.
-- Usar `01_analisis_tecnico_conceptual.md` como capa generica.
+- Mantener `instrucciones_base_academia.md` como base obligatoria.
+- Usar `analisis_tecnico_conceptual.md` como capa generica.
 - Usar `02` a `06` solo cuando el notebook o el curso indique el area.
-- Usar `07_checklist_revision_notebook.md` como verificacion transversal.
+- Usar `checklist_revision_notebook.md` como verificacion transversal.
 
 ### 4. Rigor y no invencion
 
@@ -86,3 +86,25 @@ El archivo no versionado `skills/academia/prompt-tarea1-vision-nlp-redes.md` se 
 - Definir si `skills/geoespacial/` sera un dominio formal y, si lo sera, completar su `README.md`, instrucciones base y criterios de uso.
 - Definir una politica explicita de codificacion y fin de linea, por ejemplo mediante `.gitattributes`, si se quiere eliminar la incertidumbre LF/CRLF.
 - Crear `AGENTS.md` raiz si las reglas metodologicas deben ser obligatorias para futuras sesiones.
+
+## Actualizacion 2026-09-09
+
+- Los paquetes nativos de Codex se mantienen separados bajo `examples/gen-ia-codex/`.
+- `skills/geoespacial/` queda declarado como dominio en preparacion. Sus archivos actuales son placeholders vacios y no constituyen instrucciones utilizables.
+- No se renombran ni eliminan los archivos geoespaciales hasta confirmar su contenido y autoría.
+- La formalizacion de `geoespacial` requiere README, instruccion base, reglas y checklists con contenido validado, nombres Markdown convencionales y revision de consistencia.
+
+## Actualizacion 2026-09-09 - dominios de instrucciones
+
+### Decisiones registradas
+
+- Los nombres descriptivos actuales de las skills son la convencion canonica; la eliminacion de prefijos numericos fue intencional.
+- Los subdirectorios `pack-chatgpt/` fueron eliminados intencionalmente y no deben recrearse.
+- Los archivos de texto del repositorio deben mantenerse en UTF-8 sin BOM y con finales de linea LF.
+- `.gitattributes` establece LF para archivos de texto y `.editorconfig` establece UTF-8, LF, nueva linea final y eliminacion de espacios finales.
+
+### Alcance y excepciones
+
+- Esta politica aplica a archivos nuevos y a los archivos normalizados en la presente tarea.
+- No se modifican automaticamente binarios ni archivos fuera del alcance de la normalizacion solicitada.
+- La normalizacion no implica staging, commit, push ni publicacion.
