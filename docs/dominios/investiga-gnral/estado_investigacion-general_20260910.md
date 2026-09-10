@@ -1,0 +1,42 @@
+# Estado del dominio — investigacion-general
+
+Fecha: 20260910
+
+- Ruta: `skills/investigacion-general/`
+- Fase ejecutada: FASE 8 — AUDITORÍA POST-REFACTOR.
+- Clasificación de precheck: FUNCTIONAL.
+- Estado general: APROBADO_CON_MEJORAS.
+- Archivos Markdown inspeccionados: 8.
+- Archivos no vacíos: 8.
+- Skills operativas por contenido: 6 (base y cinco módulos).
+- Auxiliares: 1 (`checklist_investigacion.md`).
+- Placeholders detectados: 0.
+- Estructura: plana.
+- Directorios con `SKILL.md`: 0.
+- Alcance declarado: investigación transversal cuantitativa, cualitativa, mixta, documental, experimental, observacional, evaluativa y aplicada; revisión de artefactos mediante checklist.
+- Cobertura actual: SUFICIENTE para el alcance transversal declarado.
+- Skills faltantes: NO_DETERMINADAS; no se abre creación de módulos sin evidencia concreta de brecha.
+- Arquitectura: MANTENER.
+- Subdirectorios: NO_REQUERIDOS.
+- SKILL.md: NO_REQUERIDO.
+- P0: 0.
+- P1: 0.
+- P2: 1 (evaluación funcional independiente pendiente; no bloqueante).
+- P3: 0.
+- Sobrecarga base: BAJA.
+- Sobrefagmentación: BAJA.
+- Redundancia: BAJA.
+- Ambigüedad significativa: NO.
+- Riesgo metodológico: BAJO para la arquitectura estática; la mejora P2 limita afirmaciones funcionales.
+- Decisiones REVISIÓN_TERRA_ALTA: 0.
+- PLAN_EJECUCION_LUNA: NO_REQUERIDO.
+- Acciones READY: 0.
+- Acciones BLOCKED: 0.
+- Ruta siguiente: FASE 10 — CIERRE; conservar P2 como backlog de validación funcional independiente.
+- Siguiente modelo: No requerido.
+- Siguiente esfuerzo: No requerido.
+- Siguiente prompt: No requerido.
+- Informe: `docs/auditoria_post_refactor_investigacion-general_20260910.md`.
+- Plan: No requerido.
+- Fases posteriores ejecutadas automáticamente: ninguna.
+- Cambios en el dominio: README y cinco módulos creados; base compactada; checklist preservado.
