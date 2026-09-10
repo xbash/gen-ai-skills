@@ -25,6 +25,28 @@ Para ChatGPT, Claude, Gemini, Qwen, GLM u otros LLMs:
 2. Agregar los archivos específicos según la tarea operacional.
 3. Incluir `checklist_script_operacional.md` cuando se pidan scripts, comandos, runbooks o cambios.
 
+## Carga selectiva y combinaciones
+
+El patrón normal de carga es:
+
+`README` + `instrucciones_base_ops.md` + un módulo principal según la tarea.
+
+Agregar complementos solo cuando correspondan:
+
+- `observabilidad_continuidad_reglas.md`: señales, alertas, logs, métricas, capacidad o evidencia operativa.
+- `incidentes_cambios_dr_reglas.md`: respuesta coordinada, cambios, rollback, restauración o DR.
+- `redes_conectividad_firewall_reglas.md`: DNS, rutas, puertos, firewall, TLS o conectividad.
+- `checklist_script_operacional.md`: scripts, comandos, runbooks, automatizaciones o cambios.
+
+Combinaciones condicionales frecuentes:
+
+- Un despliegue Kubernetes cloud o GitOps puede requerir `cloud_iac_kubernetes_reglas.md` y `virtualizacion_contenedores_reglas.md`.
+- Una caída de servicio con síntomas de conectividad puede requerir `redes_conectividad_firewall_reglas.md` y `observabilidad_continuidad_reglas.md`, además del módulo de plataforma afectado si corresponde.
+- Un cambio o recuperación de base de datos puede requerir `bases_datos_operacion_reglas.md` e `incidentes_cambios_dr_reglas.md`, y `observabilidad_continuidad_reglas.md` cuando se investiguen señales o capacidad.
+- Un script multiplataforma puede requerir el módulo Linux o Windows correspondiente y `checklist_script_operacional.md`.
+
+Estas combinaciones son condicionales y no constituyen una carga obligatoria. No es necesario cargar todos los módulos para una tarea que no los requiera.
+
 
 ## Principios del dominio
 

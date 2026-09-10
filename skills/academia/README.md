@@ -10,7 +10,6 @@ Su objetivo es mapear celdas, detectar intervenciones necesarias, completar codi
 | Archivo | Uso principal |
 |---|---|
 | `instrucciones_base_academia.md` | Base comun para revision academica de notebooks, rigor, limites y formato. |
-| `analisis_tecnico_conceptual.md` | Analisis generico de notebooks Jupyter, independiente del area del curso. |
 | `analisis_notebook_ia.md` | Revision de notebooks de IA, ML, DL, NLP, vision, RAG, agentes o modelos generativos. |
 | `analisis_notebook_programacion.md` | Revision de notebooks de programacion, Python, algoritmos, POO, scripts y estructuras de datos. |
 | `analisis_notebook_datos_estadistica.md` | Revision de notebooks de datos, pandas, visualizacion, estadistica, inferencia y EDA. |
@@ -20,13 +19,17 @@ Su objetivo es mapear celdas, detectar intervenciones necesarias, completar codi
 
 ## Recomendacion de uso
 
-Usar siempre `instrucciones_base_academia.md` como instruccion principal.
+Carga `instrucciones_base_academia.md` como unidad primaria para revisar cualquier notebook.
 
-Luego seleccionar:
+Agrega solo un perfil especializado cuando el tema del notebook cambie los criterios de revision:
 
-- `analisis_tecnico_conceptual.md` si el notebook es general o todavia no esta claro el tema.
-- Un archivo especifico `02` a `06` si el modulo ya esta identificado.
-- `checklist_revision_notebook.md` para verificar consistencia antes de entregar.
+- `analisis_notebook_ia.md` para IA, ML, DL, NLP, vision, RAG, agentes o modelos generativos.
+- `analisis_notebook_programacion.md` para Python, algoritmos, POO, scripts o fundamentos de software.
+- `analisis_notebook_datos_estadistica.md` para datos tabulares, visualizacion, estadistica, inferencia o EDA.
+- `analisis_notebook_matematicas.md` para algebra, calculo, optimizacion o metodos numericos.
+- `analisis_notebook_ciberseguridad.md` para ciberseguridad defensiva academica.
+
+Si el tema aun no esta identificado, no cargues un perfil especializado. Carga `checklist_revision_notebook.md` solo para verificar consistencia antes de entregar, durante una revision o en una auditoria.
 
 ## Principios
 
