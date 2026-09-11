@@ -1,0 +1,46 @@
+# Estado del dominio — economia-finanzas
+
+Fecha: 20260910
+
+- Dominio: `economia-finanzas`.
+- Ruta: `skills/economia-finanzas/`.
+- Fase ejecutada: FASE 8 — AUDITORÍA POST-REFACTOR.
+- Clasificación: FUNCTIONAL.
+- Cantidad de Markdown: 10.
+- Cantidad no vacía: 10.
+- Cantidad de componentes operativos: 8.
+- Cantidad de auxiliares: 2 (`README.md` y `checklist_modelos_decision_eco.md`).
+- Placeholders: 0.
+- Estructura: plana.
+- Subdirectorios: 0.
+- `SKILL.md`: 0.
+- Alcance declarado: economía, finanzas, contabilidad, costos, riesgos, regulación, econometría, análisis de datos, estrategia, marketing, negocios, personas y organización.
+- Cobertura actual: SUFICIENTE para el alcance declarado.
+- Skills faltantes: NINGUNA.
+- Arquitectura: MANTENER.
+- P0: 0.
+- P1: 0.
+- P2: 0.
+- P3: 0.
+- Sobrecarga base: MEDIA.
+- Sobrefagmentación: BAJA.
+- Redundancia: BAJA.
+- Ambigüedad significativa: NO.
+- Riesgo financiero metodológico: MEDIO.
+- Revisión Terra alta: NO.
+- P1 original de routing: RESUELTO por `ECO-P1-01`.
+- VALIDACION_POST_EJECUCION: PASS.
+- PLAN_EJECUCION_LUNA: NO_REQUERIDO.
+- Acciones READY: 0.
+- Acciones BLOCKED: 0.
+- Ruta siguiente: FASE 10 — CIERRE.
+- Modelo siguiente: No requerido.
+- Esfuerzo siguiente: No requerido.
+- Prompt siguiente: No requerido.
+- Estado workflow: STABLE.
+- Cambios realizados en el dominio: README actualizado por `ECO-P1-01`; base, módulos y checklist preservados.
+- Archivos modificados dentro del dominio: 1 (`README.md`).
+- Archivos creados dentro del dominio: 0.
+- Informe: `docs/auditoria_post_refactor_economia-finanzas_20260910.md`.
+- Plan: No requerido.
+- Evaluaciones no realizadas: verificación externa de legislación, mercados, datos o indicadores vigentes.
