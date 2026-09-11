@@ -1,4 +1,4 @@
-# Dominio geoespacial
+# Dominio: geoespacial
 
 ## Propósito y alcance
 

@@ -1,4 +1,4 @@
-# Visión por computadora
+# Dominio: Visión por computadora
 
 Dominio para diseñar, construir, evaluar, desplegar y operar soluciones de visión por computadora y visión artificial aplicada, cubriendo imágenes, video, OCR, visión industrial, aprendizaje profundo visual, visión 3D, VLM y modelos generativos.
 

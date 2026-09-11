@@ -1,4 +1,4 @@
-# Desarrollo de IA
+# Dominio: Desarrollo de IA
 
 Dominio para construir, integrar, evaluar, desplegar y operar soluciones basadas en inteligencia artificial con rigor académico-técnico y orientación práctica.
 

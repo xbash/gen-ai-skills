@@ -1,4 +1,4 @@
-# Precheck publico de repositorio
+# Dominio: Precheck publico de repositorio
 
 Dominio operacional para revisar un repositorio antes de publicarlo o abrirlo
 a terceros. Se enfoca en secretos, datos privados, archivos locales,

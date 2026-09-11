@@ -1,4 +1,4 @@
-# Seguridad AppSec
+# Dominio: Seguridad AppSec
 
 Dominio para diseñar, revisar, validar y mejorar la seguridad de aplicaciones, productos, APIs, código, dependencias, pipelines, configuraciones e infraestructura aplicativa desde un enfoque white-hat, autorizado y orientado a remediación.
 

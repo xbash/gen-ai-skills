@@ -1,4 +1,4 @@
-# Seguridad operacional
+# Dominio: Seguridad operacional
 
 Dominio para gestionar, fortalecer, monitorear y responder a riesgos de ciberseguridad desde una perspectiva defensiva, organizacional y operacional. Está enfocado en gobierno, controles, hardening, IAM, SOC, DFIR, continuidad, vulnerabilidades, cloud, AppSec defensivo, terceros y métricas.
 

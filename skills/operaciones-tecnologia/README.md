@@ -1,4 +1,4 @@
-# Operaciones y tecnología
+# Dominio: Operaciones y tecnología
 
 Dominio para administrar, diagnosticar, automatizar y operar plataformas tecnológicas corporativas con foco en continuidad, seguridad, trazabilidad, control de cambios y resolución práctica de problemas.
 
