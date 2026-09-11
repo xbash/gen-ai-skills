@@ -1,37 +1,42 @@
-﻿# Gen AI Skills
+# Gen AI Skills
 
-Coleccion de instrucciones especializadas para asistentes de IA. Cada carpeta en `skills/` representa un dominio de conocimiento y contiene reglas, criterios de respuesta y checklists para usar con LLMs como ChatGPT, Claude, Gemini, Qwen, GLM, Copilot, Open WebUI, LM Studio u Ollama.
+Colección de instrucciones especializadas para asistentes de IA. El repositorio mantiene instrucciones reutilizables, modulares y auditables para distintos dominios y modelos.
 
 ## Objetivo
 
-El repositorio busca mantener instrucciones reutilizables, modulares y auditables para distintos dominios. La idea es poder cargar solo los archivos necesarios segun la tarea, sin mezclar areas ni saturar el contexto del modelo.
+La biblioteca permite cargar solo los archivos necesarios según la tarea, sin mezclar áreas ni saturar el contexto del modelo.
 
 ## Estructura
 
 ```text
 gen-ai-skills/
-|-- docs/
-|-- examples/
-|-- skills/
+|-- docs/          # continuidad, auditorías, planes y reportes
+|-- examples/      # paquetes y ejemplos de referencia
+|-- prompts/       # prompts de tareas y fases del workflow
+|-- skills/        # dominios reutilizables
 |   `-- <dominio>/
 |       |-- README.md
 |       |-- instrucciones_base_*.md
 |       |-- *_reglas.md
-|       |-- ...
-`-- templates/
+|       |-- checklist_*.md
+|       `-- ...
+|-- templates/     # plantillas de salida o adaptación
+|-- workflows/     # workflows documentados
+`-- checklists/    # directorio reservado para checklists
 ```
 
 ## Uso recomendado
 
-- Para uso granular, cargar `README.md`, el archivo `instrucciones_base_*.md` del dominio y las reglas especificas necesarias.
-- Para ChatGPT o proyectos con limite de archivos, cargar solo los archivos especificos necesarios del dominio.
-- Para Claude, Gemini u otros entornos con mayor limite, usar los archivos especificos del dominio raiz.
-- Para dominios sensibles como medicina, bienestar, derecho, seguridad o finanzas, mantener siempre las reglas de prudencia, derivacion y limites profesionales.
+- Para un dominio Markdown simple, cargar el `README.md` del dominio, su archivo `instrucciones_base_*.md`, el módulo específico necesario y el checklist al cierre o cuando la tarea lo requiera.
+- Para un dominio compuesto, cargar su router o `README.md`, una skill primaria y solo las dependencias cuyo trigger sea necesario.
+- `SKILL.md` no es un requisito de uniformidad: se usa solo cuando existe un beneficio concreto y está respaldado por el diseño del dominio.
+- Para dominios sensibles como medicina, bienestar, derecho, seguridad o finanzas, mantener siempre las reglas de prudencia, derivación y límites profesionales.
 
 ## Dominios
 
 Los dominios principales viven en `skills/`:
 
+- `academia`
 - `arte-musical`
 - `bienestar`
 - `ciencia-ingenieria-datos`
@@ -41,7 +46,7 @@ Los dominios principales viven en `skills/`:
 - `economia-finanzas`
 - `filosofia`
 - `fotografias`
-- `academia`
+- `geoespacial` (dominio compuesto)
 - `historia`
 - `ingenieria-software`
 - `investigacion-ia`
@@ -54,32 +59,33 @@ Los dominios principales viven en `skills/`:
 - `seguridad-opsec`
 - `vision-por-computadora`
 
-## Dominios en preparacion
-
-- `geoespacial`: reservado para trabajo pendiente; actualmente contiene
-  placeholders vacios y no es utilizable como skill.
-
 ## Skills operacionales
 
-- `precheck-publica-repo`: revision previa a publicar repositorios en GitHub u otros remotos publicos, con foco en secretos, datos privados, artefactos locales, licencias y readiness documental.
+- `precheck-publica-repo`: revisión previa a publicar repositorios en GitHub u otros remotos públicos, con foco en secretos, datos privados, artefactos locales, licencias y readiness documental.
 
-## Convencion de dominios
+## Convención de dominios
 
-Cada dominio debe seguir, idealmente, este patron:
+Los dominios Markdown simples suelen incluir:
 
-- `README.md`: descripcion, mapa de archivos, recomendacion de uso y principios.
-- `instrucciones_base_*.md`: rol, alcance, limites, estilo y formato.
-- `*_reglas.md`: reglas especificas por subtema.
-- `checklist_*.md`: checklist operacional o metodologico.
-`geoespacial` permanece en preparacion: sus archivos estan reservados para trabajo
-pendiente y no deben considerarse instrucciones utilizables hasta que tengan
-contenido, README y validacion del dominio.
+- `README.md`: descripción, mapa de archivos, recomendación de uso y principios.
+- `instrucciones_base_*.md`: rol, alcance, límites, estilo y formato.
+- `*_reglas.md`: reglas específicas por subtema.
+- `checklist_*.md`: checklist operacional o metodológico.
+
+Los dominios compuestos pueden usar otra estructura cuando sus responsabilidades y triggers lo justifiquen. `skills/geoespacial/README.md` documenta su router, sus skills CORE y sus skills SPECIALIZED.
+
+## Workflow de mantenimiento
+
+El flujo vigente es: precheck → diseño o auditoría → plan congelado → ejecución → validación → auditoría post-refactor o cierre. El Planner define y congela el plan; el Executor aplica únicamente acciones autorizadas; el Validator comprueba criterios, referencias, trazabilidad y estado final.
+
+Las fases, prompts y gates están documentados en [`workflows/workflow_skills_dominio_v1.md`](workflows/workflow_skills_dominio_v1.md) y [`prompts/GUIA_EJECUCION_PROMPTS.md`](prompts/GUIA_EJECUCION_PROMPTS.md). Los cambios de alto impacto, baja confianza o contradicción significativa requieren el gate definido para Terra High.
 
 ## Criterios de calidad
 
-- No inventar fuentes, citas, datos, leyes, guias, benchmarks ni resultados.
+- No inventar fuentes, citas, datos, leyes, guías, benchmarks ni resultados.
 - Separar hechos, supuestos, interpretaciones, recomendaciones y limitaciones.
 - Mantener instrucciones concisas, accionables y no redundantes.
-- Declarar limites profesionales en areas sensibles.
-- Preferir reglas especificas y checklists sobre textos enciclopedicos.
-
+- Declarar límites profesionales en áreas sensibles.
+- Preferir reglas específicas y checklists sobre textos enciclopédicos.
+- Preservar la trazabilidad y validar rutas, referencias y criterios de aceptación.
+- Mantener los archivos de texto en UTF-8, LF y con newline final, según `.editorconfig` y `.gitattributes`.
