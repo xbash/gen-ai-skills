@@ -1,59 +1,40 @@
-# Guía de ejecución
+# Guía de ejecución — v1.1
 
-## Parámetros estándar
-```text
-<PROYECTO> = C:/rutinas-local/gen-ai-skills-root/gen-ai-skills
-<DOMINIO>  = nombre exacto del dominio
-<RUTA>     = skills/<DOMINIO>/
-<FECHA>    = YYYYMMDD
-```
+Usa como punto de entrada:
 
-## Secuencia
-| Paso | Prompt | Modelo | Esfuerzo | Condición |
-|---|---|---|---|---|
-| 1 | iniciar_workflow_dominio.md | Luna | Low | Siempre |
-| 2A | diseno_skills_dominio.md | Terra | Medium | EMPTY / PLACEHOLDER_ONLY |
-| 2B | audita_skills_dominios_v2_terra.md | Terra | Medium | FUNCTIONAL |
-| 2C | audita_skills_dominios_v2_terra.md | Terra | Medium | MIXED |
-| 3 | ejecuta_refactor_skills_luna.md | Luna | Low/Medium | Solo si existe plan |
-| 4 | audita_post_refactor_dominio.md | Terra | Medium | Solo si hubo refactor |
-| 5 | Cierre | Ninguno | — | P0=0, P1=0, sin ambigüedad, validación PASS |
+`prompts/00_iniciar_workflow_dominio.md`
 
-## Ejecución
+| Estado/hito | Prompt | Modelo | Esfuerzo |
+|---|---|---|---|
+| Inicio | `00_iniciar_workflow_dominio.md` | Luna | Low |
+| PRECHECK | `01_precheck_skills_dominio_luna.md` | Luna | Low |
+| EMPTY / PLACEHOLDER_ONLY | `02A_diseno_skills_dominio_terra.md` | Terra | Medium |
+| FUNCTIONAL | `02B_audita_skills_dominio_terra.md` | Terra | Medium |
+| MIXED | `02C_audita_skills_dominio_mixto_terra.md` | Terra | Medium |
+| Plan necesario | `03_generar_plan_ejecucion_luna_terra.md` | Terra | Medium |
+| Plan READY | `05_ejecuta_refactor_skills_luna.md` | Luna | Medium |
+| Tras ejecución | `06_valida_refactor_skills_luna.md` | Luna | Low |
+| Refactor significativo | `07_audita_post_refactor_dominio_terra.md` | Terra | Medium |
+| Cierre | `10_cierra_workflow_dominio_luna.md` | Luna | Low |
 
-### Paso 1
-Sustituye `<PROYECTO>`, `<DOMINIO>`, `<RUTA>`, `<FECHA>` en `iniciar_workflow_dominio.md`.
-Ejecuta con Luna / Low.
+Regla central:
 
-### Paso 2A
-Si el PRECHECK devuelve `EMPTY` o `PLACEHOLDER_ONLY`, ejecuta `diseno_skills_dominio.md` con Terra / Medium.
-
-### Paso 2B
-Si devuelve `FUNCTIONAL`, ejecuta `audita_skills_dominios_v2_terra.md` con:
-`<MODO> = AUDITORÍA_FUNCIONAL`.
-
-### Paso 2C
-Si devuelve `MIXED`, usa el mismo auditor con:
-`<MODO> = AUDITORÍA_HÍBRIDA`.
-
-### Paso 3
-Solo si existe plan. Completa:
-```text
-<PLAN> = ruta exacta del plan
-<ACCIONES> = IDs exactos, por ejemplo A001 o A002,A003
-```
-Usa Luna / Medium para redacción semántica y Luna / Low para operaciones mecánicas o validación.
-
-### Paso 4
-Solo si hubo refactor y la validación terminó PASS.
-Completa `<AUDITORIA_PREVIA>`, `<PLAN_EJECUTADO>`, `<EXECUTION_REPORT>` y ejecuta con Terra / Medium.
-
-### Paso 5
-Cierra como `STABLE` si:
 ```text
 P0 = 0
 P1 = 0
 AMBIGÜEDAD_SIGNIFICATIVA = NO
-VALIDACION_FINAL = PASS
+→ no refactorizar por rutina
+→ P2/P3 pueden quedar como backlog
+→ cierre
 ```
-P2/P3 quedan como backlog salvo evidencia nueva.
+
+Principios:
+- Concepto ≠ skill.
+- No completar taxonomías.
+- Preferir estructura mínima suficiente.
+- No migrar a SKILL.md por uniformidad.
+- Terra decide; Luna ejecuta.
+- Validación estática ≠ validación funcional.
+- No eliminar conocimiento sin trazabilidad y rollback.
+- No afirmar ahorro de tokens sin medición.
+- No reabrir STABLE sin nueva evidencia.
