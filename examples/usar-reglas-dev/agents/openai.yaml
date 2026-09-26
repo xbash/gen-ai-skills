@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "Aplicar reglas de software"
+  short_description: "Criterio tecnico para software"
+  default_prompt: "Use $aplicar-reglas-software to answer this software engineering request with rigorous, practical guidance."
