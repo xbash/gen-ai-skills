@@ -41,7 +41,7 @@ No asignes significado a candidatos ambiguos.
 ## Artefactos
 ```text
 docs/diseno_<DOMINIO>_<FECHA>.md
-docs/plan_refactor_<DOMINIO>_luna_<FECHA>.md   # solo si corresponde
+docs/plan_refactor_<DOMINIO>_ejec_<FECHA>.md   # solo si corresponde
 ```
 
 No ejecutes cambios.

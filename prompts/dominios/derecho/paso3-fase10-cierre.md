@@ -1,6 +1,6 @@
 Aplica estrictamente:
 
-prompts/10_cierra_workflow_dominio_luna.md
+prompts/10_cierra_workflow_dominio_ejec.md
 
 Proyecto:
 C:/rutinas-local/gen-ai-skills-root/gen-ai-skills

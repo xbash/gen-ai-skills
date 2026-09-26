@@ -54,7 +54,7 @@ No uses un requisito futuro como precondición.
 Para DELETE/MERGE/MOVE exige trazabilidad, rollback y validación de preservación de conocimiento.
 
 ## Artefacto
-`docs/plan_refactor_<DOMINIO>_luna_<FECHA>.md`
+`docs/plan_refactor_<DOMINIO>_ejec_<FECHA>.md`
 
 ## Respuesta
 ```text

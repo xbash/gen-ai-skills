@@ -6,19 +6,25 @@ Procedimiento reproducible para inspeccionar, clasificar, diseñar, auditar, ref
 Principio: **Observar → clasificar → razonar → decidir → ejecutar → validar → cerrar.**
 
 ## Política de modelos
-| Trabajo | Modelo | Esfuerzo |
-|---|---|---|
-| Inicio/router | GPT-5.6 Luna | Low |
-| PRECHECK | GPT-5.6 Luna | Low |
-| Diseño | GPT-5.6 Terra | Medium |
-| Auditoría funcional/híbrida | GPT-5.6 Terra | Medium |
-| Plan determinista | GPT-5.6 Terra | Medium |
-| Ejecución | GPT-5.6 Luna | Medium |
-| Validación mecánica | GPT-5.6 Luna | Low |
-| Post-refactor | GPT-5.6 Terra | Medium |
-| Gate excepcional | GPT-5.6 Terra | High |
 
-Terra High no es una fase estándar; usar solo ante alto impacto + baja confianza.
+Roles independientes del proveedor (ver `AGENTS.md` sección «Selección eficiente de modelos»):
+- **Ejecutor**: razonamiento bajo — tareas mecánicas, deterministas, alta velocidad.
+- **Analista**: razonamiento medio — análisis acotado, equilibrio costo/calidad.
+- **Arquitecto**: razonamiento alto — diseño, decisiones de impacto, revisión sustantiva.
+
+| Trabajo | Rol | Esfuerzo |
+|---|---|---|
+| Inicio/router | Ejecutor | Bajo |
+| PRECHECK | Ejecutor | Bajo |
+| Diseño | Arquitecto | Medio |
+| Auditoría funcional/híbrida | Arquitecto | Medio |
+| Plan determinista | Arquitecto | Medio |
+| Ejecución | Ejecutor | Medio |
+| Validación mecánica | Ejecutor | Bajo |
+| Post-refactor | Arquitecto | Medio |
+| Gate excepcional | Arquitecto | Alto |
+
+Arquitecto en esfuerzo alto no es una fase estándar; usar solo ante alto impacto + baja confianza.
 
 ## Parámetros estándar
 ```text

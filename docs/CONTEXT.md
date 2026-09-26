@@ -67,6 +67,29 @@ Mantener una biblioteca modular de instrucciones Markdown bajo `skills/<dominio>
 - No hubo staging, commit, push, release ni publicación. No hubo validación
   funcional con LLM ni medición de tokens/contexto.
 
+## Consolidación de sesión — 2026-09-26 (AGENTS.md — plan completo)
+
+### Trabajo realizado
+
+Se ejecutó un plan de 4 acciones sobre `AGENTS.md` y archivos relacionados:
+
+- ACCION-01: `prompts/GUIA_EJECUCION_PROMPTS.md` agregado a «Fuentes de autoridad».
+- ACCION-02: Nueva sección «Estructura del repositorio» con tabla de 10 directorios raíz y su función.
+- ACCION-03: Referencia a estructura de `prompts/` agregada en «Arquitectura y carga de contexto».
+- ACCION-04: Terminología Luna/Terra eliminada de todo el proyecto; reemplazada por roles independientes del proveedor: **Ejecutor** (razonamiento bajo), **Analista** (medio), **Arquitecto** (alto). Cambios en `AGENTS.md`, `workflow_skills_dominio_v1.1.md`, `GUIA_EJECUCION_PROMPTS.md` y 35 archivos de prompts. 9 archivos renombrados con git mv (`_luna` → `_ejec`, `_terra` → `_arq`). Convenciones de nomenclatura de salida (`_luna_<FECHA>`, `_terra_<FECHA>`) actualizadas en 9 archivos adicionales.
+
+### Decisiones de incertidumbres
+
+- A: `agents/`, `.agents/`, `.codex/` son directorios reservados para uso futuro. Documentados en «Estructura del repositorio».
+- B: Terminología abstracta (Ejecutor/Analista/Arquitecto) preferida sobre nombres de proveedor. Resuelta.
+- C: `prompts/otros/` son prompts de uso directo del usuario; no se referencian desde `AGENTS.md`. Resuelta.
+
+### Intactos intencionalmente
+
+- Referencias históricas en `docs/` con fechas concretas (`_luna_20260910`, `_terra_20260910`): los archivos existen con esos nombres.
+- `workflow_skills_dominio_v1.md` (versión antigua, no activa): no modificado.
+- `prompts/otros/`: contenido no referenciado desde `AGENTS.md`.
+
 ## Consolidación de sesión — 2026-09-26 (README.md raíz — plan completo)
 
 ### Trabajo realizado

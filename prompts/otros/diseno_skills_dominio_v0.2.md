@@ -66,8 +66,8 @@ Usa `REVISIÓN_TERRA_ALTA` solo ante:
 
 Genera:
 
-- `docs/diseno_<DOMINIO>_terra_<FECHA>.md`
-- `docs/plan_creacion_<DOMINIO>_luna_<FECHA>.md`
+- `docs/diseno_<DOMINIO>_arq_<FECHA>.md`
+- `docs/plan_creacion_<DOMINIO>_ejec_<FECHA>.md`
 
 El plan de ejecución debe utilizar:
 

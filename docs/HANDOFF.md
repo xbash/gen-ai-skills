@@ -69,6 +69,35 @@ Elegir entre validación funcional (LLM + tareas representativas) o medición co
 
 ---
 
+## Handoff de sesión — 2026-09-26 (AGENTS.md — plan completo)
+
+### Estado al cierre
+
+Archivos modificados en esta sesión (unstaged salvo los git mv):
+
+- `AGENTS.md` — 4 acciones: fuentes de autoridad, estructura del repositorio, referencia a prompts/, terminología Ejecutor/Analista/Arquitecto.
+- `workflows/workflow_skills_dominio_v1.1.md` — tabla de política de modelos actualizada.
+- `prompts/GUIA_EJECUCION_PROMPTS.md` — tabla de prompts por fase actualizada; «Arquitecto decide; Ejecutor ejecuta».
+- 9 archivos de prompts renombrados con `git mv` (`_luna` → `_ejec`, `_terra` → `_arq`).
+- 35 archivos de prompts con referencias actualizadas.
+- 9 archivos con convenciones de nomenclatura de salida actualizadas.
+- `docs/CONTEXT.md`, `docs/DECISIONS.md`, `docs/HANDOFF.md` — actualizados.
+
+### Al iniciar la próxima sesión
+
+1. Leer `docs/CONTEXT.md`, `docs/DECISIONS.md` y este archivo.
+2. Ejecutar `git status` para verificar el estado del working tree.
+3. No hacer commit, push ni publicación sin autorización explícita.
+
+### Referencias clave
+
+- `AGENTS.md` — guía normativa vigente para agentes; actualizada en esta sesión.
+- `workflows/workflow_skills_dominio_v1.1.md` — workflow vigente; actualizado en esta sesión.
+- `prompts/GUIA_EJECUCION_PROMPTS.md` — punto de entrada operacional; actualizado en esta sesión.
+- `docs/eliminar/` — archivos pendientes de decisión de eliminación (pendiente del usuario).
+
+---
+
 ## Handoff de sesión — 2026-09-26 (README.md raíz — plan completo)
 
 ### Estado al cierre

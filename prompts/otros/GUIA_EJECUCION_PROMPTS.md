@@ -13,9 +13,9 @@
 |---|---|---|---|---|
 | 1 | iniciar_workflow_dominio.md | Luna | Low | Siempre |
 | 2A | diseno_skills_dominio.md | Terra | Medium | EMPTY / PLACEHOLDER_ONLY |
-| 2B | audita_skills_dominios_v2_terra.md | Terra | Medium | FUNCTIONAL |
-| 2C | audita_skills_dominios_v2_terra.md | Terra | Medium | MIXED |
-| 3 | ejecuta_refactor_skills_luna.md | Luna | Low/Medium | Solo si existe plan |
+| 2B | audita_skills_dominios_v2_arq.md | Terra | Medium | FUNCTIONAL |
+| 2C | audita_skills_dominios_v2_arq.md | Terra | Medium | MIXED |
+| 3 | ejecuta_refactor_skills_ejec.md | Luna | Low/Medium | Solo si existe plan |
 | 4 | audita_post_refactor_dominio.md | Terra | Medium | Solo si hubo refactor |
 | 5 | Cierre | Ninguno | — | P0=0, P1=0, sin ambigüedad, validación PASS |
 
@@ -29,7 +29,7 @@ Ejecuta con Luna / Low.
 Si el PRECHECK devuelve `EMPTY` o `PLACEHOLDER_ONLY`, ejecuta `diseno_skills_dominio.md` con Terra / Medium.
 
 ### Paso 2B
-Si devuelve `FUNCTIONAL`, ejecuta `audita_skills_dominios_v2_terra.md` con:
+Si devuelve `FUNCTIONAL`, ejecuta `audita_skills_dominios_v2_arq.md` con:
 `<MODO> = AUDITORÍA_FUNCIONAL`.
 
 ### Paso 2C

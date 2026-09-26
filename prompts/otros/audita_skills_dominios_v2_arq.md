@@ -62,10 +62,10 @@ Marca `REVISIÓN_TERRA_ALTA` solo ante eliminación de conocimiento especializad
 
 ## Salidas
 Genera:
-`docs/auditoria_<DOMINIO>_terra_<FECHA>.md`
+`docs/auditoria_<DOMINIO>_arq_<FECHA>.md`
 
 Si hay cambios justificados:
-`docs/plan_refactor_<DOMINIO>_luna_<FECHA>.md`
+`docs/plan_refactor_<DOMINIO>_ejec_<FECHA>.md`
 
 Si P0=0, P1=0 y no hay ambigüedad significativa:
 `PLAN_EJECUCION_LUNA: NO REQUERIDO`

@@ -1,6 +1,6 @@
 Aplica estrictamente:
 
-prompts/01_precheck_skills_dominio_luna.md
+prompts/01_precheck_skills_dominio_ejec.md
 
 Proyecto:
 C:/rutinas-local/gen-ai-skills-root/gen-ai-skills

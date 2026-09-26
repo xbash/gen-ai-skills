@@ -18,7 +18,7 @@ Ejecuta únicamente la FASE 1 — PRECHECK.
 
 Usa:
 
-prompts/precheck_skills_dominio_luna.md
+prompts/precheck_skills_dominio_ejec.md
 
 Objetivo:
 determinar el estado real del dominio y enrutarlo correctamente dentro de:

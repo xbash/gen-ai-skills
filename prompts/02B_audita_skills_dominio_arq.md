@@ -73,7 +73,7 @@ Si P0=0, P1=0 y sin ambigüedad:
 ```text
 docs/auditoria_<DOMINIO>_<FECHA>.md
 docs/estado_<DOMINIO>_<FECHA>.md
-docs/plan_refactor_<DOMINIO>_luna_<FECHA>.md   # si corresponde
+docs/plan_refactor_<DOMINIO>_ejec_<FECHA>.md   # si corresponde
 ```
 
 No ejecutes refactor.

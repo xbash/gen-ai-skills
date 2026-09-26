@@ -56,7 +56,7 @@ GATE_TERRA_HIGH:
 ```text
 docs/auditoria_<DOMINIO>_<FECHA>.md
 docs/estado_<DOMINIO>_<FECHA>.md
-docs/plan_refactor_<DOMINIO>_luna_<FECHA>.md   # si corresponde
+docs/plan_refactor_<DOMINIO>_ejec_<FECHA>.md   # si corresponde
 ```
 
 No ejecutes cambios.

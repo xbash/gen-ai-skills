@@ -35,12 +35,12 @@ EMPTY / PLACEHOLDER_ONLY
 FUNCTIONAL
 → AUDITORÍA FUNCIONAL
 → GPT-5.6 Terra / Medium
-→ prompts/audita_skills_dominios_v2_terra.md
+→ prompts/audita_skills_dominios_v2_arq.md
 
 MIXED
 → AUDITORÍA HÍBRIDA
 → GPT-5.6 Terra / Medium
-→ prompts/audita_skills_dominios_v2_terra.md
+→ prompts/audita_skills_dominios_v2_arq.md
 
 INVALID
 → STOP

@@ -37,8 +37,8 @@ Propón estructura física solo después de definir responsabilidades. Puede ser
 
 ## Salidas
 Genera:
-- `docs/diseno_<DOMINIO>_terra_<FECHA>.md`
-- `docs/plan_creacion_<DOMINIO>_luna_<FECHA>.md`
+- `docs/diseno_<DOMINIO>_arq_<FECHA>.md`
+- `docs/plan_creacion_<DOMINIO>_ejec_<FECHA>.md`
 
 ## Contrato del plan
 Cada acción:

@@ -35,7 +35,7 @@ No avances automáticamente.
 1. Verifica proyecto y ruta.
 2. Lee el workflow v1.1.
 3. Si no hay estado verificable, enruta a FASE 1 — PRECHECK.
-4. Usa `prompts/01_precheck_skills_dominio_luna.md`.
+4. Usa `prompts/01_precheck_skills_dominio_ejec.md`.
 
 ## Respuesta
 ```text

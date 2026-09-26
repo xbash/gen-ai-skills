@@ -58,7 +58,7 @@ Marca `REVISIÓN_TERRA_ALTA` solo ante posible pérdida de conocimiento especial
 
 ## Segundo plan
 Genera:
-`docs/plan_post_refactor_<DOMINIO>_luna_<FECHA>.md`
+`docs/plan_post_refactor_<DOMINIO>_ejec_<FECHA>.md`
 
 solo si existen cambios concretos justificados.
 

@@ -18,6 +18,6 @@ Ejecuta únicamente la FASE 1 — PRECHECK.
 
 Usa:
 
-prompts/precheck_skills_dominio_luna.md
+prompts/precheck_skills_dominio_ejec.md
 
 No avances automáticamente a ninguna fase posterior.

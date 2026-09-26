@@ -1,6 +1,6 @@
 Aplica estrictamente:
 
-prompts/ejecuta_refactor_skills_luna.md
+prompts/ejecuta_refactor_skills_ejec.md
 
 Proyecto:
 C:/rutinas-local/gen-ai-skills-root/gen-ai-skills

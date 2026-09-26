@@ -1,6 +1,6 @@
 Aplica estrictamente:
 
-prompts/02B_audita_skills_dominio_terra.md
+prompts/02B_audita_skills_dominio_arq.md
 
 Proyecto:
 C:/rutinas-local/gen-ai-skills-root/gen-ai-skills

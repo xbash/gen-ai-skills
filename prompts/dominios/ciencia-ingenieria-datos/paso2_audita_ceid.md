@@ -1,6 +1,6 @@
 Aplica estrictamente:
 
-prompts/audita_skills_dominios_v2_terra.md
+prompts/audita_skills_dominios_v2_arq.md
 
 Proyecto:
 C:/rutinas-local/gen-ai-skills-root/gen-ai-skills
@@ -157,7 +157,7 @@ docs/plan_refactor_ciencia-ingenieria-datos_luna_20260910.md
 
 El plan debe seguir estrictamente el contrato definido en:
 
-prompts/audita_skills_dominios_v2_terra.md
+prompts/audita_skills_dominios_v2_arq.md
 
 Cada acción debe incluir como mínimo:
 

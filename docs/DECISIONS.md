@@ -61,6 +61,16 @@ Fecha de corte: 2026-09-09
 5. La modificación se limita a `AGENTS.md`; no se autorizaron acciones Git ni
    cambios en los archivos no rastreados preexistentes.
 
+## Decisiones de sesión — 2026-09-26 (AGENTS.md — plan completo)
+
+1. `prompts/GUIA_EJECUCION_PROMPTS.md` es fuente de autoridad operacional; se referencia desde `AGENTS.md`.
+2. Los directorios `agents/`, `.agents/` y `.codex/` son reservados para uso futuro; se documentan como vacíos en `AGENTS.md`.
+3. `prompts/` se describe en `AGENTS.md` como dos niveles: numerados por fase (`00–10`) y específicos por dominio (`dominios/<dominio>/`).
+4. La terminología Luna/Terra queda eliminada del proyecto. Los roles son independientes del proveedor: **Ejecutor** (razonamiento bajo, tareas mecánicas), **Analista** (razonamiento medio, equilibrio costo/calidad), **Arquitecto** (razonamiento alto, diseño y decisiones de impacto).
+5. Los archivos de prompts se renombran con abreviaturas `_ejec` y `_arq`; los archivos históricos en `docs/` con fechas concretas no se renombran.
+6. `prompts/otros/` son prompts de uso directo del usuario; no se referencian desde `AGENTS.md`.
+7. No se hizo commit, push ni publicación en esta sesión.
+
 ## Decisiones de sesión — 2026-09-26 (README.md raíz — plan completo)
 
 1. El README raíz debe incluir una sección «Conceptos clave» que defina brevemente cada tipo de artefacto; es información orientada al usuario nuevo, no copia de `AGENTS.md`.

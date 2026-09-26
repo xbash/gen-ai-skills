@@ -18,7 +18,7 @@ Ejecuta únicamente la FASE 1 — PRECHECK.
 
 Usa:
 
-prompts/precheck_skills_dominio_luna.md
+prompts/precheck_skills_dominio_ejec.md
 
 No avances automáticamente a diseño, auditoría, refactorización ni creación
 de nuevas skills.
@@ -146,7 +146,7 @@ Si:
 FUNCTIONAL
 → FASE 2B — AUDITORÍA FUNCIONAL
 → GPT-5.6 Terra / Medium
-→ prompts/audita_skills_dominios_v2_terra.md
+→ prompts/audita_skills_dominios_v2_arq.md
 
 MIXED
 → FASE 2C — AUDITORÍA HÍBRIDA

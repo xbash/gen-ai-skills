@@ -1,6 +1,6 @@
 Aplica estrictamente:
 
-prompts/audita_skills_dominios_v2_terra.md
+prompts/audita_skills_dominios_v2_arq.md
 
 Proyecto:
 C:/rutinas-local/gen-ai-skills-root/gen-ai-skills
@@ -218,7 +218,7 @@ Identifica:
 
 Aplica las métricas definidas en:
 
-prompts/audita_skills_dominios_v2_terra.md
+prompts/audita_skills_dominios_v2_arq.md
 
 Incluye al menos:
 
@@ -291,7 +291,7 @@ docs/plan_post_refactor_academia_luna_20260910.md
 
 Cada acción debe ser determinista y seguir el contrato de:
 
-prompts/audita_skills_dominios_v2_terra.md
+prompts/audita_skills_dominios_v2_arq.md
 
 Si el cambio puede expresarse exactamente:
 

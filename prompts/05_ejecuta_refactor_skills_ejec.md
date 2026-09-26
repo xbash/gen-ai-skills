@@ -15,7 +15,7 @@ RUTA:
 FECHA:
 <FECHA>
 PLAN:
-docs/plan_refactor_<DOMINIO>_luna_<FECHA>.md
+docs/plan_refactor_<DOMINIO>_ejec_<FECHA>.md
 ```
 
 Ejecuta solo acciones READY.
