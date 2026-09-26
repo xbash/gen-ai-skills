@@ -67,6 +67,43 @@ Mantener una biblioteca modular de instrucciones Markdown bajo `skills/<dominio>
 - No hubo staging, commit, push, release ni publicación. No hubo validación
   funcional con LLM ni medición de tokens/contexto.
 
+## Consolidación de sesión — 2026-09-26 (README.md raíz — plan completo)
+
+### Trabajo realizado
+
+Se ejecutó un plan de 9 acciones sobre `README.md` raíz, generado a partir de análisis en modo solo lectura al inicio de la sesión:
+
+- ACCION-01: Lista de dominios verificada contra directorios reales; `desarrollo-ia` marcado como dominio compuesto.
+- ACCION-02: Agregada sección «Conceptos clave» con tabla de 6 artefactos (skill, workflow, template, checklist, prompt, example).
+- ACCION-03: «Uso recomendado» reemplazado por «Uso básico» con 4 pasos y ejemplo concreto del dominio `academia`.
+- ACCION-04: Agregada sección «Templates por plataforma» con los 6 archivos verificados en `templates/`.
+- ACCION-05: Descripción de `docs/` actualizada para reflejar su estado real (luego corregida en ACCION-09b al verificar que el directorio tiene contenido real).
+- ACCION-06: Agregada sección «Ejemplos» con enlace a `examples/README.md`.
+- ACCION-07: Agregada línea introductoria en «Workflow de mantenimiento» que aclara que es para mantenedores/contribuidores.
+- ACCION-08: `checklists/` marcado como vacío/en desarrollo en el árbol.
+- ACCION-09: «Documentación adicional» reordenada antes de «Workflow de mantenimiento».
+- ACCION-09b (corrección): Descripción de `docs/` actualizada con la estructura real: `archivos/`, `dominios/`, `eliminar/`.
+
+### Estado de incertidumbres
+
+- A: `fotografias` existe con README.md. Resuelta.
+- B/C: `leeme-por-favor.txt` es ayuda memoria personal sin valor documental. Resuelta.
+- D: `checklists/` vacío marcado como en desarrollo. Resuelta.
+- E: `academia` confirmado como ejemplo de uso básico con todos los artefactos necesarios. Resuelta.
+
+### Estado de `docs/`
+
+- `docs/eliminar/`: contiene archivos pendientes de eliminación (decisión del usuario pendiente).
+- `docs/archivos/`: auditorías iniciales por dominio (sept. 2026).
+- `docs/dominios/`: estados, planes, auditorías y reportes por dominio.
+- `docs/CONTEXT.md`, `docs/DECISIONS.md`, `docs/HANDOFF.md`: archivos de continuidad activos.
+- `estado_dominio_skills.md` en `templates/`: uso no determinado; excluido del README por ahora.
+
+### Restricciones de esta sesión
+
+- Solo lectura para análisis inicial; modificaciones limitadas a `README.md` y archivos de continuidad en `docs/`.
+- No se hizo commit, push ni publicación.
+
 ## Consolidación de sesión — 2026-09-25 (README.md raíz)
 
 ### Trabajo realizado

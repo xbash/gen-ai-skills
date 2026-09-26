@@ -61,6 +61,19 @@ Fecha de corte: 2026-09-09
 5. La modificación se limita a `AGENTS.md`; no se autorizaron acciones Git ni
    cambios en los archivos no rastreados preexistentes.
 
+## Decisiones de sesión — 2026-09-26 (README.md raíz — plan completo)
+
+1. El README raíz debe incluir una sección «Conceptos clave» que defina brevemente cada tipo de artefacto; es información orientada al usuario nuevo, no copia de `AGENTS.md`.
+2. «Uso recomendado» se reemplaza por «Uso básico» con pasos accionables y un ejemplo con rutas verificadas; no se inventan comandos ni funcionalidades.
+3. `templates/` se referencia desde el README con los archivos verificados; `estado_dominio_skills.md` queda excluido por uso no determinado.
+4. `checklists/` está vacío; se mantiene en el árbol marcado como en desarrollo.
+5. `desarrollo-ia` tiene 6 subdirectorios y se marca como dominio compuesto igual que `geoespacial`.
+6. `fotografias` existe como dominio real con README.md; la lista de dominios está sincronizada.
+7. `leeme-por-favor.txt` es ayuda memoria personal del usuario; no tiene valor documental para el proyecto.
+8. La descripción de `docs/` en el README refleja la estructura real: `archivos/`, `dominios/`, `eliminar/`.
+9. «Documentación adicional» va antes de «Workflow de mantenimiento»; este último se aclara como sección para mantenedores/contribuidores.
+10. No se hizo commit, push ni publicación en esta sesión.
+
 ## Decisiones de sesión — 2026-09-25 (README.md raíz)
 
 1. El `README.md` raíz no debe contener reglas operacionales de agentes; estas

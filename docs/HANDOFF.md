@@ -69,6 +69,39 @@ Elegir entre validación funcional (LLM + tareas representativas) o medición co
 
 ---
 
+## Handoff de sesión — 2026-09-26 (README.md raíz — plan completo)
+
+### Estado al cierre
+
+Archivos modificados en esta sesión (unstaged):
+
+- `README.md` — plan completo ACCION-01 a ACCION-09 ejecutado.
+- `docs/CONTEXT.md`, `docs/DECISIONS.md`, `docs/HANDOFF.md` — actualizados con bloque de esta sesión.
+
+### Pendiente del usuario
+
+- Decidir qué hacer con `docs/eliminar/` (14 archivos, incluyendo `leeme-por-favor.txt`).
+- Decidir si `estado_dominio_skills.md` en `templates/` tiene un uso activo o también va a `eliminar/`.
+- Commit y push cuando sea conveniente.
+
+### Al iniciar la próxima sesión
+
+1. Leer `docs/CONTEXT.md`, `docs/DECISIONS.md` y este archivo.
+2. Ejecutar `git status` para verificar el estado del working tree.
+3. No hacer commit, push ni publicación sin autorización explícita.
+
+### Referencias clave
+
+- `README.md` — actualizado en esta sesión; es el artefacto principal modificado.
+- `AGENTS.md` — guía normativa vigente para agentes.
+- `CONTRIBUTING.md` — convención de dominios y flujo de contribución.
+- `SECURITY.md` — límites de seguridad.
+- `workflows/workflow_skills_dominio_v1.1.md` — workflow vigente.
+- `prompts/GUIA_EJECUCION_PROMPTS.md` — punto de entrada del workflow.
+- `docs/eliminar/` — archivos pendientes de decisión de eliminación.
+
+---
+
 ## Handoff de sesión — 2026-09-25 (README.md raíz)
 
 ### Estado al cierre

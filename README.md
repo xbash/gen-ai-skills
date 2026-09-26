@@ -6,6 +6,17 @@ Colección de instrucciones especializadas para asistentes de IA. El repositorio
 
 La biblioteca permite cargar solo los archivos necesarios según la tarea, sin mezclar áreas ni saturar el contexto del modelo.
 
+## Conceptos clave
+
+| Artefacto | Función |
+|---|---|
+| **skill** | Instrucciones especializadas para un dominio; se cargan selectivamente según la tarea |
+| **workflow** | Secuencia de pasos para un proceso de múltiples fases |
+| **template** | Estructura de salida adaptada por plataforma o tipo de artefacto |
+| **checklist** | Criterios de verificación de calidad o cierre |
+| **prompt** | Solicitud reutilizable para una fase o tarea concreta |
+| **example** | Implementación de referencia para una plataforma o caso de uso específico |
+
 ## Estructura
 
 ```text
@@ -22,14 +33,28 @@ gen-ai-skills/
 |       `-- ...
 |-- templates/     # plantillas de salida o adaptación
 |-- workflows/     # workflows documentados
-`-- checklists/    # directorio reservado para checklists
+`-- checklists/    # en desarrollo (vacío actualmente)
 ```
 
-## Uso recomendado
+## Uso básico
 
-- Para un dominio Markdown simple, cargar el `README.md` del dominio, su archivo `instrucciones_base_*.md`, el módulo específico necesario y el checklist al cierre o cuando la tarea lo requiera.
-- Para un dominio compuesto, cargar su router o `README.md`, una skill primaria y solo las dependencias cuyo trigger sea necesario.
-- Para dominios sensibles como medicina, bienestar, derecho, seguridad o finanzas, mantener siempre las reglas de prudencia, derivación y límites profesionales.
+1. **Elige un dominio** en `skills/` y lee su `README.md` para entender qué módulos incluye y cuándo cargar cada uno.
+2. **Carga las instrucciones base** del dominio (`instrucciones_base_*.md`). Establecen el comportamiento general.
+3. **Agrega el módulo específico** que necesitas para la tarea concreta (p. ej. un archivo `*_reglas.md` o un `SKILL.md`).
+4. **Usa el checklist** al cerrar o revisar (`checklist_*.md`).
+
+**Ejemplo — dominio `academia`:**
+
+```
+skills/academia/README.md                        ← punto de entrada
+skills/academia/instrucciones_base_academia.md   ← instrucciones base
+skills/academia/analisis_notebook_ia.md          ← módulo específico
+skills/academia/checklist_revision_notebook.md   ← cierre
+```
+
+Para dominios compuestos (`geoespacial`, `desarrollo-ia`), el `README.md` del dominio actúa como router e indica qué subdirectorios y skills cargar.
+
+Para dominios sensibles (medicina, bienestar, derecho, seguridad, finanzas), los módulos incluyen reglas de prudencia, derivación y límites profesionales que deben mantenerse activos.
 
 ## Dominios
 
@@ -41,7 +66,7 @@ Los dominios principales viven en `skills/`:
 - `ciencia-ingenieria-datos`
 - `derecho`
 - `desarrollo-humano`
-- `desarrollo-ia`
+- `desarrollo-ia` (dominio compuesto)
 - `economia-finanzas`
 - `filosofia`
 - `fotografias`
@@ -58,12 +83,27 @@ Los dominios principales viven en `skills/`:
 - `seguridad-opsec`
 - `vision-por-computadora`
 
-## Workflow de mantenimiento
+## Templates por plataforma
 
-El flujo vigente parte de [`prompts/GUIA_EJECUCION_PROMPTS.md`](prompts/GUIA_EJECUCION_PROMPTS.md); fases, prompts y gates están documentados en [`workflows/workflow_skills_dominio_v1.1.md`](workflows/workflow_skills_dominio_v1.1.md).
+[`templates/`](templates/) contiene plantillas de carga adaptadas a cada plataforma:
+
+- [`claude.md`](templates/claude.md)
+- [`chatgpt.md`](templates/chatgpt.md)
+- [`gemini.md`](templates/gemini.md)
+- [`ollama.md`](templates/ollama.md)
+- [`lmstudio.md`](templates/lmstudio.md)
+- [`openwebui.md`](templates/openwebui.md)
+
+## Ejemplos
+
+[`examples/`](examples/) contiene paquetes de integración para plataformas específicas. Ver [`examples/README.md`](examples/README.md).
 
 ## Documentación adicional
 
 - [`CONTRIBUTING.md`](CONTRIBUTING.md): reglas de contribución, diseño de dominios y flujo de cambios.
 - [`SECURITY.md`](SECURITY.md): límites de seguridad y tratamiento de contenido externo.
-- [`docs/`](docs/): contexto operacional, auditorías y planes por dominio.
+- [`docs/`](docs/): auditorías, planes, estados y reportes por dominio. Subdirectorios: `archivos/` (auditorías iniciales), `dominios/` (seguimiento por dominio), `eliminar/` (archivos pendientes de eliminación).
+
+## Workflow de mantenimiento
+
+Esta sección es para mantenedores y contribuidores. El flujo vigente parte de [`prompts/GUIA_EJECUCION_PROMPTS.md`](prompts/GUIA_EJECUCION_PROMPTS.md); fases, prompts y gates están documentados en [`workflows/workflow_skills_dominio_v1.1.md`](workflows/workflow_skills_dominio_v1.1.md).
