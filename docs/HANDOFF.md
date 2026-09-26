@@ -54,3 +54,28 @@ Reportar palabras o tokens según la herramienta disponible y distinguir tamaño
 - 21 Markdown de `desarrollo-ia` verificados sin BOM, CRLF, espacios finales ni archivos vacíos.
 - No quedan referencias al antiguo `rl_optimizacion_evolutivos_reglas.md`.
 - `.gitattributes` y `.editorconfig` creados.
+
+## Handoff de esta sesión — 2026-09-25
+
+### Estado actual
+
+- Leer `AGENTS.md` antes de continuar; es la guía normativa vigente.
+- Revisar el diff de `AGENTS.md` y mantener separados los dos archivos no
+  rastreados de `prompts/otros/`.
+- No hacer commit, push, release ni publicación sin autorización explícita.
+
+### Siguiente paso recomendado
+
+Si se desea continuar el trabajo del repositorio, elegir explícitamente entre:
+
+1. revisión funcional con tareas representativas y un LLM, registrando archivos
+   cargados, configuración, resultados observados y limitaciones; o
+2. medición comparativa de contexto/tokens para cargas equivalentes.
+
+No declarar ahorro, mejora de calidad o cobertura sin esa evidencia.
+
+### Verificaciones de esta sesión
+
+- `git diff --check`: PASS.
+- `AGENTS.md`: UTF-8 sin BOM, LF, newline final y sin espacios finales.
+- No se ejecutaron pruebas funcionales ni comandos de publicación.

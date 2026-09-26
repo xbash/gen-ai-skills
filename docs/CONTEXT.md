@@ -53,3 +53,16 @@ Mantener una biblioteca modular de instrucciones Markdown bajo `skills/<dominio>
 - No restaurar numeración ni `pack-chatgpt/`.
 - No limpiar, revertir, hacer staging ni publicar cambios sin solicitud explícita.
 - Tratar el working tree como intencionalmente sucio; no asumir que todos los cambios son de esta sesión.
+
+## Consolidación de esta sesión — 2026-09-25
+
+- Se actualizó `AGENTS.md` como guía normativa estable para agentes, con reglas
+  de alcance, seguridad, carga progresiva, autorización, validación y selección
+  Luna/Terra.
+- `git diff --check` pasó; `AGENTS.md` quedó en UTF-8 sin BOM, LF, newline final
+  y sin espacios finales.
+- `AGENTS.md` es el único archivo modificado por esta sesión. Se preservaron
+  los no rastreados `prompts/otros/creacion-agents.md` y
+  `prompts/otros/reanalizar-archivos-residuales.md`.
+- No hubo staging, commit, push, release ni publicación. No hubo validación
+  funcional con LLM ni medición de tokens/contexto.

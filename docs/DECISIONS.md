@@ -45,3 +45,18 @@ Fecha de corte: 2026-09-09
 - Commit, push, release o publicación.
 - Restauración de archivos numerados o packs eliminados.
 - Decisiones sobre placeholders de `geoespacial` y otros pendientes generales del repositorio.
+
+## Decisiones de esta sesión — 2026-09-25
+
+1. `AGENTS.md` es la superficie normativa para instrucciones persistentes de
+   agentes; no se usa como README, bitácora, changelog ni continuidad.
+2. La carga de contexto sigue siendo progresiva: router/README, base, módulo
+   principal, complementos por dependencia y checklist solo para revisión o
+   cierre.
+3. La selección de modelos se expresa por complejidad: Luna para operaciones
+   deterministas o acotadas; Terra para arquitectura, análisis transversal y
+   decisiones sustantivas; Terra High solo mediante gate explícito.
+4. La documentación histórica y operacional bajo `docs/` no se transforma
+   automáticamente en reglas permanentes.
+5. La modificación se limita a `AGENTS.md`; no se autorizaron acciones Git ni
+   cambios en los archivos no rastreados preexistentes.

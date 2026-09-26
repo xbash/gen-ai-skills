@@ -29,7 +29,6 @@ gen-ai-skills/
 
 - Para un dominio Markdown simple, cargar el `README.md` del dominio, su archivo `instrucciones_base_*.md`, el módulo específico necesario y el checklist al cierre o cuando la tarea lo requiera.
 - Para un dominio compuesto, cargar su router o `README.md`, una skill primaria y solo las dependencias cuyo trigger sea necesario.
-- `SKILL.md` no es un requisito de uniformidad: se usa solo cuando existe un beneficio concreto y está respaldado por el diseño del dominio.
 - Para dominios sensibles como medicina, bienestar, derecho, seguridad o finanzas, mantener siempre las reglas de prudencia, derivación y límites profesionales.
 
 ## Dominios
@@ -59,33 +58,12 @@ Los dominios principales viven en `skills/`:
 - `seguridad-opsec`
 - `vision-por-computadora`
 
-## Skills operacionales
-
-- `precheck-publica-repo`: revisión previa a publicar repositorios en GitHub u otros remotos públicos, con foco en secretos, datos privados, artefactos locales, licencias y readiness documental.
-
-## Convención de dominios
-
-Los dominios Markdown simples suelen incluir:
-
-- `README.md`: descripción, mapa de archivos, recomendación de uso y principios.
-- `instrucciones_base_*.md`: rol, alcance, límites, estilo y formato.
-- `*_reglas.md`: reglas específicas por subtema.
-- `checklist_*.md`: checklist operacional o metodológico.
-
-Los dominios compuestos pueden usar otra estructura cuando sus responsabilidades y triggers lo justifiquen. `skills/geoespacial/README.md` documenta su router, sus skills CORE y sus skills SPECIALIZED.
-
 ## Workflow de mantenimiento
 
-El flujo vigente es: precheck → diseño o auditoría → plan congelado → ejecución → validación → auditoría post-refactor o cierre. El Planner define y congela el plan; el Executor aplica únicamente acciones autorizadas; el Validator comprueba criterios, referencias, trazabilidad y estado final.
+El flujo vigente parte de [`prompts/GUIA_EJECUCION_PROMPTS.md`](prompts/GUIA_EJECUCION_PROMPTS.md); fases, prompts y gates están documentados en [`workflows/workflow_skills_dominio_v1.1.md`](workflows/workflow_skills_dominio_v1.1.md).
 
-Las fases, prompts y gates están documentados en [`workflows/workflow_skills_dominio_v1.md`](workflows/workflow_skills_dominio_v1.md) y [`prompts/GUIA_EJECUCION_PROMPTS.md`](prompts/GUIA_EJECUCION_PROMPTS.md). Los cambios de alto impacto, baja confianza o contradicción significativa requieren el gate definido para Terra High.
+## Documentación adicional
 
-## Criterios de calidad
-
-- No inventar fuentes, citas, datos, leyes, guías, benchmarks ni resultados.
-- Separar hechos, supuestos, interpretaciones, recomendaciones y limitaciones.
-- Mantener instrucciones concisas, accionables y no redundantes.
-- Declarar límites profesionales en áreas sensibles.
-- Preferir reglas específicas y checklists sobre textos enciclopédicos.
-- Preservar la trazabilidad y validar rutas, referencias y criterios de aceptación.
-- Mantener los archivos de texto en UTF-8, LF y con newline final, según `.editorconfig` y `.gitattributes`.
+- [`CONTRIBUTING.md`](CONTRIBUTING.md): reglas de contribución, diseño de dominios y flujo de cambios.
+- [`SECURITY.md`](SECURITY.md): límites de seguridad y tratamiento de contenido externo.
+- [`docs/`](docs/): contexto operacional, auditorías y planes por dominio.
