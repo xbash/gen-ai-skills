@@ -55,27 +55,53 @@ Reportar palabras o tokens según la herramienta disponible y distinguir tamaño
 - No quedan referencias al antiguo `rl_optimizacion_evolutivos_reglas.md`.
 - `.gitattributes` y `.editorconfig` creados.
 
-## Handoff de esta sesión — 2026-09-25
+## Handoff de sesión — 2026-09-25 (AGENTS.md)
 
-### Estado actual
+### Estado al cierre
 
-- Leer `AGENTS.md` antes de continuar; es la guía normativa vigente.
-- Revisar el diff de `AGENTS.md` y mantener separados los dos archivos no
-  rastreados de `prompts/otros/`.
-- No hacer commit, push, release ni publicación sin autorización explícita.
+- `AGENTS.md` actualizado y verificado (UTF-8 sin BOM, LF, newline final).
+- Archivos no rastreados en `prompts/otros/` intactos; no modificar sin solicitud.
+- No se hizo commit, push ni publicación.
 
 ### Siguiente paso recomendado
 
-Si se desea continuar el trabajo del repositorio, elegir explícitamente entre:
+Elegir entre validación funcional (LLM + tareas representativas) o medición comparativa de contexto/tokens. No declarar mejora sin evidencia observada.
 
-1. revisión funcional con tareas representativas y un LLM, registrando archivos
-   cargados, configuración, resultados observados y limitaciones; o
-2. medición comparativa de contexto/tokens para cargas equivalentes.
+---
 
-No declarar ahorro, mejora de calidad o cobertura sin esa evidencia.
+## Handoff de sesión — 2026-09-25 (README.md raíz)
 
-### Verificaciones de esta sesión
+### Estado al cierre
 
-- `git diff --check`: PASS.
-- `AGENTS.md`: UTF-8 sin BOM, LF, newline final y sin espacios finales.
-- No se ejecutaron pruebas funcionales ni comandos de publicación.
+Archivos modificados en esta sesión (unstaged):
+
+- `README.md` — limpieza y actualización según plan ACCION-01 a ACCION-07.
+- `docs/CONTEXT.md`, `docs/DECISIONS.md`, `docs/HANDOFF.md` — actualizados con bloque de esta sesión.
+
+Archivos no rastreados relevantes (no modificados):
+
+- `prompts/otros/analiza-crea-agents_v0.{1,2,3}.md`
+- `prompts/otros/analiza-crea-readme_v0.{1,2,3}.md`
+- `prompts/otros/analizar-archivos-residuales_v0.{1,2,3}.md`
+- `prompts/otros/auditar-codigo-contra-skill_v0.1.md`
+- `prompts/otros/auditar-estructura-directorios_v0.{1,2}.md`
+- `prompts/otros/diseno_skills_dominio_v0.{1,2}.md`
+- `skills/ingenieria-software/analizar_archivos_residuales.md`
+- `skills/ingenieria-software/auditar_codigo_contra_skill.md`
+- `skills/ingenieria-software/auditar_estructura_directorios.md`
+
+### Al iniciar la próxima sesión
+
+1. Leer `docs/CONTEXT.md`, `docs/DECISIONS.md` y este archivo.
+2. Ejecutar `git status` para verificar el estado actual del working tree.
+3. No hacer commit, push ni publicación sin autorización explícita.
+4. Los archivos no rastreados en `skills/ingenieria-software/` son nuevas skills pendientes de rastrear; evaluar si corresponde hacerles staging.
+
+### Referencias clave
+
+- `README.md` — archivo actualizado en esta sesión.
+- `AGENTS.md` — guía normativa vigente para agentes.
+- `CONTRIBUTING.md` — convención de dominios y flujo de contribución.
+- `SECURITY.md` — límites de seguridad.
+- `workflows/workflow_skills_dominio_v1.1.md` — workflow vigente.
+- `prompts/GUIA_EJECUCION_PROMPTS.md` — punto de entrada del workflow.

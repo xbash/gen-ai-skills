@@ -46,7 +46,7 @@ Fecha de corte: 2026-09-09
 - Restauración de archivos numerados o packs eliminados.
 - Decisiones sobre placeholders de `geoespacial` y otros pendientes generales del repositorio.
 
-## Decisiones de esta sesión — 2026-09-25
+## Decisiones de sesión — 2026-09-25 (AGENTS.md)
 
 1. `AGENTS.md` es la superficie normativa para instrucciones persistentes de
    agentes; no se usa como README, bitácora, changelog ni continuidad.
@@ -60,3 +60,19 @@ Fecha de corte: 2026-09-09
    automáticamente en reglas permanentes.
 5. La modificación se limita a `AGENTS.md`; no se autorizaron acciones Git ni
    cambios en los archivos no rastreados preexistentes.
+
+## Decisiones de sesión — 2026-09-25 (README.md raíz)
+
+1. El `README.md` raíz no debe contener reglas operacionales de agentes; estas
+   pertenecen a `AGENTS.md`.
+2. El `README.md` raíz no debe reproducir la arquitectura interna de dominios;
+   esta pertenece a `CONTRIBUTING.md`.
+3. Las secciones de criterios de calidad, convención de dominios y workflow
+   detallado se remueven del README cuando ya están cubiertas por otros archivos
+   de autoridad (`AGENTS.md`, `CONTRIBUTING.md`, archivos de workflow).
+4. La sección "Skills operacionales" no aporta valor adicional a la lista de
+   dominios cuando el propio README del dominio documenta su propósito.
+5. `CONTRIBUTING.md` y `SECURITY.md` deben referenciarse explícitamente desde
+   el README raíz, ya que son fuentes de autoridad declaradas en `AGENTS.md`.
+6. La versión vigente del workflow es `v1.1.md`; las referencias a `v1.md` en
+   documentos raíz deben actualizarse al detectarse.
