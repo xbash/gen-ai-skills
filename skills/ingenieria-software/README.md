@@ -16,6 +16,10 @@ Dominio para diseñar, construir, corregir, revisar, probar, documentar, despleg
 | CI/CD, release o despliegue | Base + DevOps y CI/CD |
 | Revision defensiva | Base + seguridad de codigo + skill tecnica afectada |
 | Entrega o revision final | Checklist, junto con las skills aplicables |
+| Notebook reproducible (pipeline de datos) | Base + notebooks reproducibles |
+| Script o CLI de pipeline de datos | Base + CLI pipeline |
+| Dashboard de exploración o validación de datos | Base + dashboard de datos |
+| Empaquetar pipeline en Docker | Base + contenedor pipeline |
 
 Carga solo las skills tematicas necesarias. No es necesario cargar todo el dominio para una tarea acotada.
 
@@ -39,6 +43,10 @@ Carga solo las skills tematicas necesarias. No es necesario cargar todo el domin
 | `devops_ci_cd_reglas.md` | CI/CD, contenedores, releases, artefactos, ambientes, despliegue y operación. |
 | `seguridad_codigo_reglas.md` | Seguridad de aplicaciones, código defensivo, secretos, dependencias, errores y logs. |
 | `checklist_codigo_dev.md` | Checklist transversal para revisar o entregar código, scripts, servicios y sistemas. |
+| `notebooks_reproducibles_reglas.md` | Notebooks Jupyter/Quarto como artefactos ejecutables y reproducibles de un pipeline de datos. |
+| `cli_pipeline_reglas.md` | Scripts y herramientas CLI para ejecutar pipelines de datos de forma parametrizable y trazable. |
+| `dashboard_datos_reglas.md` | Dashboards interactivos (Streamlit, Dash, Panel) para explorar y validar datasets. |
+| `contenedor_pipeline_reglas.md` | Empaquetado de pipelines de datos con Docker para reproducibilidad de entorno. |
 
 ## Recomendación práctica
 
