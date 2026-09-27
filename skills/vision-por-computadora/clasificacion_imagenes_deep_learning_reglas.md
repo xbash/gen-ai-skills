@@ -33,3 +33,17 @@ Aplicar cuando la tarea involucre clasificación de imágenes, clasificación mu
 - Separar dataset/dataloader, transformaciones, modelo, entrenamiento, evaluación, inferencia y persistencia.
 - Validar dimensiones, normalización, canales RGB/BGR, labels, batch size y dispositivo CPU/GPU.
 - Incluir prueba de humo con pocas imágenes y una o dos iteraciones antes de entrenamiento completo.
+
+## Tooling y librerías recomendadas (2025-2026)
+
+- **torchvision:** datasets, transforms v2 y modelos preentrenados para PyTorch; `torchvision.transforms.v2` reemplaza la API anterior con soporte mejorado para bounding boxes y máscaras.
+- **timm (PyTorch Image Models):** biblioteca de referencia para modelos de clasificación: ResNet, EfficientNet, ViT, Swin, ConvNeXt, DeiT y cientos más con pesos preentrenados; `timm.create_model("resnet50", pretrained=True, num_classes=N)`.
+- **albumentations:** biblioteca de aumentaciones de imagen con API consistente para clasificación, detección y segmentación; más rápida que torchvision transforms para augmentaciones complejas.
+- **CLIP / zero-shot:** modelos CLIP (OpenAI) y variantes (SigLIP, OpenCLIP) permiten clasificación zero-shot con descripciones textuales de clases; útil cuando el dataset es pequeño o las clases cambian.
+
+## Imágenes multiespectrales y satelitales
+
+- Las imágenes de satélite como Sentinel-2 tienen 13 bandas espectrales (no solo RGB); las bandas NIR, SWIR y Red Edge contienen información que el ojo humano no percibe pero que mejora la clasificación de vegetación, suelo, agua y áreas quemadas.
+- Para clasificación con imágenes multiespectrales: adaptar el primer layer de la CNN para aceptar N canales (`in_channels=N`) en lugar de 3; inicializar los pesos extra con la media de los canales RGB o desde cero.
+- Composiciones de falso color (NIR-R-G o SWIR-NIR-R) permiten usar arquitecturas preentrenadas en RGB sobre datos satelitales sin modificar la arquitectura.
+- Evitar leakage por escena, fecha de captura, tile o cobertura espacial al separar train/valid/test en datos satelitales.

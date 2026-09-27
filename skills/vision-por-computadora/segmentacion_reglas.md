@@ -41,3 +41,17 @@ Aplicar cuando la tarea involucre segmentación semántica, segmentación de ins
 - Separar configuración, dataset, transformaciones, modelo, pérdida, entrenamiento, evaluación e inferencia.
 - Validar dimensiones de tensores, número de clases, formato de máscara y función de pérdida.
 - Incluir prueba de humo con pocas imágenes y máscaras.
+
+## Tooling y librerías recomendadas (2025-2026)
+
+- **segmentation-models-pytorch (SMP):** biblioteca con arquitecturas U-Net, FPN, DeepLab, LinkNet y backbones intercambiables (ResNet, EfficientNet, timm); `smp.Unet(encoder_name="resnet34", in_channels=3, classes=N)`.
+- **mmsegmentation (OpenMMLab):** framework completo para segmentación semántica e instancias; mayor flexibilidad que SMP para investigación, mayor curva de aprendizaje.
+- **supervision:** visualización y evaluación de máscaras de segmentación; compatible con SAM, Mask R-CNN y modelos Ultralytics seg.
+- **SAM2 (Meta):** modelo fundacional promptable para segmentación de imágenes y video; útil para asistencia de anotación y segmentación interactiva sin fine-tuning.
+
+## Segmentación en imágenes satelitales
+
+- Las imágenes multiespectrales de satélite (Sentinel-2, Landsat) permiten segmentación temática usando índices espectrales como máscara inicial: NDVI (vegetación), NDWI (agua), NBR/dNBR (área quemada), seguida de refinamiento con U-Net o SAM.
+- Para segmentación de área quemada: calcular dNBR pre/post evento como aproximación inicial; usar U-Net con bandas B8A, B11, B12 de Sentinel-2 para entrenamiento supervisado si se dispone de ground truth.
+- Adaptar `in_channels` del encoder para imágenes multiespectrales (más de 3 bandas); SMP permite configurar esto directamente.
+- Separar train/valid/test por tile espacial o por fecha para evitar leakage en datos satelitales con superposición espacial.

@@ -33,3 +33,13 @@ Aplicar cuando la tarea involucre login, MFA, roles, permisos, control de acceso
 - Logs de auditoría.
 - Mensajes de error no reveladores.
 - Gestión de sesión y cierre correcto.
+
+## Autenticación mínima para demos académicas y APIs abiertas
+
+Aplicar cuando la aplicación sea una demo de investigación, prototipo público o API sin usuarios registrados.
+
+- **Sin auth es aceptable cuando:** el sistema no procesa datos personales identificables, no realiza acciones destructivas, no expone datos privados y el acceso es de solo lectura para demostración pública.
+- **API key simple como auth mínima:** pasar la clave en header `X-API-Key` o como parámetro de query; validar en servidor contra variable de entorno; rotar si se filtra. No es sustituto de OAuth para sistemas productivos con usuarios.
+- **Streamlit:** usar `secrets.toml` bajo `.streamlit/secrets.toml` (excluir del repositorio con `.gitignore`); acceder con `st.secrets["clave"]`. No hardcodear valores en el script.
+- **FastAPI con APIKey simple:** usar `fastapi.security.APIKeyHeader`; validar contra variable de entorno, no contra valor literal en código fuente.
+- **Cuándo escalar a OAuth/OIDC:** cuando haya usuarios identificables, roles diferenciados, datos personales o integración con sistemas de terceros.

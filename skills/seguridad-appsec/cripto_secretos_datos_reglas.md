@@ -34,3 +34,11 @@ Aplicar cuando la tarea involucre cifrado, hashing, TLS, certificados, llaves, s
 - Prueba de rotación controlada.
 - Verificación de TLS/certificados con herramientas defensivas.
 - Criterios de aceptación documentados.
+
+## Secretos en proyectos Python y Jupyter
+
+- **python-dotenv:** cargar variables desde `.env` con `load_dotenv()`; agregar `.env` al `.gitignore`; publicar `.env.example` con claves en blanco como referencia para colaboradores.
+- **Jupyter notebooks:** nunca hardcodear API keys, tokens ni contraseñas en celdas; usar `os.environ.get("CLAVE")` o `python-dotenv`; ejecutar `nbstripout` antes de commit para eliminar outputs que puedan contener valores impresos accidentalmente.
+- **Contenedores Podman/Docker:** pasar secretos como variables de entorno en tiempo de ejecución (`podman run -e API_KEY=$API_KEY`); usar `podman secret create` + `--secret` en run para inyección segura; nunca declarar valores sensibles en `ENV` ni `ARG` del Containerfile.
+- **Conda/mamba:** las variables de activación de entorno (`conda env config vars set`) no están cifradas y se almacenan en texto plano; preferir variables del sistema operativo o gestores de secretos para credenciales de producción.
+- **Escaneo preventivo:** usar `gitleaks`, `trufflehog` o `detect-secrets` antes de hacer push; integrar como pre-commit hook en proyectos que manejen credenciales de APIs externas.

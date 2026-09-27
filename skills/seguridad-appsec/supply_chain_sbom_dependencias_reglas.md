@@ -34,3 +34,17 @@ Aplicar cuando la tarea involucre dependencias, librerías, paquetes, imágenes,
 - Prueba de build/test posterior.
 - Plan de rollback o mitigación.
 - Evidencia de SBOM o reporte SCA cuando aplique.
+
+## Ecosistema Python: pip, conda-forge y escaneo de imágenes
+
+- **conda-forge:** canal comunitario verificado por la comunidad; los paquetes pasan revisión de recetas pero no el proceso de seguridad de PyPI; validar que el canal origen sea `conda-forge` y no canales desconocidos o privados sin control.
+- **Prioridad de canales:** definir `channel_priority: strict` en `.condarc` para evitar conflictos de versiones entre conda-forge y otros canales; instalar dependencias conda antes que pip para reducir incompatibilidades de bibliotecas nativas.
+- **Escaneo de dependencias Python:**
+  - `pip-audit`: escanea el entorno activo contra OSV/PyPA Advisory Database — `pip-audit` o `pip-audit -r requirements.txt`.
+  - `osv-scanner --lockfile requirements.txt`: detecta vulnerabilidades transitivas; soporta pip, npm, cargo, go.mod.
+  - Para entornos conda, exportar con `pip list --format=freeze > reqs-pip.txt` y escanear con pip-audit.
+- **Dependencias geoespaciales:** GDAL, PROJ, rasterio, fiona y shapely tienen compilación nativa en C; una versión desactualizada puede tener CVEs en la biblioteca C subyacente (no visible solo desde Python); actualizar la imagen base o el paquete conda-forge resuelve la cadena completa.
+- **Escaneo de imágenes de contenedor:**
+  - `trivy image mi-pipeline:1.0` — detecta CVEs en paquetes OS (apt, rpm) y librerías Python dentro de la imagen.
+  - Para Podman: `podman save mi-pipeline:1.0 -o /tmp/img.tar && trivy image --input /tmp/img.tar`.
+  - `grype mi-pipeline:1.0` — alternativa a Trivy; exporta SBOM en SPDX/CycloneDX con `syft`.

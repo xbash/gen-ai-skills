@@ -32,3 +32,25 @@ Aplicar cuando la tarea involucre gobierno de seguridad, políticas, controles, 
 - Dueño y fecha objetivo.
 - Indicador de efectividad.
 - Riesgo residual aceptado o plan de mitigación.
+
+## Gobierno de datos de investigación y proyectos académicos
+
+Aplicar cuando el proyecto involucre datos de investigación, datasets con potencial de datos personales o proyectos que serán publicados.
+
+### Clasificación de datos
+
+- Definir clasificación antes de cualquier decisión de procesamiento o publicación: público, interno, confidencial, sensible.
+- En investigación geoespacial o de campo, coordenadas precisas pueden identificar predios, personas o actividades privadas; tratar como confidencial hasta confirmar anonimización o autorización explícita.
+- Datos derivados de fuentes públicas (Copernicus, NASA, OSM) no siempre son libres de restricciones de privacidad si el análisis permite re-identificación de personas o propietarios.
+
+### Privacidad en investigación (marco Chile/LatAm)
+
+- En Chile, la Ley 19.628 regula el tratamiento de datos personales; la Ley 21.719 (vigente 2026) amplía obligaciones, derechos de titulares y sanciones.
+- En proyectos académicos con datos de personas: evaluar si se requiere consentimiento informado, anonimización o aprobación de comité de ética institucional antes de recolectar o publicar.
+- No publicar microdatos con combinaciones de variables que permitan re-identificación (fecha + ubicación + característica personal).
+
+### Gobierno de dataset publicado
+
+- Documentar para cada dataset: fuente, fecha de corte, licencia, restricciones de uso, responsable, método de anonimización aplicado y contacto.
+- Publicar datasheet (Gebru et al., 2021) o data card junto con el dataset al momento de la publicación académica.
+- Definir política de retención y borrado: cuánto tiempo se conserva el dataset original, quién tiene acceso, cómo se elimina cuando ya no es necesario.

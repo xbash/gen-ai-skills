@@ -39,3 +39,21 @@ Aplicar cuando la tarea involucre localizar objetos mediante bounding boxes, det
 - Separar configuración, dataset, augmentations, modelo, entrenamiento, evaluación, inferencia y exportación.
 - Validar rutas, dependencias, GPU/CPU, archivos YAML/config, imágenes y labels.
 - Incluir manejo de errores, logs útiles y prueba mínima.
+
+## Ecosistema moderno de detección (2025-2026)
+
+### Ultralytics / YOLO
+
+- **YOLOv8 / YOLOv11 (Ultralytics):** familia de modelos one-stage estándar en 2024-2025; API unificada para detección, segmentación, pose y clasificación: `model = YOLO("yolov8n.pt"); model.train(data="dataset.yaml")`.
+- Formatos de exportación: ONNX, TensorRT, CoreML, TFLite desde `model.export(format="onnx")`.
+- Para fine-tuning, definir `dataset.yaml` con rutas, número de clases y nombres; el formato de anotación es YOLO txt (xywh normalizado).
+
+### Detectores transformer
+
+- **DINO / Grounding DINO:** detectores basados en transformer con capacidad zero-shot; Grounding DINO detecta objetos descritos en lenguaje natural.
+- **RT-DETR:** detector transformer en tiempo real; alternativa a YOLO cuando se necesita mayor precisión con latencia aceptable.
+
+### Librería supervision
+
+- `supervision` (Roboflow): herramienta de postprocesamiento y visualización para detección; manejo de anotaciones, NMS, tracking, métricas y visualización con una API simple.
+- Compatible con Ultralytics, Hugging Face y cualquier modelo que retorne bounding boxes.

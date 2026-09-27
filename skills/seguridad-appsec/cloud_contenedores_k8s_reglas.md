@@ -34,3 +34,12 @@ Aplicar cuando la tarea involucre cloud, IAM, redes, buckets/storage, funciones 
 - Verificación de exposición externa.
 - Evidencia de logs/monitoreo.
 - Criterio de rollback.
+
+## Podman rootless: consideraciones de seguridad
+
+- **Rootless por defecto:** Podman ejecuta contenedores sin daemon root; validar que `subuid`/`subgid` estén configurados para el usuario (`grep $(whoami) /etc/subuid /etc/subgid`).
+- **SELinux y volúmenes:** en sistemas con SELinux activo (RHEL, Fedora), agregar `:Z` (relabel exclusivo, un solo contenedor) o `:z` (relabel compartido, varios contenedores) al montar volúmenes; sin este flag el contenedor puede no tener acceso al directorio del host.
+- **`--userns=keep-id`:** mapea el UID del usuario host al mismo UID dentro del contenedor; útil cuando el proceso del contenedor escribe archivos que el host debe leer con el mismo propietario.
+- **Sin privilegios innecesarios:** evitar `--privileged`; preferir capabilities mínimas con `--cap-add` solo cuando sea estrictamente necesario y documentado.
+- **Registry y confianza de imágenes:** Quay.io (mantenido por Red Hat) es el registry de referencia para imágenes Podman-nativas; aplicar la misma validación de procedencia, firmas y CVEs que con Docker Hub. Preferir imágenes firmadas con Sigstore/cosign cuando estén disponibles.
+- **Secretos en tiempo de ejecución:** usar `podman secret create nombre archivo` + `--secret nombre` en run para inyección segura; nunca incluir credenciales en capas de imagen.

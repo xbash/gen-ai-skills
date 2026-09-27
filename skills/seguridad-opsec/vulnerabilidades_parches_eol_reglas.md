@@ -34,3 +34,31 @@ Aplicar cuando la tarea involucre CVEs, escáneres, priorización, parches, obso
 - Evidencia post-remediación.
 - SLA y responsable.
 - Riesgo residual documentado.
+
+## Herramientas de escaneo para Python y contenedores
+
+### Dependencias Python
+
+- **pip-audit:** `pip-audit` (entorno activo) o `pip-audit -r requirements.txt` (sin instalar). Fuente: OSV/PyPA Advisory Database. Integrar como gate en CI.
+- **OSV Scanner (Google):** `osv-scanner --lockfile requirements.txt` o `osv-scanner -r .`; detecta vulnerabilidades transitivas; soporta pip, npm, cargo, go.mod.
+- **Safety:** `safety check`; base de datos comercial con tier gratuito limitado; complementar con pip-audit para cobertura completa.
+
+### Imágenes de contenedor
+
+- **Trivy (Aqua):** `trivy image mi-imagen:tag` — escanea paquetes OS (apt, rpm) y librerías Python/npm dentro de la imagen. Para Podman: `podman save mi-imagen:tag -o /tmp/img.tar && trivy image --input /tmp/img.tar`.
+- **Grype (Anchore):** `grype mi-imagen:tag` — similar a Trivy; integra con Syft para generación de SBOM.
+- **Syft:** genera SBOM de imagen en SPDX o CycloneDX: `syft mi-imagen:tag -o spdx-json > sbom.json`.
+
+### Flujo mínimo de escaneo
+
+```bash
+# Dependencias Python
+pip-audit -r requirements.txt
+
+# Imagen de contenedor (compatible con Podman)
+podman save mi-pipeline:1.0 -o /tmp/mi-pipeline.tar
+trivy image --input /tmp/mi-pipeline.tar
+
+# Generar SBOM
+syft mi-pipeline:1.0 -o spdx-json > sbom.json
+```
