@@ -31,3 +31,11 @@ La tarea entrena o evalúa modelos supervisados. No usar como módulo principal 
 - Registrar seed, versión de librerías, split, features, hiperparámetros, métricas y artefactos.
 - Incluir prueba de humo con muestra pequeña antes de entrenamiento completo.
 - No inventar resultados, comparativas ni tiempos.
+
+## Datos geoespaciales y leakage espacial
+
+Aplicar cuando la unidad de análisis tenga coordenadas (celda-grilla, polígono, punto georeferenciado).
+
+- **Leakage por contigüidad espacial:** separar train/valid/test por bloque espacial (tile, cuadrícula, comuna) además de por período cronológico. Celdas vecinas comparten autocorrelación espacial (mismo microclima, vegetación, pendiente), por lo que un random split o un split solo por predio introduce leakage aunque no haya identificadores comunes.
+- **Blocked spatial cross-validation:** usar bloques espaciales no contiguos como folds. Para datos espacio-temporales: combinar bloque espacial + expanding window temporal. No usar k-fold aleatorio en datos con autocorrelación espacial.
+- **Métricas para eventos raros geoespaciales:** cuando la clase positiva es < 2 % (p. ej., ignición en celda-día), preferir AUPRC y Average Precision sobre AUROC; AUROC puede ser engañosamente alto con clases muy desbalanceadas. Reportar PR-curve junto a ROC-curve.
