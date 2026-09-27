@@ -1,9 +1,9 @@
 # HANDOFF — Punto de entrada para nueva sesión
 
-Fecha de corte: 2026-09-26  
+Fecha de corte: 2026-09-27  
 Repo: `C:\rutinas-local\gen-ai-skills-root\gen-ai-skills`  
 Estado: limpio, `main` sincronizado con `origin/main`  
-Último commit: `eebc113`
+Último commit: `e54314c`
 
 ---
 
@@ -13,18 +13,27 @@ Estado: limpio, `main` sincronizado con `origin/main`
 2. `git log --oneline -5` y `git status` para verificar estado.
 3. Memoria persistente disponible en:  
    `C:\Users\xbash\.claude\projects\C--rutinas-local-gen-ai-skills-root-gen-ai-skills\memory\`
-4. Detalle completo de sesión en `docs/sesiones/2026-09-26/`.
+4. Detalle completo de sesión anterior en `docs/sesiones/2026-09-26/`.
 
 ---
 
-## Trabajo pendiente
+## Estado del repositorio — todos los dominios de tesis completos
 
-| Prioridad | Tarea |
-|---|---|
-| **Media** | Revisar skills internas de `investigacion-general`, `ciencia-ingenieria-datos` e `investigacion-ia` — diagnóstico equivalente al de geoespacial (¿son thin? ¿necesitan enriquecimiento moderado para la tesis?) |
-| **Baja** | Decidir qué hacer con `skills/geoespacial/cr2.md` — vacío, sin propósito asignado |
-| **Baja** | Evaluar `skills/desarrollo-ia/` para la tesis (programación asistida por IA) |
-| **Futura** | Construir el pipeline real de la tesis usando las skills como guía |
+Todos los dominios relevantes para la tesis han sido enriquecidos. No hay trabajo de enriquecimiento pendiente en el repositorio gen-ai-skills.
+
+---
+
+## Próxima etapa
+
+El repositorio gen-ai-skills está listo para soportar la tesis. La siguiente actividad esperada es:
+
+**Construir el pipeline real de la tesis** usando las skills como guía:
+- Fase 1: Diagnóstico e inventario de fuentes (CONAF, ERA5, Sentinel-2, VIIRS)
+- Fase 2: Modelo espaciotemporal común (grilla celda-día 200 m)
+- Fase 3: Protocolo de etiquetado de ignición
+- Fase 4: Pipeline reproducible (DVC + MLflow + STAC/COG/GeoParquet)
+- Fase 5: Dataset piloto Las Cabras, O'Higgins
+- Fase 6: Validación (calidad, reproducibilidad, interoperabilidad)
 
 ---
 
@@ -36,15 +45,18 @@ Estado: limpio, `main` sincronizado con `origin/main`
 | `1aa6a54` | 4 skills nuevas ingenieria-software |
 | `24a85b3` | Contenedor OCI-agnóstico (Podman-first) |
 | `4c73f26` | README lenguaje-castellano completado |
-| `da53c48` | 4 skills enriquecidas (precheck, academia, ops-linux, ops-virtualizacion) + docs/plan.md |
-| `eebc113` | Artefactos de sesión actualizados |
+| `da53c48` | precheck, academia, ops-linux, ops-virtualizacion enriquecidas |
+| `eebc113` | Artefactos de sesión 2026-09-26 actualizados |
+| `fdccd92` | seguridad-appsec (4), seguridad-opsec (3), vision (4), precheck checklist, cr2.md eliminado |
+| `3eb603b` | investigacion-general, investigacion-ia, ciencia-ingenieria-datos enriquecidas |
+| `e54314c` | desarrollo-ia/ml_supervisado — spatial CV y AUPRC para eventos raros |
 
 ---
 
-## Para la tarea de mayor prioridad (investigacion-*)
+## Patrón de trabajo validado
 
-Sugerencia de flujo eficiente:
-1. **Sonnet** lee READMEs + 1-2 skills internas de cada dominio → diagnóstico.
-2. Si necesitan enriquecimiento: Sonnet escribe `docs/plan.md` con sub-planes.
-3. **Haiku** ejecuta el plan (verifica ancla → inserta → no elimina).
-4. **Sonnet** revisa y hace commit/push.
+1. **Sonnet** diagnostica y escribe `docs/plan.md` con sub-planes (archivo, ancla, contenido exacto).
+2. **Haiku** lee el archivo, verifica ancla, inserta al final. No elimina ni reescribe.
+3. **Sonnet** revisa, hace commit y push.
+
+Costo de referencia: 5 archivos → ~56K tokens Haiku en ~128 s.

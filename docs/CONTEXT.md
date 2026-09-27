@@ -1,7 +1,7 @@
 # CONTEXT — Estado actual del repositorio
 
-Fecha de corte: 2026-09-26  
-Último commit: `eebc113` (rama `main`, sincronizada con origin)
+Fecha de corte: 2026-09-27  
+Último commit: `e54314c` (rama `main`, sincronizada con origin)
 
 ---
 
@@ -26,13 +26,16 @@ Fecha de corte: 2026-09-26
 | `skills/geoespacial/` | Pipeline central | 6/8 skills enriquecidas (`33335cf`) |
 | `skills/ingenieria-software/` | Demo, CLI, notebooks, dashboard, contenedor | 4 skills nuevas (`1aa6a54`, `24a85b3`) |
 | `skills/lenguaje-castellano/` | Redacción de tesis | README completado con routing (`4c73f26`) |
-| `skills/precheck-publica-repo/` | Publicación del repo/dataset al cierre | Enriquecido con sección geoespacial (`da53c48`) |
+| `skills/precheck-publica-repo/` | Publicación del repo/dataset al cierre | Enriquecido + checklist nuevo (`fdccd92`) |
 | `skills/academia/` | Revisión de notebooks de pipeline | `analisis_notebook_datos_estadistica` enriquecido (`da53c48`) |
 | `skills/operaciones-tecnologia/` | Linux, Bash, Podman | `linux` y `virtualizacion` enriquecidos (`da53c48`) |
-| `skills/investigacion-general/` | Inventario de fuentes, diseño metodológico | **Solo README leído — pendiente revisión interna** |
-| `skills/investigacion-ia/` | Estado del arte, lectura crítica | **Solo README leído — pendiente revisión interna** |
-| `skills/ciencia-ingenieria-datos/` | Pipeline de datos, calidad, gobernanza | **Solo README leído — pendiente revisión interna** |
-| `skills/desarrollo-ia/` | Programación asistida por IA | Sin cambios; pendiente evaluación de relevancia |
+| `skills/seguridad-appsec/` | Secrets, contenedores, supply chain | 4 skills enriquecidas — Podman, python-dotenv, pip-audit (`fdccd92`) |
+| `skills/seguridad-opsec/` | OWASP LLM, privacidad, escaneo | 3 skills enriquecidas — Ley 19.628/21.719, Trivy/Grype (`fdccd92`) |
+| `skills/vision-por-computadora/` | Repaso diplomado IA | 4 skills enriquecidas — timm, YOLOv8, SMP/SAM2, VLM table (`fdccd92`) |
+| `skills/investigacion-general/` | Diseño metodológico | Enriquecido — leakage espaciotemporal, spatial CV (`3eb603b`) |
+| `skills/investigacion-ia/` | Estado del arte, reproducibilidad | Enriquecido — STAC/COG/DVC, baseline ignición (`3eb603b`) |
+| `skills/ciencia-ingenieria-datos/` | Pipeline, gobernanza, privacidad | Enriquecido — pipeline geoespacial, Ley 19.628 (`3eb603b`) |
+| `skills/desarrollo-ia/` | Modelo baseline | Enriquecido — spatial CV, AUPRC para eventos raros (`e54314c`) |
 
 ## Entorno del usuario
 

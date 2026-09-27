@@ -56,6 +56,15 @@ El modelo predictivo basal es **secundario** — solo valida consumibilidad del 
 
 ---
 
+## Dominio desarrollo-ia
+
+- **ml_supervisado_reglas.md enriquecida:** spatial cross-validation (blocked spatial CV), leakage por contigüidad espacial entre celdas vecinas, AUPRC/AP como métricas primarias para clase de ignición (< 2 % positivos).
+- **Resto del dominio:** adecuado sin cambios para la tesis; cobertura geoespacial fue agregada a `ciencia-ingenieria-datos` e `investigacion-ia`.
+
+---
+
 ## Dominios fuera del alcance de la tesis
 
-`arte-musical`, `bienestar`, `derecho`, `desarrollo-humano`, `economia-finanzas`, `filosofia`, `fotografias`, `historia`, `medicina`, `seguridad-opsec`, `seguridad-appsec`. No revisar ni modificar en contexto de tesis.
+`arte-musical`, `bienestar`, `derecho`, `desarrollo-humano`, `economia-finanzas`, `filosofia`, `fotografias`, `historia`, `medicina`. No revisar ni modificar en contexto de tesis.
+
+`seguridad-appsec` y `seguridad-opsec` fueron enriquecidos como skills reutilizables generales (no solo tesis).
