@@ -1,9 +1,9 @@
-# CONTEXT — Sesión 2026-09-26
+# CONTEXT — Sesión 2026-09-26 (completa)
 
 ## Proyecto principal activo
 
-**Tesis Magíster en Tecnologías de la Información — Universidad de Chile**
-Alumno: Jorge Antonio Sepúlveda Sepúlveda
+**Tesis Magíster en Tecnologías de la Información — Universidad de Chile**  
+Alumno: Jorge Antonio Sepúlveda Sepúlveda  
 Archivo de referencia: `C:\universidad-local\uchile\mgtr-ti\sem03-2026\cc79g-tesis-grado-i\clase1-20260819\Propuesta_de_tesis_jsepuls_v4.2.5.pdf`
 
 **Título:** "Metodología reproducible para construir datasets geoespaciales de ignición de incendios rurales a escala comunal"
@@ -28,28 +28,37 @@ Archivo de referencia: `C:\universidad-local\uchile\mgtr-ti\sem03-2026\cc79g-tes
 
 ## Repositorio gen-ai-skills
 
-Repositorio de biblioteca de instrucciones para IA, agnóstico al proveedor.
-Ruta: `C:\rutinas-local\gen-ai-skills-root\gen-ai-skills`
-Rama activa: `main`. Último commit relevante: `4c73f26`.
+Repositorio de biblioteca de instrucciones para IA, agnóstico al proveedor.  
+Ruta: `C:\rutinas-local\gen-ai-skills-root\gen-ai-skills`  
+Rama activa: `main`. Último commit: `da53c48`.
 
 ## Dominios relevantes para la tesis (mapa completo)
 
-| Dominio | Uso en tesis |
-|---|---|
-| `skills/geoespacial/` | Pipeline central — 6 de 8 skills enriquecidas esta sesión |
-| `skills/investigacion-general/` | Inventario de fuentes, diseño metodológico |
-| `skills/investigacion-ia/` | Estado del arte, lectura crítica, redacción académica |
-| `skills/ciencia-ingenieria-datos/` | Pipeline de datos, calidad, gobernanza |
-| `skills/lenguaje-castellano/` | Redacción de la tesis |
-| `skills/desarrollo-ia/` | Programación asistida por IA |
-| `skills/ingenieria-software/` | Demo, notebooks, CLI, dashboard, contenedores |
-| `skills/precheck-publica-repo/` | Antes de publicar repositorio o dataset |
-| `skills/academia/` | Gestión de notebooks académicos |
-| `skills/operaciones-tecnologia/` | Entorno Linux, bash, Podman |
+| Dominio | Uso en tesis | Estado |
+|---|---|---|
+| `skills/geoespacial/` | Pipeline central | 6 de 8 skills enriquecidas |
+| `skills/ingenieria-software/` | Demo, notebooks, CLI, dashboard, contenedores | 4 skills nuevas + existentes |
+| `skills/lenguaje-castellano/` | Redacción de la tesis | README completado con routing |
+| `skills/precheck-publica-repo/` | Antes de publicar repositorio o dataset | Enriquecido con sección geoespacial |
+| `skills/academia/` | Revisión de notebooks de pipeline | analisis_notebook_datos_estadistica enriquecido |
+| `skills/operaciones-tecnologia/` | Entorno Linux, Bash, Podman | linux y virtualizacion enriquecidos |
+| `skills/investigacion-general/` | Inventario de fuentes, diseño metodológico | Solo README leído — pendiente revisión interna |
+| `skills/investigacion-ia/` | Estado del arte, lectura crítica | Solo README leído — pendiente revisión interna |
+| `skills/ciencia-ingenieria-datos/` | Pipeline de datos, calidad, gobernanza | Solo README leído — pendiente revisión interna |
+| `skills/desarrollo-ia/` | Programación asistida por IA | Sin cambios; pendiente evaluación |
 
 ## Entorno del usuario
 
 - SO: Windows 11 Pro — shell principal: PowerShell + Git Bash disponible
 - Runtime de contenedores: **Podman** (no Docker Desktop; evitar por licenciamiento)
-- Git user: Jorge Von Braun
-- Email: buzondepitagoras@gmail.com
+- WSL2 disponible; para pipelines I/O-intensivos usar filesystem Linux nativo, no `/mnt/c/`
+- Git user: Jorge Von Braun / buzondepitagoras@gmail.com
+
+## Patrón de trabajo validado
+
+Para tareas de escritura mecánica en el repositorio:
+1. **Sonnet** diagnostica, diseña el plan y escribe `docs/plan.md` con sub-planes autocontenidos (archivo, ancla, contenido exacto).
+2. **Haiku** lee el archivo, verifica el ancla y aplica el contenido sin reescribir nada.
+3. **Sonnet** revisa, hace commit y push.
+
+Costo de referencia: 4 archivos / 4 sub-planes → ~47K tokens Haiku en ~104 s.
