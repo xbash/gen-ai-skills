@@ -43,3 +43,46 @@ Aplicar cuando la tarea involucre KVM, OLVM, VMware, Hyper-V, Podman, Docker, co
 - Dependencia de imágenes externas no disponibles.
 - Mezclar configuración QA/PROD.
 - Aplicar manifiestos en namespace o cluster incorrecto.
+
+## Podman rootless para pipelines de datos
+
+### Configuración básica rootless
+
+```bash
+# Verificar que subuid/subgid estén configurados
+grep $(whoami) /etc/subuid /etc/subgid
+
+# Ejecutar pipeline sin root
+podman run --rm \
+  -v $(pwd)/data:/app/data:Z \
+  -v $(pwd)/output:/app/output:Z \
+  mi-pipeline:1.0 --config config/config.yaml
+```
+
+- La opción `:Z` ajusta el contexto SELinux del volumen. Sin ella, el contenedor puede no tener acceso al directorio del host en sistemas con SELinux activo (RHEL, Fedora).
+- Para volúmenes compartidos entre múltiples contenedores, usar `:z` (minúscula) en lugar de `:Z`.
+
+### Datos grandes y memoria en procesamiento geoespacial
+
+- GDAL y rasterio pueden consumir varios GB de RAM al procesar rasters de alta resolución. Limitar memoria del contenedor para evitar OOM del host:
+
+```bash
+podman run --rm \
+  --memory=8g \
+  --memory-swap=8g \
+  -v $(pwd)/data:/app/data:Z \
+  mi-pipeline:1.0
+```
+
+- Para rasters muy grandes, procesar por tiles o bloques; no cargar el array completo en memoria si la resolución de salida no lo requiere.
+- Verificar espacio libre antes de ejecutar: `df -h $(pwd)/output` en el host; el procesamiento puede generar archivos de salida 2-5× más grandes que el input.
+
+### Diagnóstico de problemas comunes
+
+| Síntoma | Causa probable | Solución |
+|---|---|---|
+| `permission denied` en volumen | SELinux sin `:Z` | Agregar `:Z` al volumen |
+| Contenedor OOM killed | Procesamiento raster sin límite | Usar `--memory` |
+| `subuid range not found` | Rootless no configurado | `sudo usermod --add-subuids 100000-165535 $(whoami)` |
+| Imagen no encontrada | Registry sin autenticación | `podman login registry.example.com` |
+| Lento acceso a datos en WSL2 | Datos en `/mnt/c/` en lugar de filesystem Linux | Mover datos a `~/` dentro de WSL2 |

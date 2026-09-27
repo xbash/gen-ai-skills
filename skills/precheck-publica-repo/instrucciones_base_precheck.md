@@ -71,3 +71,48 @@ Si no hay hallazgos criticos, decirlo claramente, pero mencionar riesgos residua
 - Alto: historico/log con datos no destinados a publicacion, licencia incompleta, dump, backup, archivo de configuracion local riesgoso.
 - Medio: rutas personales, checkpoints, resultados grandes, docs con afirmaciones no verificadas.
 - Bajo: limpieza editorial, ejemplos obsoletos, archivos auxiliares no sensibles.
+
+## Datasets geoespaciales y publicación académica
+
+Aplicar cuando el repositorio incluya datos raster, vectoriales o tabulares de origen geoespacial, o cuando la publicación sea un producto académico (tesis, artículo, dataset de investigación).
+
+### Archivos grandes y datos externos
+
+- Los archivos raster (GeoTIFF, COG, NetCDF) y tabulares grandes (GeoParquet, CSV con coordenadas) no deben estar en el repositorio Git. Verificar que `.gitignore` excluya extensiones como `.tif`, `.tiff`, `.nc`, `.parquet`, `.geojson` si superan el límite de GitHub (100 MB).
+- Los datos deben estar alojados en un repositorio de datos externo (Zenodo, Figshare, OSF) o accesibles vía STAC/COG. El README debe documentar cómo obtenerlos.
+- Verificar que no existan archivos `data/`, `raw/`, `output/` con datos crudos commiteados accidentalmente.
+
+### Licencias de fuentes geoespaciales
+
+Verificar que el README o un archivo `ATTRIBUTIONS.md` declare la licencia de cada fuente de datos utilizada:
+
+| Fuente habitual | Licencia / restricción |
+|---|---|
+| ERA5 (Copernicus Climate Change Service) | Copernicus License v1.2 — requiere atribución; redistribución permitida con condiciones |
+| Sentinel-2 (ESA/Copernicus) | Acceso libre; requiere atribución "Contains modified Copernicus Sentinel data [año]" |
+| VIIRS (NASA FIRMS) | Dominio público (NASA); requiere atribución |
+| CONAF (Chile) | Verificar términos vigentes; datos derivados pueden requerir autorización |
+| OpenStreetMap | ODbL — requiere atribución y share-alike si se redistribuyen datos derivados |
+
+No publicar datos de fuentes con restricciones sin verificar si el producto derivado cumple los términos.
+
+### Datos sensibles geoespaciales
+
+- Registros de ignición con coordenadas precisas pueden identificar predios privados. Evaluar si corresponde agregar desplazamiento espacial (spatial jitter) o publicar solo a nivel de celda/grilla.
+- Nombres de propietarios, direcciones o RUT asociados a registros de campo nunca deben estar en el repositorio.
+
+### Publicación académica del dataset
+
+Antes de publicar el repositorio final de tesis, verificar:
+
+- Existe un `datasheet.md` o sección equivalente que documente: origen de cada variable, método de recolección, limitaciones conocidas, sesgos, fecha de corte y versión.
+- El README incluye cómo citar el dataset (formato BibTeX o APA con DOI si está en Zenodo/Figshare).
+- El pipeline es reproducible desde cero siguiendo solo las instrucciones del README (sin archivos locales no documentados).
+- Los notebooks están sin outputs si se publican como código fuente (usar `nbstripout` o equivalente antes del commit final).
+
+### Severidad adicional para datasets geoespaciales
+
+- **Crítico:** datos personales o prediales identificables commiteados en el repo.
+- **Alto:** datos raster grandes (>50 MB) en el historial Git; fuentes con licencia restrictiva redistribuidas sin verificación.
+- **Medio:** falta de datasheet o atribución de fuentes; notebooks con outputs de datos privados.
+- **Bajo:** extensiones geoespaciales no cubiertas por `.gitignore`; README sin instrucciones de descarga de datos.

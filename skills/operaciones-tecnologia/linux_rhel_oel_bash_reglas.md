@@ -39,3 +39,45 @@ Aplicar cuando la tarea involucre Linux, RHEL/OEL 7/8/9, Bash, Python operaciona
 - Scripts con CRLF ejecutados en Linux.
 - Uso de comandos destructivos sin validación de variables.
 - Deshabilitar SELinux/firewall como solución permanente sin análisis.
+
+## Entornos Python para pipelines de datos
+
+### Entorno virtual con venv
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+- Activar el entorno antes de ejecutar el pipeline; verificar con `which python`.
+- No instalar dependencias globalmente con `sudo pip`; contamina el sistema base.
+- Para fijar versiones exactas: `pip freeze > requirements.txt` sobre el entorno activo.
+
+### Entorno conda/mamba (recomendado para dependencias geoespaciales)
+
+```bash
+mamba create -n geo311 python=3.11
+mamba activate geo311
+mamba install -c conda-forge gdal rasterio fiona geopandas
+pip install -r requirements-extras.txt
+```
+
+- `mamba` es equivalente a `conda` pero más rápido para resolver dependencias.
+- Para dependencias geoespaciales complejas (GDAL, rasterio, fiona), conda-forge resuelve compatibilidad de bibliotecas C nativa mejor que pip.
+- Exportar entorno reproducible: `mamba env export --no-builds > environment.yml`.
+
+### Consideraciones WSL2 (Windows 11)
+
+- WSL2 corre como VM con kernel Linux real; los comandos Linux aplican sin modificación.
+- La ruta del sistema de archivos Windows se monta en `/mnt/c/`; acceder a archivos Windows desde WSL2 es más lento que trabajar en el sistema de archivos Linux (`~/`). Para pipelines I/O-intensivos, copiar los datos a `~/data/` en WSL2.
+- Podman en WSL2: instalar la versión Linux de Podman dentro de WSL2, no usar Podman Desktop de Windows para scripts de pipeline.
+- Variables de entorno definidas en `.bashrc` o `.zshrc` dentro de WSL2 no son visibles desde PowerShell y viceversa.
+- Para memoria: WSL2 por defecto usa hasta el 50% de la RAM del host. Si el pipeline requiere más, configurar en `%USERPROFILE%\.wslconfig`:
+
+```ini
+[wsl2]
+memory=12GB
+processors=4
+```
