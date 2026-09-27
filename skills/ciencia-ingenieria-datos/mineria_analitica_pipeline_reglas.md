@@ -21,3 +21,28 @@ La tarea transforma, valida, publica u opera datos para analisis o consumo recur
 
 ## Validacion minima
 Pipeline trazable, transformaciones justificadas, calidad medida, contratos o expectativas documentadas, artefactos reproducibles y limites comunicados.
+
+## Pipeline geoespacial
+
+Aplicar cuando el pipeline procese datos raster, vectoriales o tabulares con coordenadas geográficas.
+
+### Etapas adicionales respecto a pipeline tabular
+
+1. **Ingesta:** verificar CRS, resolución, período, extensión y licencia de cada fuente raster o vectorial.
+2. **Reproyección:** definir CRS común del proyecto (p. ej., EPSG:32719 para Chile zona 19S); reproyectar todas las fuentes antes de cualquier join espacial.
+3. **Recorte y remuestreo:** clip por bounding box o polígono del área de estudio; reproject_match para igualar resolución y grilla entre fuentes.
+4. **Enmascaramiento nodata:** aplicar máscara de nodata antes de calcular estadísticas; propagar la máscara a los features derivados.
+5. **Validación de geometrías:** `is_valid()` en datos vectoriales; registrar y reparar geometrías inválidas antes de joins espaciales.
+
+### Validaciones específicas del pipeline geoespacial
+
+- CRS declarado y consistente entre todas las fuentes unidas.
+- Solapamiento temporal entre fuentes verificado: confirmar que el período cubierto por cada fuente cubre el rango de fechas del dataset.
+- Resolución espacial documentada y consistente tras el remuestreo.
+- Nodata enmascarado y no tratado como cero ni como valor válido.
+
+### Formatos y contratos de datos geoespaciales
+
+- **GeoParquet:** formato de pipeline para tabular con geometría; preserva CRS, soporta predicados espaciales con DuckDB y geopandas; reemplaza CSV con lat/lon.
+- **STAC como contrato de datos:** usar `pystac-client` para descubrir y filtrar colecciones externas (Sentinel-2, ERA5); documentar colección, período, AOI y resolución en el contrato de ingesta.
+- Documentar linaje: para cada feature derivado, registrar fuente, período, transformación aplicada y CRS resultante.

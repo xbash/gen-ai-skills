@@ -50,3 +50,23 @@ Considera validez interna, externa y de constructo, confiabilidad, credibilidad,
 ## Salida recomendada
 
 Entrega problema y pregunta, objetivos, diseño, datos y muestra, variables o categorías, protocolo, riesgos de validez, criterios de éxito y decisiones pendientes. No conviertas el módulo en un manual disciplinar o estadístico exhaustivo.
+
+## Datos geoespaciales y series de tiempo espaciales
+
+Aplicar cuando la unidad de análisis tenga coordenadas (celda-grilla, punto, polígono) o cuando los datos provengan de fuentes raster, vectoriales o satelitales.
+
+### CRS y granularidad
+
+- Declarar el sistema de referencia de coordenadas (CRS) de cada fuente: EPSG, unidad, datum y proyección. Las fuentes con CRS distintos deben reproyectarse a un CRS común antes de cualquier join o análisis conjunto.
+- Documentar granularidad espacial (resolución de celda o escala del polígono) y temporal (diaria, mensual) como parte de la definición de la unidad de análisis.
+
+### Leakage espaciotemporal
+
+- En datos con autocorrelación espacial, el random split invalida la evaluación: celdas vecinas comparten contexto, por lo que el modelo aprende del entorno del punto de prueba.
+- Separar train/valid/test simultáneamente por bloque espacial (tile, comuna, región) **y** por período cronológico. Nunca asignar celdas contiguas a conjuntos distintos sin separación espacial explícita.
+- Spatial cross-validation: usar bloques espaciales no contiguos como folds (blocked spatial CV). Para series de tiempo: expanding window o blocked time series split.
+
+### Eventos raros y desbalance extremo
+
+- Declarar la tasa de la clase positiva (p. ej., 1 ignición en 1000 celdas-día). Justificar métricas de evaluación proporcionales al desbalance: F1, PR-AUC, Average Precision. Evitar accuracy como métrica primaria en clases muy desbalanceadas.
+- Aplicar sobremuestreo (SMOTE, RandomOverSampler) solo en el conjunto de entrenamiento, nunca en validación ni test.

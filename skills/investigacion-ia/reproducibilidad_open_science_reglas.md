@@ -27,3 +27,17 @@ La tarea sea una explicación conceptual sin afirmaciones empíricas ni artefact
 
 ## Salida recomendada
 Mapa de artefactos, brechas de reproducibilidad, riesgos, pasos para replicar, criterios de aceptacion y recomendaciones de documentacion.
+
+## Reproducibilidad en datos geoespaciales y pipelines IA
+
+### Estándares de publicación abierta para datos geoespaciales
+
+- **STAC (OGC 25-004):** catálogo de artefactos geoespaciales versionado. Publicar cada tile o dataset como STAC Item con metadatos de cobertura espacial, rango de fechas, CRS, resolución, licencia y enlace de descarga. Permite que terceros descubran y repliquen el dataset sin instrucciones ad-hoc.
+- **COG (OGC 21-026):** formato Cloud-Optimized GeoTIFF para raster; acceso parcial por bounding box sin descargar el archivo completo.
+- **GeoParquet:** formato tabular con geometría integrada y CRS declarado; reemplaza CSV con columnas lat/lon y permite predicados espaciales en DuckDB y geopandas.
+
+### Versionado de datos y tracking de experimentos
+
+- **DVC (Data Version Control):** rastrear versiones de datasets geoespaciales sin commitear archivos grandes en Git; usar remote storage en Zenodo, S3 o local. Registrar `dvc.yaml` con el pipeline y `params.yaml` con hiperparámetros.
+- **MLflow / Weights & Biases:** logging de métricas, parámetros, artefactos y splits por fold; permite comparar corridas y auditar qué configuración produjo cada resultado.
+- Registrar: semillas, versión de cada fuente de datos, período cubierto, CRS, splits espaciales y temporales, y métricas por fold.

@@ -40,3 +40,23 @@ Prioriza validez metodologica, coherencia entre pregunta-datos-metodo-metrica-co
 
 ## Salida recomendada
 Diseno general, pregunta e hipotesis, datos requeridos, metodos comparados, protocolo experimental, metricas, plan de analisis, riesgos metodologicos y criterios de reproducibilidad.
+
+## Datasets geoespaciales en investigación IA
+
+Aplicar cuando el dataset tenga coordenadas, fechas de evento y fuentes raster o satelitales como variables de entrada.
+
+### Protocolo de partición espacio-temporal
+
+- La unidad de análisis georreferenciada (celda-día, polígono-semana) requiere separar train/valid/test respetando contigüidad espacial **y** orden temporal de forma simultánea. El random split introduce leakage por autocorrelación espacial y temporal.
+- Usar bloques espaciales (tile, comuna) como unidad de asignación a conjuntos; dentro de cada conjunto, respetar el orden cronológico.
+
+### Leakage de features desde fuentes externas
+
+- Verificar que cada feature de celda-día esté disponible **antes** del evento en el horizonte de predicción declarado. ERA5 tiene un delay de publicación de ~5 días; Sentinel-2 tiene revisita de 5 días con posible cobertura de nubes; CONAF publica registros con latencia variable.
+- Documentar el delay efectivo de cada fuente y ajustar el horizonte de predicción (24-72 h) a lo que es operacionalmente disponible.
+
+### Baseline mínimo para datasets de ignición
+
+- Clasificador de frecuencia base: predecir siempre la clase mayoritaria (no-ignición); establece el piso de métricas.
+- Modelo logístico con variables meteorológicas simples (temperatura máxima, humedad relativa, velocidad del viento): baseline interpretable antes de modelos complejos.
+- Reportar F1, PR-AUC y AP para cada baseline; cualquier modelo propuesto debe superarlos con el mismo split y protocolo.

@@ -1,4 +1,4 @@
-# Plan de enriquecimiento — vision-por-computadora
+# Plan de enriquecimiento — investigacion-general, investigacion-ia, ciencia-ingenieria-datos
 
 **Fecha:** 2026-09-26  
 **Estado:** Pendiente de ejecución  
@@ -11,130 +11,166 @@
 - Leer el archivo antes de modificar. Confirmar que el ancla existe tal cual está escrita.
 - Agregar el contenido AL FINAL del archivo, después de la última línea existente.
 - No eliminar, reordenar ni modificar ninguna línea existente.
-- Respetar el estilo Markdown del archivo (encabezados `##`, listas con `-`, bloques de código con triple backtick).
+- Respetar el estilo Markdown del archivo (encabezados `##`, listas con `-`, bloques de código).
 - No hacer commit, no hacer push.
 - Al terminar, ejecutar `git diff --stat` y reportar resultado.
 
 ---
 
-## Sub-plan 1 — `skills/vision-por-computadora/clasificacion_imagenes_deep_learning_reglas.md`
+## Sub-plan 1 — `skills/investigacion-general/diseno_metodologico_datos_reglas.md`
 
-**Ancla a verificar:** `## Implementación`  
+**Ancla a verificar:** `## Salida recomendada`  
 **Acción:** agregar al final del archivo.
 
 ```markdown
 
-## Tooling y librerías recomendadas (2025-2026)
+## Datos geoespaciales y series de tiempo espaciales
 
-- **torchvision:** datasets, transforms v2 y modelos preentrenados para PyTorch; `torchvision.transforms.v2` reemplaza la API anterior con soporte mejorado para bounding boxes y máscaras.
-- **timm (PyTorch Image Models):** biblioteca de referencia para modelos de clasificación: ResNet, EfficientNet, ViT, Swin, ConvNeXt, DeiT y cientos más con pesos preentrenados; `timm.create_model("resnet50", pretrained=True, num_classes=N)`.
-- **albumentations:** biblioteca de aumentaciones de imagen con API consistente para clasificación, detección y segmentación; más rápida que torchvision transforms para augmentaciones complejas.
-- **CLIP / zero-shot:** modelos CLIP (OpenAI) y variantes (SigLIP, OpenCLIP) permiten clasificación zero-shot con descripciones textuales de clases; útil cuando el dataset es pequeño o las clases cambian.
+Aplicar cuando la unidad de análisis tenga coordenadas (celda-grilla, punto, polígono) o cuando los datos provengan de fuentes raster, vectoriales o satelitales.
 
-## Imágenes multiespectrales y satelitales
+### CRS y granularidad
 
-- Las imágenes de satélite como Sentinel-2 tienen 13 bandas espectrales (no solo RGB); las bandas NIR, SWIR y Red Edge contienen información que el ojo humano no percibe pero que mejora la clasificación de vegetación, suelo, agua y áreas quemadas.
-- Para clasificación con imágenes multiespectrales: adaptar el primer layer de la CNN para aceptar N canales (`in_channels=N`) en lugar de 3; inicializar los pesos extra con la media de los canales RGB o desde cero.
-- Composiciones de falso color (NIR-R-G o SWIR-NIR-R) permiten usar arquitecturas preentrenadas en RGB sobre datos satelitales sin modificar la arquitectura.
-- Evitar leakage por escena, fecha de captura, tile o cobertura espacial al separar train/valid/test en datos satelitales.
+- Declarar el sistema de referencia de coordenadas (CRS) de cada fuente: EPSG, unidad, datum y proyección. Las fuentes con CRS distintos deben reproyectarse a un CRS común antes de cualquier join o análisis conjunto.
+- Documentar granularidad espacial (resolución de celda o escala del polígono) y temporal (diaria, mensual) como parte de la definición de la unidad de análisis.
+
+### Leakage espaciotemporal
+
+- En datos con autocorrelación espacial, el random split invalida la evaluación: celdas vecinas comparten contexto, por lo que el modelo aprende del entorno del punto de prueba.
+- Separar train/valid/test simultáneamente por bloque espacial (tile, comuna, región) **y** por período cronológico. Nunca asignar celdas contiguas a conjuntos distintos sin separación espacial explícita.
+- Spatial cross-validation: usar bloques espaciales no contiguos como folds (blocked spatial CV). Para series de tiempo: expanding window o blocked time series split.
+
+### Eventos raros y desbalance extremo
+
+- Declarar la tasa de la clase positiva (p. ej., 1 ignición en 1000 celdas-día). Justificar métricas de evaluación proporcionales al desbalance: F1, PR-AUC, Average Precision. Evitar accuracy como métrica primaria en clases muy desbalanceadas.
+- Aplicar sobremuestreo (SMOTE, RandomOverSampler) solo en el conjunto de entrenamiento, nunca en validación ni test.
 ```
 
 ---
 
-## Sub-plan 2 — `skills/vision-por-computadora/deteccion_objetos_reglas.md`
+## Sub-plan 2 — `skills/investigacion-ia/diseno_metodologico_experimentos_ia_reglas.md`
 
-**Ancla a verificar:** `## Implementación`  
+**Ancla a verificar:** `## Salida recomendada`  
 **Acción:** agregar al final del archivo.
 
 ```markdown
 
-## Ecosistema moderno de detección (2025-2026)
+## Datasets geoespaciales en investigación IA
 
-### Ultralytics / YOLO
+Aplicar cuando el dataset tenga coordenadas, fechas de evento y fuentes raster o satelitales como variables de entrada.
 
-- **YOLOv8 / YOLOv11 (Ultralytics):** familia de modelos one-stage estándar en 2024-2025; API unificada para detección, segmentación, pose y clasificación: `model = YOLO("yolov8n.pt"); model.train(data="dataset.yaml")`.
-- Formatos de exportación: ONNX, TensorRT, CoreML, TFLite desde `model.export(format="onnx")`.
-- Para fine-tuning, definir `dataset.yaml` con rutas, número de clases y nombres; el formato de anotación es YOLO txt (xywh normalizado).
+### Protocolo de partición espacio-temporal
 
-### Detectores transformer
+- La unidad de análisis georreferenciada (celda-día, polígono-semana) requiere separar train/valid/test respetando contigüidad espacial **y** orden temporal de forma simultánea. El random split introduce leakage por autocorrelación espacial y temporal.
+- Usar bloques espaciales (tile, comuna) como unidad de asignación a conjuntos; dentro de cada conjunto, respetar el orden cronológico.
 
-- **DINO / Grounding DINO:** detectores basados en transformer con capacidad zero-shot; Grounding DINO detecta objetos descritos en lenguaje natural.
-- **RT-DETR:** detector transformer en tiempo real; alternativa a YOLO cuando se necesita mayor precisión con latencia aceptable.
+### Leakage de features desde fuentes externas
 
-### Librería supervision
+- Verificar que cada feature de celda-día esté disponible **antes** del evento en el horizonte de predicción declarado. ERA5 tiene un delay de publicación de ~5 días; Sentinel-2 tiene revisita de 5 días con posible cobertura de nubes; CONAF publica registros con latencia variable.
+- Documentar el delay efectivo de cada fuente y ajustar el horizonte de predicción (24-72 h) a lo que es operacionalmente disponible.
 
-- `supervision` (Roboflow): herramienta de postprocesamiento y visualización para detección; manejo de anotaciones, NMS, tracking, métricas y visualización con una API simple.
-- Compatible con Ultralytics, Hugging Face y cualquier modelo que retorne bounding boxes.
+### Baseline mínimo para datasets de ignición
+
+- Clasificador de frecuencia base: predecir siempre la clase mayoritaria (no-ignición); establece el piso de métricas.
+- Modelo logístico con variables meteorológicas simples (temperatura máxima, humedad relativa, velocidad del viento): baseline interpretable antes de modelos complejos.
+- Reportar F1, PR-AUC y AP para cada baseline; cualquier modelo propuesto debe superarlos con el mismo split y protocolo.
 ```
 
 ---
 
-## Sub-plan 3 — `skills/vision-por-computadora/segmentacion_reglas.md`
+## Sub-plan 3 — `skills/investigacion-ia/reproducibilidad_open_science_reglas.md`
 
-**Ancla a verificar:** `## Implementación`  
+**Ancla a verificar:** `## Salida recomendada`  
 **Acción:** agregar al final del archivo.
 
 ```markdown
 
-## Tooling y librerías recomendadas (2025-2026)
+## Reproducibilidad en datos geoespaciales y pipelines IA
 
-- **segmentation-models-pytorch (SMP):** biblioteca con arquitecturas U-Net, FPN, DeepLab, LinkNet y backbones intercambiables (ResNet, EfficientNet, timm); `smp.Unet(encoder_name="resnet34", in_channels=3, classes=N)`.
-- **mmsegmentation (OpenMMLab):** framework completo para segmentación semántica e instancias; mayor flexibilidad que SMP para investigación, mayor curva de aprendizaje.
-- **supervision:** visualización y evaluación de máscaras de segmentación; compatible con SAM, Mask R-CNN y modelos Ultralytics seg.
-- **SAM2 (Meta):** modelo fundacional promptable para segmentación de imágenes y video; útil para asistencia de anotación y segmentación interactiva sin fine-tuning.
+### Estándares de publicación abierta para datos geoespaciales
 
-## Segmentación en imágenes satelitales
+- **STAC (OGC 25-004):** catálogo de artefactos geoespaciales versionado. Publicar cada tile o dataset como STAC Item con metadatos de cobertura espacial, rango de fechas, CRS, resolución, licencia y enlace de descarga. Permite que terceros descubran y repliquen el dataset sin instrucciones ad-hoc.
+- **COG (OGC 21-026):** formato Cloud-Optimized GeoTIFF para raster; acceso parcial por bounding box sin descargar el archivo completo.
+- **GeoParquet:** formato tabular con geometría integrada y CRS declarado; reemplaza CSV con columnas lat/lon y permite predicados espaciales en DuckDB y geopandas.
 
-- Las imágenes multiespectrales de satélite (Sentinel-2, Landsat) permiten segmentación temática usando índices espectrales como máscara inicial: NDVI (vegetación), NDWI (agua), NBR/dNBR (área quemada), seguida de refinamiento con U-Net o SAM.
-- Para segmentación de área quemada: calcular dNBR pre/post evento como aproximación inicial; usar U-Net con bandas B8A, B11, B12 de Sentinel-2 para entrenamiento supervisado si se dispone de ground truth.
-- Adaptar `in_channels` del encoder para imágenes multiespectrales (más de 3 bandas); SMP permite configurar esto directamente.
-- Separar train/valid/test por tile espacial o por fecha para evitar leakage en datos satelitales con superposición espacial.
+### Versionado de datos y tracking de experimentos
+
+- **DVC (Data Version Control):** rastrear versiones de datasets geoespaciales sin commitear archivos grandes en Git; usar remote storage en Zenodo, S3 o local. Registrar `dvc.yaml` con el pipeline y `params.yaml` con hiperparámetros.
+- **MLflow / Weights & Biases:** logging de métricas, parámetros, artefactos y splits por fold; permite comparar corridas y auditar qué configuración produjo cada resultado.
+- Registrar: semillas, versión de cada fuente de datos, período cubierto, CRS, splits espaciales y temporales, y métricas por fold.
 ```
 
 ---
 
-## Sub-plan 4 — `skills/vision-por-computadora/vlm_generativa_datos_sinteticos_reglas.md`
+## Sub-plan 4 — `skills/ciencia-ingenieria-datos/etica_privacidad_gobernanza_datos_reglas.md`
 
-**Ancla a verificar:** `## Evaluación y seguridad`  
+**Ancla a verificar:** `## Validacion minima`  
 **Acción:** agregar al final del archivo.
 
 ```markdown
 
-## VLMs actuales y modelos de generación (2025-2026)
+## Datos geoespaciales y privacidad en investigación chilena
 
-### Modelos visión-lenguaje (VLM) de referencia
+### Marco legal aplicable (Chile)
 
-| Modelo | Organización | Notas |
+- **Ley 19.628** (vigente): protección de datos de carácter personal; aplica a registros de campo con propietarios, nombres o RUT asociados a coordenadas de ignición.
+- **Ley 21.719** (en tramitación): modernización de la ley de datos personales; anticipa principios de minimización, finalidad y proporcionalidad más estrictos.
+- Datos de ignición con coordenadas precisas combinados con registros catastrales pueden identificar predios y propietarios: aplicar los principios de minimización y finalidad antes de publicar.
+
+### Tratamiento de coordenadas sensibles
+
+- Evaluar si las coordenadas brutas de inicio de incendio son necesarias para el objetivo declarado (metodología reproducible a escala comunal) o si la grilla de 200 m es suficiente.
+- Si se publican coordenadas brutas: aplicar **spatial jitter** (desplazamiento aleatorio ≤ resolución de celda) o agregar solo a nivel de grilla antes de publicar.
+- Nunca incluir nombres de propietarios, RUT, direcciones ni datos de campo con identificadores en el repositorio o dataset público.
+
+### Clasificación de sensibilidad para datasets de investigación
+
+| Nivel | Contenido | Tratamiento |
 |---|---|---|
-| GPT-4V / GPT-4o | OpenAI | Multimodal de propósito general; fuerte en razonamiento visual y OCR |
-| Claude 3.5/3.7 Sonnet | Anthropic | Bueno en análisis de documentos, diagramas y código visual |
-| Gemini 1.5/2.0 Pro | Google | Contexto largo; útil para video e imágenes múltiples |
-| LLaVA / LLaVA-NeXT | Community | Open source; base para fine-tuning en dominios específicos |
-| PaliGemma / PaliGemma 2 | Google | Eficiente; diseñado para fine-tuning en tareas visuales |
-| InternVL2 | Shanghai AI Lab | Fuerte en benchmarks multilingües y científicos |
-| Qwen-VL / Qwen2-VL | Alibaba | Multilingüe; buen desempeño en documentos y texto en imagen |
+| Público | Grilla agregada, índices, métricas por celda sin identificadores | Publicable en Zenodo/Figshare |
+| Uso restringido | Coordenadas brutas de ignición sin datos personales | Disponible bajo solicitud con protocolo de uso |
+| Privado | Registros con propietarios, RUT o datos de campo identificables | No publicar; anonimizar antes de cualquier uso |
+```
 
-- Para tareas de descripción, VQA o extracción estructurada: evaluar con casos reales antes de elegir modelo.
-- Para fine-tuning de VLMs open source: LLaVA y PaliGemma son los puntos de entrada más accesibles.
+---
 
-### Modelos de generación de imágenes de referencia
+## Sub-plan 5 — `skills/ciencia-ingenieria-datos/mineria_analitica_pipeline_reglas.md`
 
-- **Stable Diffusion XL (SDXL) / SD3:** generación de alta calidad con control por prompt y ControlNet.
-- **FLUX (Black Forest Labs):** arquitectura basada en flow matching; alta fidelidad a prompts de texto.
-- **Imagen 3 / DALL-E 3:** modelos propietarios de alta calidad para generación creativa.
+**Ancla a verificar:** `## Validacion minima`  
+**Acción:** agregar al final del archivo.
 
-### Aplicaciones en imágenes satelitales y científicas
+```markdown
 
-- Los VLMs actuales tienen desempeño limitado en imágenes satelitales (no son parte del pretraining principal); fine-tuning con imágenes etiquetadas mejora resultados en clasificación de cobertura, detección de cambios y descripción de escenas.
-- Para generación de datos sintéticos satelitales: CycleGAN y difusión condicional son enfoques viables para traducción de dominio (ej. simulación de imágenes en diferentes condiciones atmosféricas o estaciones).
-- Documentar siempre si una imagen fue generada sintéticamente; no mezclar con datos reales sin registro explícito.
+## Pipeline geoespacial
+
+Aplicar cuando el pipeline procese datos raster, vectoriales o tabulares con coordenadas geográficas.
+
+### Etapas adicionales respecto a pipeline tabular
+
+1. **Ingesta:** verificar CRS, resolución, período, extensión y licencia de cada fuente raster o vectorial.
+2. **Reproyección:** definir CRS común del proyecto (p. ej., EPSG:32719 para Chile zona 19S); reproyectar todas las fuentes antes de cualquier join espacial.
+3. **Recorte y remuestreo:** clip por bounding box o polígono del área de estudio; reproject_match para igualar resolución y grilla entre fuentes.
+4. **Enmascaramiento nodata:** aplicar máscara de nodata antes de calcular estadísticas; propagar la máscara a los features derivados.
+5. **Validación de geometrías:** `is_valid()` en datos vectoriales; registrar y reparar geometrías inválidas antes de joins espaciales.
+
+### Validaciones específicas del pipeline geoespacial
+
+- CRS declarado y consistente entre todas las fuentes unidas.
+- Solapamiento temporal entre fuentes verificado: confirmar que el período cubierto por cada fuente cubre el rango de fechas del dataset.
+- Resolución espacial documentada y consistente tras el remuestreo.
+- Nodata enmascarado y no tratado como cero ni como valor válido.
+
+### Formatos y contratos de datos geoespaciales
+
+- **GeoParquet:** formato de pipeline para tabular con geometría; preserva CRS, soporta predicados espaciales con DuckDB y geopandas; reemplaza CSV con lat/lon.
+- **STAC como contrato de datos:** usar `pystac-client` para descubrir y filtrar colecciones externas (Sentinel-2, ERA5); documentar colección, período, AOI y resolución en el contrato de ingesta.
+- Documentar linaje: para cada feature derivado, registrar fuente, período, transformación aplicada y CRS resultante.
 ```
 
 ---
 
 ## Criterios de aceptación globales
 
-1. `git diff --stat` muestra exactamente 4 archivos modificados.
+1. `git diff --stat` muestra exactamente 5 archivos modificados.
 2. Ningún archivo perdió contenido (solo líneas `+`, ninguna `-` en contenido previo).
-3. Los 4 archivos terminan con newline final.
+3. Los 5 archivos terminan con newline final.
 4. No hay commit, no hay push.

@@ -21,3 +21,25 @@ Hay datos personales o sensibles, decisiones automatizadas, requisitos de acceso
 
 ## Validacion minima
 Finalidad legitima, datos minimizados, accesos controlados, linaje documentado, riesgos evaluados y responsable definido.
+
+## Datos geoespaciales y privacidad en investigación chilena
+
+### Marco legal aplicable (Chile)
+
+- **Ley 19.628** (vigente): protección de datos de carácter personal; aplica a registros de campo con propietarios, nombres o RUT asociados a coordenadas de ignición.
+- **Ley 21.719** (en tramitación): modernización de la ley de datos personales; anticipa principios de minimización, finalidad y proporcionalidad más estrictos.
+- Datos de ignición con coordenadas precisas combinados con registros catastrales pueden identificar predios y propietarios: aplicar los principios de minimización y finalidad antes de publicar.
+
+### Tratamiento de coordenadas sensibles
+
+- Evaluar si las coordenadas brutas de inicio de incendio son necesarias para el objetivo declarado (metodología reproducible a escala comunal) o si la grilla de 200 m es suficiente.
+- Si se publican coordenadas brutas: aplicar **spatial jitter** (desplazamiento aleatorio ≤ resolución de celda) o agregar solo a nivel de grilla antes de publicar.
+- Nunca incluir nombres de propietarios, RUT, direcciones ni datos de campo con identificadores en el repositorio o dataset público.
+
+### Clasificación de sensibilidad para datasets de investigación
+
+| Nivel | Contenido | Tratamiento |
+|---|---|---|
+| Público | Grilla agregada, índices, métricas por celda sin identificadores | Publicable en Zenodo/Figshare |
+| Uso restringido | Coordenadas brutas de ignición sin datos personales | Disponible bajo solicitud con protocolo de uso |
+| Privado | Registros con propietarios, RUT o datos de campo identificables | No publicar; anonimizar antes de cualquier uso |
