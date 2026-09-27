@@ -1,169 +1,50 @@
-# Handoff de continuidad
+# HANDOFF — Punto de entrada para nueva sesión
 
-Fecha de corte: 2026-09-09
-
-## Al iniciar la próxima sesión
-
-1. Leer `docs/CONTEXT.md`, `docs/DECISIONS.md` y este archivo.
-2. No restaurar nombres numerados ni `pack-chatgpt/`.
-3. No ejecutar commit, push o release; el usuario hará la publicación.
-4. Mantener separados los cambios intencionales existentes del trabajo de esta sesión.
-
-## Próximo trabajo prioritario
-
-### 1. Validación funcional
-
-Probar selección y comportamiento con un LLM en:
-
-- clasificación tabular;
-- fine-tuning;
-- RAG;
-- agente con herramientas;
-- API de inferencia;
-- forecasting;
-- recomendadores;
-- OCR/VLM;
-- evaluación de regresión.
-
-Registrar solo resultados observados, configuración usada, archivos cargados y limitaciones.
-
-### 2. Medición de contexto
-
-Comparar, para casos equivalentes:
-
-- base sola;
-- base + transversal;
-- base + transversal + módulo principal;
-- base + transversal + complementarios.
-
-Reportar palabras o tokens según la herramienta disponible y distinguir tamaño estático de comportamiento del modelo.
-
-## Referencias principales
-
-- `skills/desarrollo-ia/README.md`
-- `skills/desarrollo-ia/base/instrucciones_base_ia.md`
-- `skills/desarrollo-ia/base/reglas_transversales_ia.md`
-- `skills/desarrollo-ia/seguridad/gobernanza_uso_responsable_ia_reglas.md`
-- `skills/ciencia-ingenieria-datos/README.md`
-- `docs/DECISIONES_TECNICAS.md`
-- `docs/PENDIENTES.md`
-
-## Verificaciones ya realizadas
-
-- Árbol físico de `desarrollo-ia` reorganizado y referencias relativas actualizadas.
-- 21 Markdown de `desarrollo-ia` verificados sin BOM, CRLF, espacios finales ni archivos vacíos.
-- No quedan referencias al antiguo `rl_optimizacion_evolutivos_reglas.md`.
-- `.gitattributes` y `.editorconfig` creados.
-
-## Handoff de sesión — 2026-09-25 (AGENTS.md)
-
-### Estado al cierre
-
-- `AGENTS.md` actualizado y verificado (UTF-8 sin BOM, LF, newline final).
-- Archivos no rastreados en `prompts/otros/` intactos; no modificar sin solicitud.
-- No se hizo commit, push ni publicación.
-
-### Siguiente paso recomendado
-
-Elegir entre validación funcional (LLM + tareas representativas) o medición comparativa de contexto/tokens. No declarar mejora sin evidencia observada.
+Fecha de corte: 2026-09-26  
+Repo: `C:\rutinas-local\gen-ai-skills-root\gen-ai-skills`  
+Estado: limpio, `main` sincronizado con `origin/main`  
+Último commit: `eebc113`
 
 ---
 
-## Handoff de sesión — 2026-09-26 (AGENTS.md — plan completo)
+## Cómo retomar
 
-### Estado al cierre
-
-Archivos modificados en esta sesión (unstaged salvo los git mv):
-
-- `AGENTS.md` — 4 acciones: fuentes de autoridad, estructura del repositorio, referencia a prompts/, terminología Ejecutor/Analista/Arquitecto.
-- `workflows/workflow_skills_dominio_v1.1.md` — tabla de política de modelos actualizada.
-- `prompts/GUIA_EJECUCION_PROMPTS.md` — tabla de prompts por fase actualizada; «Arquitecto decide; Ejecutor ejecuta».
-- 9 archivos de prompts renombrados con `git mv` (`_luna` → `_ejec`, `_terra` → `_arq`).
-- 35 archivos de prompts con referencias actualizadas.
-- 9 archivos con convenciones de nomenclatura de salida actualizadas.
-- `docs/CONTEXT.md`, `docs/DECISIONS.md`, `docs/HANDOFF.md` — actualizados.
-
-### Al iniciar la próxima sesión
-
-1. Leer `docs/CONTEXT.md`, `docs/DECISIONS.md` y este archivo.
-2. Ejecutar `git status` para verificar el estado del working tree.
-3. No hacer commit, push ni publicación sin autorización explícita.
-
-### Referencias clave
-
-- `AGENTS.md` — guía normativa vigente para agentes; actualizada en esta sesión.
-- `workflows/workflow_skills_dominio_v1.1.md` — workflow vigente; actualizado en esta sesión.
-- `prompts/GUIA_EJECUCION_PROMPTS.md` — punto de entrada operacional; actualizado en esta sesión.
-- `docs/eliminar/` — archivos pendientes de decisión de eliminación (pendiente del usuario).
+1. Leer `docs/CONTEXT.md` + `docs/DECISIONS.md` + este archivo.
+2. `git log --oneline -5` y `git status` para verificar estado.
+3. Memoria persistente disponible en:  
+   `C:\Users\xbash\.claude\projects\C--rutinas-local-gen-ai-skills-root-gen-ai-skills\memory\`
+4. Detalle completo de sesión en `docs/sesiones/2026-09-26/`.
 
 ---
 
-## Handoff de sesión — 2026-09-26 (README.md raíz — plan completo)
+## Trabajo pendiente
 
-### Estado al cierre
-
-Archivos modificados en esta sesión (unstaged):
-
-- `README.md` — plan completo ACCION-01 a ACCION-09 ejecutado.
-- `docs/CONTEXT.md`, `docs/DECISIONS.md`, `docs/HANDOFF.md` — actualizados con bloque de esta sesión.
-
-### Pendiente del usuario
-
-- Decidir qué hacer con `docs/eliminar/` (14 archivos, incluyendo `leeme-por-favor.txt`).
-- Decidir si `estado_dominio_skills.md` en `templates/` tiene un uso activo o también va a `eliminar/`.
-- Commit y push cuando sea conveniente.
-
-### Al iniciar la próxima sesión
-
-1. Leer `docs/CONTEXT.md`, `docs/DECISIONS.md` y este archivo.
-2. Ejecutar `git status` para verificar el estado del working tree.
-3. No hacer commit, push ni publicación sin autorización explícita.
-
-### Referencias clave
-
-- `README.md` — actualizado en esta sesión; es el artefacto principal modificado.
-- `AGENTS.md` — guía normativa vigente para agentes.
-- `CONTRIBUTING.md` — convención de dominios y flujo de contribución.
-- `SECURITY.md` — límites de seguridad.
-- `workflows/workflow_skills_dominio_v1.1.md` — workflow vigente.
-- `prompts/GUIA_EJECUCION_PROMPTS.md` — punto de entrada del workflow.
-- `docs/eliminar/` — archivos pendientes de decisión de eliminación.
+| Prioridad | Tarea |
+|---|---|
+| **Media** | Revisar skills internas de `investigacion-general`, `ciencia-ingenieria-datos` e `investigacion-ia` — diagnóstico equivalente al de geoespacial (¿son thin? ¿necesitan enriquecimiento moderado para la tesis?) |
+| **Baja** | Decidir qué hacer con `skills/geoespacial/cr2.md` — vacío, sin propósito asignado |
+| **Baja** | Evaluar `skills/desarrollo-ia/` para la tesis (programación asistida por IA) |
+| **Futura** | Construir el pipeline real de la tesis usando las skills como guía |
 
 ---
 
-## Handoff de sesión — 2026-09-25 (README.md raíz)
+## Commits de referencia
 
-### Estado al cierre
+| Commit | Qué contiene |
+|---|---|
+| `33335cf` | 6 skills geoespaciales enriquecidas |
+| `1aa6a54` | 4 skills nuevas ingenieria-software |
+| `24a85b3` | Contenedor OCI-agnóstico (Podman-first) |
+| `4c73f26` | README lenguaje-castellano completado |
+| `da53c48` | 4 skills enriquecidas (precheck, academia, ops-linux, ops-virtualizacion) + docs/plan.md |
+| `eebc113` | Artefactos de sesión actualizados |
 
-Archivos modificados en esta sesión (unstaged):
+---
 
-- `README.md` — limpieza y actualización según plan ACCION-01 a ACCION-07.
-- `docs/CONTEXT.md`, `docs/DECISIONS.md`, `docs/HANDOFF.md` — actualizados con bloque de esta sesión.
+## Para la tarea de mayor prioridad (investigacion-*)
 
-Archivos no rastreados relevantes (no modificados):
-
-- `prompts/otros/analiza-crea-agents_v0.{1,2,3}.md`
-- `prompts/otros/analiza-crea-readme_v0.{1,2,3}.md`
-- `prompts/otros/analizar-archivos-residuales_v0.{1,2,3}.md`
-- `prompts/otros/auditar-codigo-contra-skill_v0.1.md`
-- `prompts/otros/auditar-estructura-directorios_v0.{1,2}.md`
-- `prompts/otros/diseno_skills_dominio_v0.{1,2}.md`
-- `skills/ingenieria-software/analizar_archivos_residuales.md`
-- `skills/ingenieria-software/auditar_codigo_contra_skill.md`
-- `skills/ingenieria-software/auditar_estructura_directorios.md`
-
-### Al iniciar la próxima sesión
-
-1. Leer `docs/CONTEXT.md`, `docs/DECISIONS.md` y este archivo.
-2. Ejecutar `git status` para verificar el estado actual del working tree.
-3. No hacer commit, push ni publicación sin autorización explícita.
-4. Los archivos no rastreados en `skills/ingenieria-software/` son nuevas skills pendientes de rastrear; evaluar si corresponde hacerles staging.
-
-### Referencias clave
-
-- `README.md` — archivo actualizado en esta sesión.
-- `AGENTS.md` — guía normativa vigente para agentes.
-- `CONTRIBUTING.md` — convención de dominios y flujo de contribución.
-- `SECURITY.md` — límites de seguridad.
-- `workflows/workflow_skills_dominio_v1.1.md` — workflow vigente.
-- `prompts/GUIA_EJECUCION_PROMPTS.md` — punto de entrada del workflow.
+Sugerencia de flujo eficiente:
+1. **Sonnet** lee READMEs + 1-2 skills internas de cada dominio → diagnóstico.
+2. Si necesitan enriquecimiento: Sonnet escribe `docs/plan.md` con sub-planes.
+3. **Haiku** ejecuta el plan (verifica ancla → inserta → no elimina).
+4. **Sonnet** revisa y hace commit/push.
