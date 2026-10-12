@@ -15,6 +15,7 @@ Dominio para diseñar, construir, corregir, revisar, probar, documentar, despleg
 | Refactorizacion | Base + diseno y arquitectura + pruebas y calidad |
 | CI/CD, release o despliegue | Base + DevOps y CI/CD |
 | Revision defensiva | Base + seguridad de codigo + skill tecnica afectada |
+| Auditoría de contratos documentales y gobernanza | Base + `auditar-contratos-proyecto/SKILL.md`; consulta su matriz y plantilla solo al auditar |
 | Entrega o revision final | Checklist, junto con las skills aplicables |
 | Notebook reproducible (pipeline de datos) | Base + notebooks reproducibles |
 | Script o CLI de pipeline de datos | Base + CLI pipeline |
@@ -46,6 +47,7 @@ Carga solo las skills tematicas necesarias. No es necesario cargar todo el domin
 | `notebooks_reproducibles_reglas.md` | Notebooks Jupyter/Quarto como artefactos ejecutables y reproducibles de un pipeline de datos. |
 | `cli_pipeline_reglas.md` | Scripts y herramientas CLI para ejecutar pipelines de datos de forma parametrizable y trazable. |
 | `dashboard_datos_reglas.md` | Dashboards interactivos (Streamlit, Dash, Panel) para explorar y validar datasets. |
+| `auditar-contratos-proyecto/SKILL.md` | Auditoría documental contextual de solo lectura; separada de la auditoría técnica general. |
 | `contenedor_pipeline_reglas.md` | Empaquetado de pipelines de datos con Docker para reproducibilidad de entorno. |
 
 ## Recomendación práctica
