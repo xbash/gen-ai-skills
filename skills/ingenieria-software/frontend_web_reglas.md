@@ -42,3 +42,8 @@ Aplicar cuando la tarea involucre interfaces web, componentes, formularios, esta
 - Prueba de humo de carga de pantalla.
 - Validar flujo principal, estados de carga/error/vacío, formularios y errores de API.
 - Revisar consola del navegador, accesibilidad básica y comportamiento responsive.
+
+## Integración SDLC
+
+- Cada flujo visible debe corresponder a un requisito y criterio de aceptación verificable; no agregar pantallas por conveniencia técnica.
+- Para interfaces de exploración científica, separar representación visual de inferencias o afirmaciones metodológicas.

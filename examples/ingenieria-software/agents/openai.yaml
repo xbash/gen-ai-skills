@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ingeniería de software"
+  short_description: "Enruta tareas de ingeniería al dominio técnico rector"
+  default_prompt: "Usa $ingenieria-software para esta tarea de ingeniería de software y carga solo las reglas pertinentes del dominio rector."

@@ -3,9 +3,7 @@
 ## Alcance
 
 USAR CUANDO: la tarea requiera decidir estructura, responsabilidades, contratos, algoritmos o trade-offs.
-
 NO USAR CUANDO: solo se necesita una correccion local sin impacto de diseno.
-
 Aplicar cuando la tarea involucre arquitectura, diseño de componentes, patrones, modularización, integración entre sistemas, monolitos, microservicios, sistemas distribuidos, decisiones técnicas, algoritmos, estructuras de datos o análisis de complejidad.
 
 ## Contexto y requisitos
@@ -45,3 +43,10 @@ Aplicar cuando la tarea involucre arquitectura, diseño de componentes, patrones
 - Estrategia de pruebas.
 - Plan incremental de implementación.
 - Señales de observabilidad necesarias para operar o diagnosticar.
+
+## Enlace con etapa 03 — Diseño
+
+- Partir de requisitos identificados y priorizados; si no existen, detener el diseño detallado y solicitar la etapa 02.
+- Relacionar cada componente, interfaz, transformación o decisión significativa con `REQ` y un identificador `DIS`.
+- Para pipelines científicos, diseñar procedencia de datos, separación temporal/espacial, manejo de faltantes, versiones de fuentes y prevención de fuga de información antes de codificar.
+- Documentar decisiones reversibles e irreversibles, alternativas y validación de diseño; no confundir arquitectura con resultados experimentales.

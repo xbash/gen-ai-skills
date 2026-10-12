@@ -41,3 +41,10 @@ Aplicar cuando la tarea involucre pruebas unitarias, integración, contrato, reg
 - Datos mínimos de prueba.
 - Riesgos no cubiertos por las pruebas.
 - Qué se verificó manualmente si no existe automatización.
+
+## Enlace con etapa 05 — Pruebas y validación
+
+- Vincular cada caso de prueba (`PRU`) a requisitos (`REQ`) y criterios de aceptación.
+- Distinguir **verificación** (el artefacto cumple especificaciones) de **validación** (responde a la necesidad y, en investigación, la metodología y resultados son defendibles).
+- Reportar ambiente, comando, entradas, salidas, evidencia (`EVI`) y estado `PASÓ/FALLÓ/NO_EJECUTADO/NO_APLICA`. Nunca reportar como ejecutado lo que solo fue propuesto.
+- En modelos predictivos, documentar particiones, baselines, métricas, incertidumbre y riesgo de leakage según el problema; no inventar umbrales de aprobación.

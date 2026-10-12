@@ -1,62 +1,23 @@
-# HANDOFF — Punto de entrada para nueva sesión
+# HANDOFF — Punto de entrada para la siguiente sesión
 
-Fecha de corte: 2026-09-27  
-Repo: `C:\rutinas-local\gen-ai-skills-root\gen-ai-skills`  
-Estado: limpio, `main` sincronizado con `origin/main`  
-Último commit: `e54314c`
+Fecha de corte: 2026-10-11 (America/Santiago)
+Repositorio: `<ruta-local>\gen-ai-skills-root\gen-ai-skills`
 
----
+## Estado actual
 
-## Cómo retomar
+La integración de skills globales `IS-GLOBAL-20261011` está cerrada: IS-01 a IS-06 constan como DONE en `docs/PLAN_integracion_skills_globales_20261011.md`, y el registro de ejecución se encuentra en `logs/planificacion.jsonl`. IS-06B retiró los cuatro directorios heredados autorizados. No hay una acción posterior autorizada en esta sesión.
 
-1. Leer `docs/CONTEXT.md` + `docs/DECISIONS.md` + este archivo.
-2. `git log --oneline -5` y `git status` para verificar estado.
-3. Memoria persistente disponible en:  
-   `C:\Users\xbash\.claude\projects\C--rutinas-local-gen-ai-skills-root-gen-ai-skills\memory\`
-4. Detalle completo de sesión anterior en `docs/sesiones/2026-09-26/`.
+## Al retomar
 
----
+1. Leer este archivo, `docs/CONTEXT.md` y `docs/DECISIONS.md`.
+2. Consultar `git status --short`; el árbol conserva numerosos cambios y eliminaciones previos. No revertir, limpiar ni normalizar cambios sin autorización específica.
+3. Para evidencia y trazabilidad de la migración, consultar el plan y el JSONL indicado arriba.
+4. Si se solicita restaurar las carpetas heredadas, seguir el procedimiento documentado en IS-06B y validar `manifest.json` en `~/.codex\backups\IS-GLOBAL-20261011\IS-06B-backup-20261011T211024\` antes de restaurar.
 
-## Estado del repositorio — todos los dominios de tesis completos
+## Limitaciones abiertas
 
-Todos los dominios relevantes para la tesis han sido enriquecidos. No hay trabajo de enriquecimiento pendiente en el repositorio gen-ai-skills.
+- No se puede descartar que existan consumidores externos no observables de los nombres antiguos.
+- No hay telemetría autoritativa de selección automática de skills en el CLI. La respuesta funcional y los hashes no deben presentarse como prueba de selección automática.
+- La prueba de portabilidad localizó el dominio rector desde un directorio externo, pero no aisló completamente la memoria global.
 
----
-
-## Próxima etapa
-
-El repositorio gen-ai-skills está listo para soportar la tesis. La siguiente actividad esperada es:
-
-**Construir el pipeline real de la tesis** usando las skills como guía:
-- Fase 1: Diagnóstico e inventario de fuentes (CONAF, ERA5, Sentinel-2, VIIRS)
-- Fase 2: Modelo espaciotemporal común (grilla celda-día 200 m)
-- Fase 3: Protocolo de etiquetado de ignición
-- Fase 4: Pipeline reproducible (DVC + MLflow + STAC/COG/GeoParquet)
-- Fase 5: Dataset piloto Las Cabras, O'Higgins
-- Fase 6: Validación (calidad, reproducibilidad, interoperabilidad)
-
----
-
-## Commits de referencia
-
-| Commit | Qué contiene |
-|---|---|
-| `33335cf` | 6 skills geoespaciales enriquecidas |
-| `1aa6a54` | 4 skills nuevas ingenieria-software |
-| `24a85b3` | Contenedor OCI-agnóstico (Podman-first) |
-| `4c73f26` | README lenguaje-castellano completado |
-| `da53c48` | precheck, academia, ops-linux, ops-virtualizacion enriquecidas |
-| `eebc113` | Artefactos de sesión 2026-09-26 actualizados |
-| `fdccd92` | seguridad-appsec (4), seguridad-opsec (3), vision (4), precheck checklist, cr2.md eliminado |
-| `3eb603b` | investigacion-general, investigacion-ia, ciencia-ingenieria-datos enriquecidas |
-| `e54314c` | desarrollo-ia/ml_supervisado — spatial CV y AUPRC para eventos raros |
-
----
-
-## Patrón de trabajo validado
-
-1. **Sonnet** diagnostica y escribe `docs/plan.md` con sub-planes (archivo, ancla, contenido exacto).
-2. **Haiku** lee el archivo, verifica ancla, inserta al final. No elimina ni reescribe.
-3. **Sonnet** revisa, hace commit y push.
-
-Costo de referencia: 5 archivos → ~56K tokens Haiku en ~128 s.
+No se requiere continuar IS-06 ni editar las skills para cerrar la integración ya registrada como DONE.

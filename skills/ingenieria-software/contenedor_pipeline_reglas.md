@@ -141,3 +141,11 @@ __pycache__/
 - Ejecutar con datos de muestra produce el artefacto de salida esperado.
 - La imagen no contiene credenciales, rutas absolutas del host ni datos crudos embebidos.
 - El README documenta el comando exacto para ejecutar el pipeline, indicando el runtime usado en el proyecto.
+
+## Integración SDLC y precisión de reproducibilidad
+
+- Vincular la imagen y procedimiento de ejecución con los requisitos de despliegue y una evidencia de prueba de humo.
+- Fijar versiones y, cuando sea necesario, digests de imágenes base; registrar SBOM o inventario de dependencias según riesgo.
+- Una imagen contenedorizada **no garantiza** resultados idénticos: verificar datos externos, arquitectura de CPU/GPU, drivers, variables de entorno, aleatoriedad y servicios remotos.
+- No asumir que todas las funciones Docker/Podman/Compose son intercambiables sin comprobar versiones y plataforma.
+- Registrar hash o identificador del artefacto y pasos para ejecutar y verificar resultados.

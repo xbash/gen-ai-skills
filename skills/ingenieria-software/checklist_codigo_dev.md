@@ -1,9 +1,7 @@
 # Checklist — Código, scripts y sistemas de software
 
 Usar antes de entregar, corregir o revisar código, consultas, configuraciones, pipelines, servicios o aplicaciones.
-
 USAR CUANDO: se prepare una entrega, una revision final o una correccion con criterios verificables.
-
 NO USAR CUANDO: se encuentre en una exploracion inicial sin cambio ni resultado que validar.
 
 ## Alcance
@@ -61,3 +59,12 @@ NO USAR CUANDO: se encuentre en una exploracion inicial sin cambio ni resultado 
 - [ ] Recomienda pruebas adicionales si el riesgo lo amerita.
 - [ ] Distingue mejoras opcionales de cambios necesarios.
 - [ ] Documenta riesgos no cubiertos por pruebas.
+
+## Puerta de entrega y trazabilidad SDLC
+
+- [ ] Existe referencia a un objetivo y requisito aprobados, o justificación explícita de una corrección urgente.
+- [ ] El cambio identifica decisión de diseño, implementación, prueba y evidencia (identificadores `OBJ/REQ/DIS/IMP/PRU/EVI` o equivalentes).
+- [ ] Se distingue resultado **ejecutado y observado** de resultado **esperado o no verificado**.
+- [ ] Los criterios de aceptación fueron evaluados; los incumplimientos tienen responsables o pendientes.
+- [ ] Si hay investigación, se revisaron supuestos metodológicos pertinentes y límites de generalización.
+- [ ] Se documentó la decisión de avance: `APROBADO`, `CONDICIONADO` o `BLOQUEADO`, con evidencia.

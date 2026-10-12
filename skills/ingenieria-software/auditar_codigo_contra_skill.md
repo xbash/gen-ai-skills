@@ -1,15 +1,12 @@
 ## Objetivo
 
 Revisa el programa ubicado en:
-
 `C:\rutinas-local\gen-ai-app\busca-articulos-incendios\run_literature_review\.py`
 
 y evalúa su alineación con las buenas prácticas definidas en:
-
 `C:\rutinas-local\gen-ai-skills-root\gen-ai-skills\skills\ingenieria-software\instrucciones_base_dev.md`
 
 Usa `instrucciones_base_dev.md` como **fuente de verdad principal**.
-
 El objetivo es identificar incumplimientos, desviaciones, oportunidades de mejora y prácticas correctamente implementadas, sin modificar el código.
 
 ## Alcance del análisis
@@ -50,9 +47,7 @@ Para cada hallazgo:
 ## Restricciones
 
 Trabaja exclusivamente en modo **solo lectura**.
-
 No:
-
 - crees archivos;
 - modifiques archivos;
 - muevas, renombres o elimines archivos o directorios;
@@ -120,3 +115,9 @@ Criterio de prioridad:
 Indica únicamente decisiones que no puedan resolverse de forma objetiva a partir del programa y de `instrucciones_base_dev.md`.
 
 No propongas modificaciones cuando falte evidencia suficiente.
+
+## Integración SDLC — auditoría
+
+- No limitar el diagnóstico a estilo y robustez: si existe documentación de requisitos, evaluar también trazabilidad `OBJ/REQ/DIS/IMP/PRU/EVI`.
+- No inventar requisitos a partir del código ni considerar que pasar el checklist prueba validez científica.
+- La ruta del script del ejemplo inicial es específica de un proyecto: reemplazarla por la ruta real antes de ejecutar la auditoría.

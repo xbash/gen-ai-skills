@@ -78,3 +78,11 @@ Un Makefile tiene la ventaja de registrar dependencias entre pasos y solo re-eje
 - Ejecutar dos veces seguidas no corrompe el resultado.
 - Los errores esperables producen mensaje claro y código de salida distinto de 0.
 - El log registra parámetros y resultado de la ejecución.
+
+## Integración SDLC y límites de reproducibilidad
+
+- Cada CLI debe indicar `OBJ/REQ`, entradas y salidas, criterios de aceptación y evidencia verificable.
+- La reproducibilidad exacta solo puede exigirse bajo condiciones controladas; fuentes remotas cambiantes, paralelismo, dependencias externas y cómputo no determinista pueden impedir igualdad bit a bit. Registrar condiciones y tolerancias justificadas.
+- La elección entre `argparse`, Click y Typer depende de complejidad y dependencias; no incorporar librerías nuevas por defecto.
+- Un Makefile **no** determina por sí solo si se deben reconstruir objetivos: esto requiere reglas de dependencias y artefactos configurados correctamente.
+- Registrar versiones/identificadores de datos, parámetros, software, entorno y, cuando corresponda, semilla aleatoria.

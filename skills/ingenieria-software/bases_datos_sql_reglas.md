@@ -44,3 +44,8 @@ Aplicar cuando la tarea involucre modelamiento de datos, SQL, consultas, migraci
 - Verificar conteos antes/después.
 - Validar restricciones, nulos, duplicados y consistencia.
 - Revisar rendimiento si la consulta puede afectar grandes volúmenes.
+
+## Integración SDLC y datos de investigación
+
+- Vincular esquemas y transformaciones a requisitos; documentar linaje, claves, reglas de integridad y versiones de fuentes cuando aplique.
+- En datos espacio-temporales, verificar sistemas de referencia, granularidad, claves celda-tiempo, duplicados y cambios de cobertura antes de validar resultados.

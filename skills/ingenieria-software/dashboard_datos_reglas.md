@@ -81,3 +81,9 @@ Para un demo académico, las opciones más simples son:
 - La carga de datos está cacheada; no se recarga en cada interacción.
 - Las visualizaciones geoespaciales se renderizan sin exceder el límite de features del cliente.
 - El README del proyecto describe cómo ejecutar el dashboard.
+
+## Integración SDLC
+
+- Justificar cada visualización por una pregunta, requisito o criterio de validación; no crear dashboards como objetivo en sí mismo.
+- Distinguir métricas descriptivas observadas de conclusiones científicas; documentar filtros, agregaciones y limitaciones.
+- Los ejemplos de frameworks, límites de elementos y APIs deben validarse con versiones y documentación vigentes antes de adoptarlos como reglas.

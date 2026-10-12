@@ -1,0 +1,8 @@
+interface:
+  display_name: "Planificar cambios"
+  short_description: "Genera planes de cambios priorizados y verificables"
+  default_prompt: "Usa $planificar-cambios para analizar mi requerimiento y generar un plan de ejecución sin modificar código."
+
+policy:
+  allow_implicit_invocation: true
+  

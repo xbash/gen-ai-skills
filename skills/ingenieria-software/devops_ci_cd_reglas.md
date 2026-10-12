@@ -44,3 +44,9 @@ Aplicar cuando la tarea involucre pipelines CI/CD, builds, empaquetado, desplieg
 - Verificar artefacto generado.
 - Validar logs, pruebas y resultado de despliegue si aplica.
 - Confirmar que no se imprimen secretos ni datos sensibles.
+
+## Enlace con etapa 06 — Despliegue
+
+- Publicar solo artefactos con requisitos y criterios de liberación identificados; registrar versión, commit, configuración y pruebas.
+- Para una tesis, despliegue puede significar **entrega reproducible de un pipeline o notebook**, sin necesidad de un servicio permanente.
+- Registrar evidencia postdespliegue y procedimiento de reversión o recuperación aplicable.

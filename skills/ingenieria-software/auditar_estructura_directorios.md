@@ -966,3 +966,8 @@ en qué orden ejecutar los cambios
 ```
 
 No realices ninguna modificación sobre el proyecto.
+
+## Integración SDLC — mantenimiento
+
+- Antes de migrar rutas, identificar referencias a experimentos, artefactos de datos, notebooks y evidencias académicas; documentar la migración como cambio controlado.
+- Conservar el modo solo lectura del diagnóstico y exigir pruebas de regresión para cualquier ejecución posterior.

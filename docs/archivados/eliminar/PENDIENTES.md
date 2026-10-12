@@ -1,0 +1,112 @@
+# Pendientes
+
+Fecha de consolidacion: 2026-07-19
+
+## Alta prioridad
+
+- Crear o actualizar `AGENTS.md` en la raiz si se quiere que las instrucciones persistentes queden disponibles para futuras sesiones.
+- Decidir el destino de `skills/academia/prompt-tarea1-vision-nlp-redes.md`, actualmente no versionado.
+- Confirmar si se deben guardar las memories propuestas en `docs/BITACORA_CODEX.md`.
+
+## Media prioridad
+
+- Completar o definir el uso de los documentos vacios existentes en `docs/`:
+  - `docs/architecture.md`
+  - `docs/best-practices.md`
+  - `docs/getting-started.md`
+  - `docs/prompt-design.md`
+  - `docs/roadmap.md`
+- Evaluar si corresponde crear una biblioteca separada para prompts concretos, por ejemplo `prompts-academicos/`.
+- Revisar si el listado de dominios del `README.md` raiz esta completo respecto del contenido actual de `skills/`.
+- Revisar consistencia entre los archivos de cada dominio.
+
+## Baja prioridad
+
+- Normalizar nombres de documentos en `docs/`, especialmente `roadmap.md.txt`, si se quiere una extension Markdown convencional.
+- Agregar ejemplos de carga de contexto para ChatGPT, Claude, Gemini, Open WebUI, LM Studio y Ollama si aun no estan cubiertos por `templates/`.
+
+## Problemas encontrados
+
+- `README.md` raiz tuvo caracteres mojibake en el arbol de directorios; fue corregido el 2026-07-23 con un arbol ASCII.
+- `git diff --stat` emitio muchas advertencias de fin de linea: `LF will be replaced by CRLF the next time Git touches it`.
+- No hay `AGENTS.md` en la raiz al momento de esta consolidacion.
+- `docs/architecture.md`, `docs/best-practices.md`, `docs/getting-started.md`, `docs/prompt-design.md` y `docs/roadmap.md` existen con longitud 0.
+- `docs/roadmap.md.txt` aparece eliminado y `docs/roadmap.md` aparece no versionado; pendiente confirmar si es un renombrado intencional.
+
+## Pendiente de verificacion
+
+- Confirmar si la politica deseada es conservar ASCII sin acentos o migrar todo a UTF-8 con acentos correctamente codificados.
+- Confirmar si el archivo no versionado `skills/academia/prompt-tarea1-vision-nlp-redes.md` fue creado intencionalmente y debe versionarse.
+- Confirmar si el contenido de memoria sobre separacion `skills/academia` versus `prompts-academicos/` debe materializarse en el repositorio actual.
+- Confirmar si las memories propuestas deben guardarse como memoria duradera o mantenerse solo en documentacion del repo.
+
+## Actualizacion 2026-07-23
+
+### Alta prioridad
+
+- [ ] Crear `AGENTS.md` raiz si se quiere que las reglas persistentes queden disponibles para futuras sesiones de Codex y agentes equivalentes.
+- [x] Corregir mojibake del arbol de directorios en `README.md`.
+- [x] Agregar `geoespacial` al listado de dominios del `README.md`.
+- [ ] Definir el destino de `skills/geoespacial/stac.md`, actualmente versionado y vacio.
+
+### Media prioridad
+
+- [ ] Completar o eliminar los templates vacios bajo `templates/`, segun su proposito real.
+- [ ] Completar o eliminar placeholders vacios bajo `docs/`.
+- [ ] Revisar si el pendiente antiguo sobre `skills/academia/prompt-tarea1-vision-nlp-redes.md` sigue vigente; no aparece en el `git status --short --branch` ejecutado el 2026-07-23.
+
+### Memories propuestas
+
+- Memory propuesta: En `gen-ai-skills`, antes de editar dominios revisar `git status --short --branch`, porque pueden existir dominios o prompts no versionados iniciados por el usuario.
+- Motivo: Evita sobrescribir o normalizar trabajo en progreso sin confirmacion.
+- Alcance: Este repositorio.
+- Riesgo si se guarda: Bajo; es una regla operacional estable.
+- Alternativa si debe ir mejor en `AGENTS.md` o `docs/`: Debe ir en `AGENTS.md` si se crea; por ahora queda en `docs/PENDIENTES.md`.
+
+- Memory propuesta: `skills/geoespacial/` contiene `stac.md` versionado y vacio; su formalizacion esta pendiente.
+- Motivo: Ayuda a no confundirlo con dominio completo.
+- Alcance: Temporal para este checkout.
+- Riesgo si se guarda: Medio; puede quedar obsoleta cuando el usuario complete o elimine el dominio.
+- Alternativa si debe ir mejor en `AGENTS.md` o `docs/`: Mejor mantenerlo en `docs/CONTEXTO_PROYECTO.md` y `docs/PENDIENTES.md` hasta resolverlo.
+
+## Actualizacion 2026-07-23 - cierre posterior a publicacion
+
+### Pendientes principales
+
+- [ ] Crear `AGENTS.md` raiz si se quiere que las reglas persistentes queden disponibles para futuras sesiones de Codex y agentes equivalentes.
+- [ ] Formalizar `skills/geoespacial/` o eliminar el placeholder si no corresponde mantenerlo.
+- [ ] Si se formaliza `geoespacial`, crear al menos un `README.md` de dominio y una instruccion base antes de presentarlo como skill usable.
+- [ ] Completar o eliminar placeholders vacios en `docs/` y `templates/`.
+- [x] Definir politica de codificacion y fin de linea: UTF-8 sin BOM y LF; ver `.gitattributes` y `.editorconfig`.
+
+## Actualizacion 2026-09-09
+
+- [x] Retirar la convencion de packs compactos `chatgpt` tras eliminar esos directorios.
+- [x] Separar los paquetes nativos de Codex en `examples/gen-ia-codex/` y documentar esa ubicacion.
+- [x] Incorporar `academia` e `investigacion-general` al indice raiz.
+- [x] Declarar `geoespacial` como dominio en preparacion y preservar sus placeholders sin renombrarlos ni eliminarlos.
+- [ ] Completar y validar el contenido de `geoespacial` antes de declararlo utilizable.
+
+### Memories propuestas pendientes de confirmacion
+
+- Memory propuesta: En `gen-ai-skills`, cuando se agregue un dominio bajo `skills/<dominio>/`, actualizar tambien el listado de dominios del `README.md` y evitar dejarlo como usable si solo contiene placeholders vacios.
+- Motivo: Evita inconsistencias de navegacion y expectativas falsas sobre dominios incompletos.
+- Alcance: Este repositorio.
+- Riesgo si se guarda: Bajo; puede quedar obsoleta solo si se automatiza el indice de dominios.
+- Alternativa si debe ir mejor en `AGENTS.md` o `docs/`: Debe ir en `AGENTS.md` como regla operativa si se crea ese archivo; por ahora queda aqui.
+
+## Corte 2026-09-09
+
+- Refactorizacion de `ingenieria-software` completada en dos iteraciones; falta validacion funcional con prompts.
+- Quedan dos warnings de linea en blanco final reportados por `git diff --check`.
+- Una release posterior a `v0.2` queda pendiente y requiere solicitud explicita.
+- Los pendientes de `geoespacial` y placeholders generales siguen vigentes; la politica de codificacion/EOL ya fue definida el 2026-09-09.
+
+## Actualizacion 2026-09-09 - continuidad de refactorizacion
+
+- [x] Registrar nombres descriptivos como convencion canonica.
+- [x] Registrar eliminacion intencional de `pack-chatgpt/`.
+- [x] Consolidar `docs/CONTEXT.md`, `docs/DECISIONS.md` y `docs/HANDOFF.md`.
+- [ ] Ejecutar validacion funcional con LLM para los dominios refactorizados.
+- [ ] Medir reduccion efectiva de contexto y tokens antes/despues.
+- [ ] Crear una release posterior solo si el usuario la solicita.

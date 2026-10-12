@@ -38,3 +38,8 @@ Aplicar cuando la tarea involucre servicios backend, APIs REST/GraphQL/gRPC, aut
 - Prueba de humo del endpoint, worker o proceso.
 - Casos básicos: entrada válida, entrada inválida, error esperado, permisos insuficientes y dependencia externa fallida si aplica.
 - Verificar logs, manejo de errores, contrato de respuesta y ausencia de secretos en salidas.
+
+## Integración SDLC
+
+- Asociar cada endpoint, worker o integración a requisitos aprobados y contratos verificables.
+- Registrar decisiones de diseño (`DIS`) y casos de prueba (`PRU`) antes de declarar completada la implementación (`IMP`).

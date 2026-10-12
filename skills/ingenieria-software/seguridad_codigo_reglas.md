@@ -38,3 +38,8 @@ Aplicar cuando la tarea involucre validación de entradas, autenticación, autor
 - Revisión de logs y mensajes de error.
 - Verificación de secretos, variables de entorno y configuración.
 - Revisión de dependencias si el cambio introduce o toca paquetes.
+
+## Integración SDLC
+
+- Identificar requisitos de confidencialidad, integridad, disponibilidad y cumplimiento desde planificación/requisitos cuando correspondan.
+- Vincular controles de seguridad con riesgos, pruebas negativas y evidencias; evitar controles sin amenaza o justificación identificada.

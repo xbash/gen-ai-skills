@@ -60,3 +60,8 @@ Entrega:
 4. casos ambiguos o que requieren revisión humana.
 
 No ejecutes ninguna acción propuesta.
+
+## Integración SDLC — mantenimiento
+
+- Antes de proponer eliminación, comprobar si el archivo es evidencia experimental, insumo versionado, decisión académica o artefacto exigido por requisitos.
+- Enlazar cada limpieza propuesta a una solicitud de cambio y prueba de no regresión; conservar solo lectura hasta aprobación explícita.

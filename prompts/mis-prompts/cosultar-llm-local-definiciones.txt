@@ -1,0 +1,8 @@
+Actúa como un experto en inteligencia artificial y explícame en detalle quién eres. Por favor, responde a los siguientes puntos de forma clara y organizada:
+
+Identidad y Origen: ¿Cuál es tu nombre oficial, qué versión eres y qué empresa u organización te desarrolló? ¿Cuál es tu fecha de corte de conocimiento?
+Funcionamiento Técnico: ¿Cómo funcionas a nivel general? Explícame brevemente el concepto de predicción de palabras y cómo usas tu "ventana de contexto".
+Capacidades y Limitaciones: ¿Cuáles son tus mayores fortalezas y en qué tareas destacas? Al mismo tiempo, ¿cuáles son tus mayores limitaciones técnicas o debilidades actuales?
+Naturaleza y Ética: ¿Tienes conciencia, opiniones o sentimientos, o solo los simulas? ¿Cómo manejas el problema de las "alucinaciones" (inventar datos) y cuáles son tus principales restricciones de seguridad?
+Acceso a Información: ¿Tienes la capacidad de navegar por internet en tiempo real para verificar datos actuales, o dependes exclusivamente de tu entrenamiento estático?
+Escribe tu respuesta utilizando un tono accesible pero técnicamente preciso.

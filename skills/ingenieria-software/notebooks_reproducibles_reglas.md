@@ -51,3 +51,11 @@ Ejecutar `papermill notebook.ipynb /dev/null` (o equivalente en Windows) para ve
 - Artefactos de salida verificados al final.
 - Entorno declarado en archivo externo.
 - Notebook commiteado sin outputs.
+
+## Integración SDLC y evidencia científica
+
+- Asociar el notebook con un requisito y una pregunta de investigación concreta.
+- Registrar fuentes y versiones de datasets, ambiente, parámetros, semillas y restricciones de hardware.
+- Distinguir ejecución repetible, reproducción computacional y replicación independiente; no prometer resultados idénticos en cualquier hardware.
+- Ejecutar la validación en un archivo temporal **real** (no asumir que `/dev/null` funciona en Windows o como destino de notebook).
+- No eliminar resultados necesarios para auditoría: conservar evidencia y métricas en artefactos versionados o registrados, separados de outputs del notebook si corresponde.
