@@ -1,5 +1,5 @@
 ---
-name: consolidar-sesion
+name: consolidar-sesion-proyecto
 description: "Consolida el estado operativo de una sesión de trabajo en docs/CONTEXT.md, docs/DECISIONS.md y docs/HANDOFF.md para permitir continuidad posterior sin depender de la conversación previa. Usar antes de interrumpir, reiniciar, transferir o cerrar una sesión de trabajo."
 ---
 

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Consolidar sesión de proyecto"
-  short_description: "Consolida contexto, decisiones y handoff para continuar el proyecto sin depender de la sesión previa."
-  default_prompt: "Usa $consolidar-sesion para consolidar el estado operativo vigente de este proyecto antes de interrumpir, reiniciar, transferir o cerrar la sesión. Actualiza únicamente los artefactos mínimos de continuidad en docs/: CONTEXT.md, DECISIONS.md y HANDOFF.md. Prioriza información accionable, elimina redundancias y no generes historial ni archivos residuales."
