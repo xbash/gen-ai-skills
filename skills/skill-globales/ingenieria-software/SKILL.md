@@ -11,7 +11,7 @@ Actuar como adaptador de activación y flujo para el dominio técnico rector `sk
 
 ## Selección progresiva del dominio rector
 
-1. Consulta `../../skills/ingenieria-software/README.md` para identificar los archivos aplicables. Si se usa desde una instalación global, busca el dominio `skills/ingenieria-software/` disponible en el proyecto o contexto actual.
+1. Busca el dominio `skills/ingenieria-software/` en la raíz del proyecto o en el contexto actual y consulta su `README.md` para identificar los archivos aplicables. No uses rutas relativas desde la ubicación de esta skill: varía según el agente y la instalación.
 2. Carga `instrucciones_base_dev.md` como base cuando esté disponible.
 3. Selecciona solo el módulo pertinente: arquitectura, backend/API, frontend, bases de datos, pruebas/calidad, DevOps/CI/CD, seguridad, notebooks, CLI, dashboards o contenedores.
 4. Consulta `ciclo-vida/00_orquestador_sdlc.md` y la etapa aplicable solo para trabajo formal por etapas; no impongas el ciclo completo a una corrección localizada.

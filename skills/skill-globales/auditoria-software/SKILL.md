@@ -23,6 +23,8 @@ Usa `skills/ingenieria-software/README.md` como router y `instrucciones_base_dev
 | Pruebas, evidencia y trazabilidad SDLC | Checklist + pruebas y calidad; etapa SDLC pertinente cuando corresponda |
 | Notebooks, CLI, dashboards y contenedores de pipelines | Módulo especializado correspondiente + checklist |
 
+Para revisar la pertinencia y coherencia de los documentos y archivos de gobernanza del proyecto, usa `auditar-contratos-proyecto`; esta skill no los evalúa.
+
 No copies a esta skill el detalle de criterios técnicos de esas fuentes. Si una regla aplicable no aparece en la fuente disponible, identifícala como limitación o pregunta abierta en vez de inventarla.
 
 ## Flujo de auditoría

@@ -11,6 +11,7 @@ Este archivo define reglas persistentes para agentes. No es un README, bitácora
 Consulta solo lo necesario para la tarea:
 
 - `README.md`: propósito, estructura y uso de la biblioteca.
+- `skills/skill-globales/README.md`: skills globales, flujo de sincronización y rutas por agente.
 - `CONTRIBUTING.md`: reglas de contribución y cambio de dominios.
 - `SECURITY.md`: límites de seguridad y tratamiento de contenido externo.
 - `workflows/workflow_skills_dominio_v1.1.md`: flujo para auditar o evolucionar un dominio bajo `skills/`.
@@ -25,6 +26,7 @@ Directorios raíz y su función:
 | Directorio | Función |
 |---|---|
 | `skills/` | Dominios de instrucciones reutilizables; unidad organizativa principal |
+| `skills/skill-globales/` | Skills que todo agente debe tener (fuente única); se distribuyen con `sincronizar_skills_en_proyecto.ps1` |
 | `prompts/` | Prompts operacionales del workflow, organizados por fase (`*.md` numerados) y por dominio (`dominios/<dominio>/`) |
 | `workflows/` | Workflows documentados del proceso de mantenimiento |
 | `templates/` | Plantillas de carga adaptadas por plataforma |
@@ -32,7 +34,7 @@ Directorios raíz y su función:
 | `examples/` | Paquetes de integración de referencia para plataformas específicas |
 | `checklists/` | Reservado; sin contenido actualmente |
 | `agents/` | Reservado para uso futuro; sin contenido actualmente |
-| `.agents/` | Reservado para uso futuro; sin contenido actualmente |
+| `.agents/`, `.claude/`, `.gemini/` | Copias de `skills/skill-globales/` para Codex y Gemini CLI, Claude Code y Gemini CLI respectivamente; no se editan a mano |
 | `.codex/` | Reservado para uso futuro; sin contenido actualmente |
 
 ## Invariantes de trabajo
@@ -94,7 +96,9 @@ Antes de pedir razonamiento a un modelo, prefiere herramientas deterministas cua
 
 ## Calidad y validación
 
-- Mantén texto en UTF-8 sin BOM, LF, newline final y sin espacios finales, conforme a `.editorconfig` y `.gitattributes`.
+- Mantén texto en UTF-8 sin BOM, LF (siempre, nunca CRLF), newline final y sin espacios finales, conforme a `.editorconfig` y `.gitattributes`.
+- Las skills globales son agnósticas a la tecnología: su contenido no nombra proveedores ni herramientas concretas; el mapeo de rutas por herramienta vive solo en `skills/skill-globales/README.md` y en el script de sincronización.
+- Edita las skills globales solo en `skills/skill-globales/` y luego sincroniza las copias de `.agents/`, `.claude/` y `.gemini/` con `skills/skill-globales/sincronizar_skills_en_proyecto.ps1`.
 - Antes y después de un cambio, revisa el alcance con Git.
 - Ejecuta `git diff --check` para cambios rastreados y verifica rutas, referencias y criterios de aceptación aplicables.
 - Ejecuta validaciones específicas solo cuando estén documentadas para el artefacto afectado o definidas en el plan.

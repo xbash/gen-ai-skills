@@ -40,6 +40,8 @@ Solo se copian los directorios que contienen `SKILL.md`. El script no borra skil
 | Codex | `.agents/skills/` | `~/.agents/skills/` |
 | Gemini CLI | `.gemini/skills/` o `.agents/skills/` | `~/.gemini/skills/` o `~/.agents/skills/` |
 
+Las skills (`SKILL.md`) son agnósticas a la tecnología y no nombran herramientas concretas; solo este README y el script de sincronización mapean rutas por herramienta.
+
 Con el mismo nombre en varios niveles, cada agente resuelve distinto (Claude Code: usuario sobre proyecto; Gemini CLI: proyecto sobre usuario; Codex: no fusiona y muestra ambas). Evita nombres repetidos.
 
 ## Agentes sin soporte de skills

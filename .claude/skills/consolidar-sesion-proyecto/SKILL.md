@@ -18,7 +18,7 @@ Esta skill puede utilizarse cuando:
 - se cambie de agente o modelo;
 - se transfiera el trabajo a otro entorno;
 - se realice una pausa;
-- se cierre VS Code, Codex, terminales o navegador;
+- se cierre el editor, el agente, las terminales o el navegador;
 - finalice la jornada de trabajo.
 
 El resultado debe ser el mismo independientemente de cuánto tiempo transcurra antes de retomar el proyecto.
@@ -54,6 +54,7 @@ Los artefactos se crean si faltan y se actualizan si existen. No se crean otros 
 - Objetivo, alcance y componentes vigentes; estructura relevante del proyecto.
 - Estado técnico actual: qué existe y funciona, con la evidencia que lo respalda (archivos, pruebas, resultados).
 - Límites y restricciones permanentes que condicionan el trabajo.
+- Fecha de corte (fecha de la consolidación) y, si hay Git, el commit o estado del árbol al que corresponde.
 - No contiene tareas pendientes ni historial de la sesión.
 
 ### `docs/DECISIONS.md` — qué quedó decidido
@@ -65,21 +66,23 @@ Los artefactos se crean si faltan y se actualizan si existen. No se crean otros 
 
 ### `docs/HANDOFF.md` — cómo retomar
 
+- Fecha de corte y, si hay Git, el commit o estado del árbol al cierre; permite a quien retoma detectar si el documento quedó desactualizado.
 - Estado verificable al cierre: último hito alcanzado y la evidencia que lo sustenta.
 - Ruta de lectura mínima para retomar (qué documentos leer y en qué orden).
 - Próxima acción: una lista corta, priorizada y ejecutable, con dependencias y criterio de cierre cuando existan.
-- Riesgos, bloqueos y discrepancias abiertas; qué falta verificar.
+- Riesgos, bloqueos y discrepancias abiertas; qué falta verificar. Si el proyecto tiene `docs/RISKS.md`, los riesgos se remiten a ese archivo en lugar de repetirlos aquí.
 - Pendientes de decisión de quien dirige el proyecto, separados de las tareas de ejecución.
 - Debe poder leerse sola: quien retoma no necesita la conversación anterior.
 
 ## Procedimiento
 
-1. **Ubicar el proyecto.** Determinar la raíz, leer las instrucciones vigentes del proyecto (por ejemplo `AGENTS.md` o `CLAUDE.md`) y los tres artefactos actuales, si existen.
+1. **Ubicar el proyecto.** Determinar la raíz, leer las instrucciones vigentes del proyecto (por ejemplo `AGENTS.md` y los archivos de instrucciones propios de cada herramienta) y los tres artefactos actuales, si existen.
 2. **Reunir evidencia.** Revisar el estado real: archivos creados o modificados durante la sesión, resultados de pruebas o ejecuciones, estado de Git si existe. Ejecutar sólo lo necesario y sin efectos secundarios; si se corren pruebas, informar el resultado exacto.
 3. **Clasificar lo ocurrido** en: decisión aprobada, propuesta sin aprobar, cambio realizado, resultado verificado, hecho observado y afirmación no verificada. Sólo lo que afecta el trabajo futuro pasa a los artefactos.
 4. **Actualizar los tres artefactos** con las reglas de la sección siguiente.
 5. **Revisar coherencia.** Comprobar que cifras, nombres de archivos y referencias cruzadas coinciden entre los tres artefactos y con la evidencia; corregir las discrepancias o dejarlas declaradas como pendientes.
-6. **Informar** con el formato de la sección «Salida».
+6. **Detectar otros rectores afectados.** Si la sesión cambió algo que describe otro archivo rector (resultados de evaluación, fuentes de datos, modelo, riesgos, versión, estado en `README.md`, reglas de `AGENTS.md`), no editarlo: anotarlo para la sección «Salida».
+7. **Informar** con el formato de la sección «Salida».
 
 ## Reglas de edición
 
@@ -94,7 +97,7 @@ Los artefactos se crean si faltan y se actualizan si existen. No se crean otros 
 
 ## Restricciones
 
-- Se escriben **solamente** `docs/CONTEXT.md`, `docs/DECISIONS.md` y `docs/HANDOFF.md`.
+- Se escriben **solamente** `docs/CONTEXT.md`, `docs/DECISIONS.md` y `docs/HANDOFF.md`. Los demás archivos rectores (`README.md`, `AGENTS.md`, `VERSION`, `CHANGELOG.md`, `docs/EVALUATION.md`, `docs/DATA.md`, `docs/MODEL.md`, `docs/RISKS.md`, entre otros) no se modifican: su actualización requiere autorización propia.
 - No se implementan cambios del proyecto durante la consolidación (código, datos, configuración).
 - No se hacen commits, envíos ni borrados; no se instalan paquetes.
 - No se presenta como hecho lo que no se verificó, ni como decisión lo que no se aprobó.
@@ -110,6 +113,7 @@ Responder, en español y de forma breve, con:
 3. Estado resultante en una línea y la próxima acción recomendada.
 4. Pendientes de decisión de quien dirige el proyecto.
 5. Discrepancias o límites encontrados al consolidar.
+6. Rectores posiblemente desactualizados: archivo, qué cambió en la sesión y qué habría que revisar, para que quien dirige el proyecto autorice su actualización. Omitir si no hay ninguno.
 
 ## Criterio de finalización
 

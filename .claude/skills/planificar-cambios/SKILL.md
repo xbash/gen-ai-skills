@@ -27,9 +27,9 @@ El usuario sólo necesita proporcionar el requerimiento. Obtener el contexto res
 
 ## Fuentes de verdad
 
-1. Leer AGENTS.md global y las instrucciones aplicables del repositorio y componente.
+1. Leer AGENTS.md global y las instrucciones aplicables del repositorio y componente. Si existen archivos de instrucciones propios de cada herramienta, leerlos también y señalar si contradicen a `AGENTS.md`.
 2. Inspeccionar documentación, contratos, configuración, código, dependencias y pruebas relacionadas.
-3. Identificar decisiones previamente aprobadas.
+3. Identificar decisiones previamente aprobadas, leyendo `docs/DECISIONS.md` y `docs/HANDOFF.md` cuando existan.
 4. Preservar identificadores de requisitos, incidencias y decisiones.
 5. No inventar archivos, comportamientos, requisitos, APIs ni resultados.
 6. Documentar contradicciones entre fuentes antes de proponer cambios.
@@ -147,7 +147,7 @@ Si una acción no cumple, refinarla o bloquearla.
 
 ## Persistencia
 
-Respetar primero las rutas, identificadores, schemas y convenciones establecidas por el proyecto.
+Respetar primero las rutas, identificadores, schemas y convenciones establecidas por el proyecto, salvo el nombre del plan rector, que es un estándar fijo (ver «Plan canónico»).
 
 Cuando no exista una convención específica, utilizar:
 
@@ -159,6 +159,14 @@ En proyectos con varios componentes, ubicar los artefactos según la convención
 Para cambios transversales, utilizar la ubicación común definida por el proyecto o, en su ausencia, docs/ y logs/ de la raíz.
 
 No sobrescribir planes no relacionados. Si existe un plan previo, comprobar su alcance y conservar su información vigente.
+
+### Plan canónico
+
+- El plan rector de un proyecto se llama siempre `PLAN.md`, con ese nombre exacto, ubicado en `docs/` (o en el `docs/` del componente afectado). Todo archivo Markdown que esta skill cree lleva nombre en inglés.
+- `PLAN.md` manda sobre cualquier otro archivo con función de plan. Si hay contradicción, prevalece `PLAN.md` y se declara la discrepancia.
+- Si existen otros archivos con función de plan, sea cual sea su nombre (`PLANNING.md`, `plan.md`, `PLAN_<tema>.md`, nombres en español u otros), no se tratan como canónicos. Proponer como acción `REQUIRES_CONFIRMATION` renombrarlos con un nombre en inglés que identifique su tema (por ejemplo `<topic>-plan.md`) o consolidarlos en `PLAN.md`. No renombrar ni reescribir sin autorización.
+- Si el plan vigente del proyecto tiene otro nombre, proponer renombrarlo a `PLAN.md` como acción `REQUIRES_CONFIRMATION` y, mientras tanto, declarar cuál se usó.
+- Si las instrucciones del proyecto fijan otro nombre para el plan, declarar la discrepancia con este estándar; no ignorar ninguna de las dos fuentes.
 
 El registro JSONL debe cumplir todos los campos y reglas exigidos por el proyecto. Cuando no exista un contrato local, incluir, cuando esté disponible:
 - timestamp
@@ -207,4 +215,3 @@ Responder brevemente con:
 - Estado global.
 
 No reproducir el plan completo en la conversación.
-  
