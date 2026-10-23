@@ -83,6 +83,7 @@ Los dominios principales viven en `skills/`:
 - `precheck-publica-repo`
 - `seguridad-appsec`
 - `seguridad-opsec`
+- `skill-globales` (skills que todo agente debe tener; ver [Skills globales](#skills-globales))
 - `vision-por-computadora`
 
 ## Templates por plataforma
