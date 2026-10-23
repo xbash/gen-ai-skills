@@ -22,6 +22,7 @@ Fecha de corte: 2026-10-23 (America/Santiago)
 | SG-06 | aprobada | 2026-10-23 | Los archivos Markdown rectores llevan nombre en inglés. `PLAN.md` es siempre el plan canónico y manda sobre otros planes, que se renombran o consolidan con confirmación. `auditar-contratos-proyecto` lo evalúa. | Coherencia con `CONTEXT`, `DECISIONS` y `HANDOFF`. |
 | SG-07 | aprobada | 2026-10-23 | No se modifica por ahora la dependencia de `ingenieria-software` y `auditoria-software` respecto del dominio `skills/ingenieria-software/`. | El proyecto que lo motivaba aún no se modificará. |
 | SG-08 | aprobada | 2026-10-23 | `alinear-rectores-proyecto` es una skill separada de `consolidar-sesion-proyecto`: la primera detecta y alinea los demás rectores (modo detectar o aplicar con autorización); la segunda escribe solo `CONTEXT`, `DECISIONS` y `HANDOFF`. El orden de cierre consta en la sección «Flujo de cierre» de `AGENTS.md`: sincronizar, alinear rectores, commit, consolidar, commit aparte, precheck y push. | Cada skill responde a un caso distinto; mezclarlas perjudicaría el resto del flujo. |
+| SG-09 | aprobada | 2026-10-23 | `~/.codex/skills/` no se elimina hasta nuevo aviso. | Evitar pérdidas; sus copias antiguas conviven con `~/.agents/skills/`. |
 
 ## Propuestas sin aprobación explícita (el usuario no las contradijo)
 

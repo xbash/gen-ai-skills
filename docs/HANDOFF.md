@@ -1,11 +1,11 @@
 # HANDOFF — Punto de entrada para la siguiente sesión
 
 Fecha de corte: 2026-10-23 (America/Santiago)
-Repositorio: `<ruta-local>\gen-ai-skills-root\gen-ai-skills`. Commit de referencia: `4f098d6` (`main`); esta consolidación se commitea aparte.
+Repositorio: `<ruta-local>\gen-ai-skills-root\gen-ai-skills`. Commit de referencia: `fdbe0a5` (`main`, un commit por delante de `origin/main`); esta consolidación se commitea aparte.
 
 ## Estado actual
 
-Las skills globales quedaron reorganizadas y publicadas: fuente única en `skills/skill-globales/` (8 skills, incluida la nueva `alinear-rectores-proyecto`), copias versionadas por agente, script `sincronizar_skills_en_proyecto.ps1`, LF con `.editorconfig` y `.gitattributes`, contenido agnóstico a proveedores, nombres en inglés y `PLAN.md` como plan canónico. `AGENTS.md` incluye el «Flujo de cierre». Los rectores `README.md`, `CHANGELOG.md`, `examples/README.md` y el README de `precheck-publica-repo` se alinearon con ese cambio (commit `4f098d6`). Las decisiones constan en [DECISIONS.md](DECISIONS.md) (SG-01 a SG-08). Evidencia en [CONTEXT.md](CONTEXT.md).
+Las skills globales quedaron reorganizadas: fuente única en `skills/skill-globales/` (8 skills, incluida `alinear-rectores-proyecto`), copias versionadas por agente, script `sincronizar_skills_en_proyecto.ps1`, LF con `.editorconfig` y `.gitattributes`, contenido agnóstico a proveedores, nombres en inglés y `PLAN.md` como plan canónico. `AGENTS.md` incluye el «Flujo de cierre». Los rectores `README.md`, `CHANGELOG.md`, `examples/README.md` y el README de `precheck-publica-repo` están alineados (commits `4f098d6` y `fdbe0a5`). El perfil de usuario (`~/.claude/skills`, `~/.agents/skills`) coincide con el repositorio. Decisiones en [DECISIONS.md](DECISIONS.md) (SG-01 a SG-09); evidencia en [CONTEXT.md](CONTEXT.md).
 
 ## Al retomar
 
@@ -16,15 +16,14 @@ Las skills globales quedaron reorganizadas y publicadas: fuente única en `skill
 
 ## Próximas acciones
 
-1. Probar `alinear-rectores-proyecto` en modo detectar sobre el proyecto `mgtr-ti-root`, sin modificar archivos. Cierre: plan `ALR-NN` que cubra los README de cada fase y los documentos `FLUJOS_ACTUALIZACION.md` y `REQUIREMENTS.md` de ese proyecto, o la lista de lo que la búsqueda no alcanzó.
-2. Resincronizar el perfil de usuario con `skills/skill-globales/sincronizar_skills_en_proyecto.ps1 -Force` (destinos `~/.claude/skills` y `~/.agents/skills`). Requiere autorización del usuario. Cierre: una segunda ejecución sin diferencias.
+1. Hacer el commit de esta consolidación y, tras `precheck-publica-repo`, el push de `main` (faltan `fdbe0a5` y la consolidación). Requiere solicitud explícita. Cierre: `main` y `origin/main` en el mismo commit.
+2. El usuario probará manualmente el flujo nuevo (`alinear-rectores-proyecto` y `consolidar-sesion-proyecto`) en el proyecto `mgtr-ti-root`. Cierre: resultado de esa prueba; si la skill no alcanza los README de cada fase, `FLUJOS_ACTUALIZACION.md` o `REQUIREMENTS.md`, ajustarla.
 3. Verificación funcional: abrir una sesión de cada agente en este repositorio y comprobar que lista o carga las skills desde su ruta. Cierre: resultado observado por agente.
-4. Tras el punto 3, decidir qué hacer con las copias antiguas de `~/.codex/skills`.
 
 ## Riesgos, bloqueos y discrepancias
 
-- `alinear-rectores-proyecto` no se ha probado. Su búsqueda por referencias puede omitir un documento que describa un cambio sin citar su ruta, nombre o identificador.
-- El perfil de usuario y `~/.codex/skills` pueden estar desactualizados; no se re-verificó hoy.
+- Observado el 2026-10-23: una skill invocada en esta sesión mostró el texto anterior a ediciones hechas durante la misma sesión, aunque el archivo en disco ya era el nuevo. Causa probable, no verificada: el agente carga las skills al iniciar la sesión. Tras editar una skill conviene reiniciar la sesión antes de usarla.
+- `alinear-rectores-proyecto` no se ha probado en un proyecto con componentes. Su búsqueda por referencias puede omitir un documento que describa un cambio sin citar su ruta, nombre o identificador; ya omitió la lista de dominios del README.
 - Las rutas por agente se verificaron en documentación, no por ejecución. Las rutas de Gemini CLI bajo el reemplazo anunciado de ese CLI no están verificadas.
 - Con `~/.codex/skills` y `~/.agents/skills` coexistiendo, Codex puede mostrar skills duplicadas.
 - Si se edita una skill sin resincronizar, la fuente y las tres copias divergen.
@@ -33,7 +32,7 @@ Las skills globales quedaron reorganizadas y publicadas: fuente única en `skill
 
 ## Pendientes de decisión del usuario
 
-- Autorizar la resincronización del perfil de usuario (próxima acción 2).
-- Qué hacer con `~/.codex/skills`.
+- Si `skills/skill-globales/` es un dominio sujeto a las reglas de `CONTRIBUTING.md` y `AGENTS.md` sobre `SKILL.md`, o un caso aparte exento (hallazgo ALR-01).
 - Cuándo retomar la dependencia de `ingenieria-software` y `auditoria-software` respecto del dominio `skills/ingenieria-software/` (diferida en SG-07).
+- Cuándo y cómo retirar `~/.codex/skills` (no se elimina hasta nuevo aviso, SG-09).
 - El proyecto `resumir-contenidos` está fuera de este repositorio y sin Git; su decisión de inicializarlo consta en su propio `HANDOFF.md`.
