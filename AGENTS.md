@@ -17,7 +17,7 @@ Consulta solo lo necesario para la tarea:
 - `workflows/workflow_skills_dominio_v1.1.md`: flujo para auditar o evolucionar un dominio bajo `skills/`.
 - `prompts/GUIA_EJECUCION_PROMPTS.md`: punto de entrada operacional del workflow; mapa de prompts por fase, modelo y esfuerzo.
 
-Los archivos bajo `docs/` que contienen contexto, handoff, auditorías, planes, decisiones, pendientes o bitácoras son históricos u operacionales. Úsalos solo cuando la tarea requiera explícitamente ese contexto; no los conviertas en reglas permanentes ni los actualices por defecto.
+Los archivos bajo `docs/` que contienen contexto, handoff, auditorías, planes, decisiones, pendientes o bitácoras son históricos u operacionales. `docs/archivados/` es material histórico local: está en `.gitignore` y no existe en un clon nuevo. Úsalos solo cuando la tarea requiera explícitamente ese contexto; no los conviertas en reglas permanentes ni los actualices por defecto.
 
 ## Estructura del repositorio
 
@@ -30,7 +30,7 @@ Directorios raíz y su función:
 | `prompts/` | Prompts operacionales del workflow, organizados por fase (`*.md` numerados) y por dominio (`dominios/<dominio>/`) |
 | `workflows/` | Workflows documentados del proceso de mantenimiento |
 | `templates/` | Plantillas de carga adaptadas por plataforma |
-| `docs/` | Auditorías, planes, estados y reportes por dominio; contenido histórico y operacional |
+| `docs/` | Documentos de continuidad (`CONTEXT.md`, `DECISIONS.md`, `HANDOFF.md`); `docs/archivados/` es histórico local y no se versiona |
 | `examples/` | Paquetes de integración de referencia para plataformas específicas |
 | `checklists/` | Reservado; sin contenido actualmente |
 | `agents/` | Reservado para uso futuro; sin contenido actualmente |
