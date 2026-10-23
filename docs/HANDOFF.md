@@ -1,22 +1,22 @@
 # HANDOFF — Punto de entrada para la siguiente sesión
 
 Fecha de corte: 2026-10-23 (America/Santiago)
-Repositorio: `<ruta-local>\gen-ai-skills-root\gen-ai-skills`. Commit de referencia: `fdbe0a5` (`main`, un commit por delante de `origin/main`); esta consolidación se commitea aparte.
+Repositorio: `<ruta-local>\gen-ai-skills-root\gen-ai-skills`. Commit de referencia: `234eb2a` (`main`, dos commits por delante de `origin/main`); los cambios posteriores y esta consolidación se commitean aparte.
 
 ## Estado actual
 
-Las skills globales quedaron reorganizadas: fuente única en `skills/skill-globales/` (8 skills, incluida `alinear-rectores-proyecto`), copias versionadas por agente, script `sincronizar_skills_en_proyecto.ps1`, LF con `.editorconfig` y `.gitattributes`, contenido agnóstico a proveedores, nombres en inglés y `PLAN.md` como plan canónico. `AGENTS.md` incluye el «Flujo de cierre». Los rectores `README.md`, `CHANGELOG.md`, `examples/README.md` y el README de `precheck-publica-repo` están alineados (commits `4f098d6` y `fdbe0a5`). El perfil de usuario (`~/.claude/skills`, `~/.agents/skills`) coincide con el repositorio. Decisiones en [DECISIONS.md](DECISIONS.md) (SG-01 a SG-09); evidencia en [CONTEXT.md](CONTEXT.md).
+Las skills globales quedaron reorganizadas: fuente única en `skills/skill-globales/` (8 skills, incluida `alinear-rectores-proyecto`), copias versionadas por agente, script `sincronizar_skills_en_proyecto.ps1`, LF con `.editorconfig` y `.gitattributes`, contenido agnóstico a proveedores, nombres en inglés y `PLAN.md` como plan canónico. `AGENTS.md` incluye el «Flujo de cierre». Los rectores `README.md`, `CHANGELOG.md`, `examples/README.md` y el README de `precheck-publica-repo` están alineados (commits `4f098d6` y `fdbe0a5`). El perfil de usuario (`~/.claude/skills`, `~/.agents/skills`) coincide con el repositorio. Tras el precheck de publicación se creó el `.gitignore`, se depuraron datos personales y `docs/archivados/` dejó de versionarse (SG-10). Decisiones en [DECISIONS.md](DECISIONS.md) (SG-01 a SG-10); evidencia en [CONTEXT.md](CONTEXT.md).
 
 ## Al retomar
 
 1. Leer este archivo, `docs/CONTEXT.md` y `docs/DECISIONS.md`.
 2. Consultar `git status --short` y `git log --oneline`.
 3. Para el flujo de sincronización y las rutas por agente, ver `skills/skill-globales/README.md`; para el orden de cierre, la sección «Flujo de cierre» de `AGENTS.md`.
-4. La integración anterior (IS-GLOBAL) y su respaldo están descritos en `docs/archivados/` y en `docs/CONTEXT.md`.
+4. La integración anterior (IS-GLOBAL) y su respaldo están descritos en `docs/CONTEXT.md`; el plan y los registros históricos están en `docs/archivados/`, que es solo local y no existe en un clon nuevo.
 
 ## Próximas acciones
 
-1. Hacer el commit de esta consolidación y, tras `precheck-publica-repo`, el push de `main` (faltan `fdbe0a5` y la consolidación). Requiere solicitud explícita. Cierre: `main` y `origin/main` en el mismo commit.
+1. Hacer el commit de los cambios de privacidad y de esta consolidación y, tras `precheck-publica-repo`, el push de `main` (faltan `fdbe0a5`, `234eb2a` y estos cambios). Requiere solicitud explícita. Cierre: `main` y `origin/main` en el mismo commit y un precheck sin hallazgos.
 2. El usuario probará manualmente el flujo nuevo (`alinear-rectores-proyecto` y `consolidar-sesion-proyecto`) en el proyecto `mgtr-ti-root`. Cierre: resultado de esa prueba; si la skill no alcanza los README de cada fase, `FLUJOS_ACTUALIZACION.md` o `REQUIREMENTS.md`, ajustarla.
 3. Verificación funcional: abrir una sesión de cada agente en este repositorio y comprobar que lista o carga las skills desde su ruta. Cierre: resultado observado por agente.
 
@@ -28,11 +28,14 @@ Las skills globales quedaron reorganizadas: fuente única en `skills/skill-globa
 - Con `~/.codex/skills` y `~/.agents/skills` coexistiendo, Codex puede mostrar skills duplicadas.
 - Si se edita una skill sin resincronizar, la fuente y las tres copias divergen.
 - Con el mismo nombre en varios niveles, cada agente resuelve la precedencia de forma distinta.
+- Los datos personales ya publicados (rutas de usuario y un correo personal en `docs/archivados/`) siguen en el historial de `origin/main`; el árbol ya está depurado. Limpiar el historial exigiría reescribirlo.
+- `docs/archivados/` no se versiona: un clon nuevo no tiene el plan de IS-GLOBAL ni los registros históricos.
 - No se puede descartar la existencia de consumidores externos de los nombres retirados ni se dispone de telemetría de selección automática.
 
 ## Pendientes de decisión del usuario
 
 - Si `skills/skill-globales/` es un dominio sujeto a las reglas de `CONTRIBUTING.md` y `AGENTS.md` sobre `SKILL.md`, o un caso aparte exento (hallazgo ALR-01).
 - Cuándo retomar la dependencia de `ingenieria-software` y `auditoria-software` respecto del dominio `skills/ingenieria-software/` (diferida en SG-07).
+- Si se reescribe el historial para retirar del repositorio público el correo y las rutas ya publicadas (no se recomienda por defecto).
 - Cuándo y cómo retirar `~/.codex/skills` (no se elimina hasta nuevo aviso, SG-09).
 - El proyecto `resumir-contenidos` está fuera de este repositorio y sin Git; su decisión de inicializarlo consta en su propio `HANDOFF.md`.

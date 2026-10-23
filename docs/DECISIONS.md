@@ -23,6 +23,7 @@ Fecha de corte: 2026-10-23 (America/Santiago)
 | SG-07 | aprobada | 2026-10-23 | No se modifica por ahora la dependencia de `ingenieria-software` y `auditoria-software` respecto del dominio `skills/ingenieria-software/`. | El proyecto que lo motivaba aún no se modificará. |
 | SG-08 | aprobada | 2026-10-23 | `alinear-rectores-proyecto` es una skill separada de `consolidar-sesion-proyecto`: la primera detecta y alinea los demás rectores (modo detectar o aplicar con autorización); la segunda escribe solo `CONTEXT`, `DECISIONS` y `HANDOFF`. El orden de cierre consta en la sección «Flujo de cierre» de `AGENTS.md`: sincronizar, alinear rectores, commit, consolidar, commit aparte, precheck y push. | Cada skill responde a un caso distinto; mezclarlas perjudicaría el resto del flujo. |
 | SG-09 | aprobada | 2026-10-23 | `~/.codex/skills/` no se elimina hasta nuevo aviso. | Evitar pérdidas; sus copias antiguas conviven con `~/.agents/skills/`. |
+| SG-10 | aprobada | 2026-10-23 | `docs/archivados/` no se versiona: se agrega a `.gitignore` y se quita del índice de Git; queda solo en el equipo local. Se eliminaron `docs/archivados/eliminar/` y `docs/archivados/sesiones/`, y las rutas de usuario se sustituyen por `<ruta-usuario>`. | El material histórico contenía rutas personales y un correo personal que no deben sincronizarse. El historial ya publicado conserva esos datos; no se reescribe. |
 
 ## Propuestas sin aprobación explícita (el usuario no las contradijo)
 

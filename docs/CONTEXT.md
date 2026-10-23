@@ -1,11 +1,11 @@
 # CONTEXT — Estado actual del repositorio
 
 Fecha de corte: 2026-10-23 (America/Santiago)
-Repositorio: `<ruta-local>\gen-ai-skills-root\gen-ai-skills`. Commit de referencia: `fdbe0a5` en `main`. Esta consolidación se commitea aparte, después de ese commit.
+Repositorio: `<ruta-local>\gen-ai-skills-root\gen-ai-skills`. Commit de referencia: `234eb2a` en `main`. Los cambios posteriores (`.gitignore`, depuración de datos personales y desindexado de `docs/archivados/`) y esta consolidación se commitean aparte.
 
 ## Proyecto activo
 
-Biblioteca modular de instrucciones para asistentes de IA, con dominios bajo `skills/` y, además, las skills globales que todo agente debe tener, en `skills/skill-globales/` (fuente única). La fuente técnica rectora de ingeniería sigue siendo `skills/ingenieria-software/`. La integración `IS-GLOBAL-20261011` (plan en `docs/archivados/PLAN_integracion_skills_globales_20261011.md`) está cerrada: IS-01 a IS-06 figuran DONE. Los paquetes que vivían en `examples/` se movieron a `skills/skill-globales/`.
+Biblioteca modular de instrucciones para asistentes de IA, con dominios bajo `skills/` y, además, las skills globales que todo agente debe tener, en `skills/skill-globales/` (fuente única). La fuente técnica rectora de ingeniería sigue siendo `skills/ingenieria-software/`. La integración `IS-GLOBAL-20261011` (plan en `docs/archivados/PLAN_integracion_skills_globales_20261011.md`, material local que no se versiona; ver SG-10) está cerrada: IS-01 a IS-06 figuran DONE. Los paquetes que vivían en `examples/` se movieron a `skills/skill-globales/`.
 
 ## Estado técnico
 
@@ -21,11 +21,13 @@ Biblioteca modular de instrucciones para asistentes de IA, con dominios bajo `sk
 
 - El respaldo de IS-06B está en `~/.codex\backups\IS-GLOBAL-20261011\IS-06B-backup-20261011T211024\`, con `manifest.json`; se verificaron hashes SHA-256 y una restauración simulada.
 - El CLI no expone telemetría autoritativa de selección automática de skills; la respuesta funcional y los hashes no la demuestran.
-- Los registros de ejecución de IS-GLOBAL están en el plan archivado y en `logs/planificacion.jsonl`.
+- Los registros de ejecución de IS-GLOBAL están en el plan archivado (solo local) y en `logs/planificacion.jsonl` (versionado).
 
 ## Límites y restricciones
 
 - Las rutas de skills por agente provienen de la documentación oficial consultada el 2026-10-22: `.claude/skills/` (Claude Code), `.agents/skills/` (Codex) y `.gemini/skills/` o `.agents/skills/` (Gemini CLI). No se comprobó por ejecución que cada agente cargue las skills desde esas rutas.
+- `docs/archivados/` se ignora en `.gitignore` y se quitó del índice de Git: existe solo en el equipo local y no se sincroniza (SG-10). Un clon nuevo no contiene el plan de IS-GLOBAL ni los registros históricos.
+- El `.gitignore` de la raíz cubre secretos y configuración local, artefactos generados, bases locales, entornos, herramientas locales y archivos del sistema; no ignora las copias de skills ni `logs/`.
 - Formato: LF siempre, UTF-8 sin BOM, newline final y sin espacios finales.
 - Los archivos Markdown rectores llevan nombre en inglés; `PLAN.md` es el plan canónico.
 - Las skills globales se editan solo en `skills/skill-globales/` y luego se sincronizan las copias.
@@ -34,4 +36,4 @@ Biblioteca modular de instrucciones para asistentes de IA, con dominios bajo `sk
 
 ## Estado del árbol de trabajo
 
-Limpio en el commit `fdbe0a5`, salvo los tres archivos de `docs/` de esta consolidación. `main` está un commit por delante de `origin/main` (falta el push). Los cambios extensos previos que existían el 2026-10-11 ya quedaron en commits.
+En el commit `234eb2a` hay cambios sin commit: `.gitignore` nuevo, 103 archivos de `docs/archivados/` desindexados, rutas personales sustituidas por `<ruta-usuario>` en 10 archivos, `README.md` y los tres archivos de `docs/`. `main` está dos commits por delante de `origin/main` (falta el push). Los cambios extensos previos que existían el 2026-10-11 ya quedaron en commits.
