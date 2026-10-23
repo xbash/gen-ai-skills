@@ -1,6 +1,6 @@
 # Skills globales
 
-Skills que todo agente o LLM de trabajo debe tener disponibles, sin importar la herramienta con que se inició una sesión. Esta carpeta es la **fuente única**; las copias en `~/.claude/skills` y `~/.codex/skills` son instalaciones derivadas.
+Skills que todo agente o LLM de trabajo debe tener disponibles, sin importar la herramienta con que se inició una sesión. Esta carpeta es la **fuente única**; las copias en el perfil de usuario y en cada proyecto son instalaciones derivadas.
 
 ## Contenido
 
@@ -18,15 +18,29 @@ Skills que todo agente o LLM de trabajo debe tener disponibles, sin importar la 
 
 1. Probar y ajustar la skill en `~/.claude/skills` o `~/.codex/skills`.
 2. Una vez aprobada, copiarla a esta carpeta (`skills/skill-globales/<nombre>/`).
-3. Instalar en los agentes desde el repo:
+3. Sincronizar desde el repo:
 
 ```powershell
-.\instalar.ps1 -WhatIf   # muestra qué copiaría
-.\instalar.ps1           # copia las nuevas; omite con aviso las que difieren
-.\instalar.ps1 -Force    # sobrescribe las instaladas que difieren
+# En un proyecto: crea .agents\skills, .claude\skills y .gemini\skills en su raíz
+.\sincronizar_skills_en_proyecto.ps1 -Proyecto C:\ruta\al\proyecto -WhatIf   # muestra qué copiaría
+.\sincronizar_skills_en_proyecto.ps1 -Proyecto C:\ruta\al\proyecto           # copia las nuevas; omite con aviso las que difieren
+.\sincronizar_skills_en_proyecto.ps1 -Proyecto C:\ruta\al\proyecto -Force    # sobrescribe las que difieren
+
+# En el perfil de usuario (~\.claude\skills y ~\.agents\skills)
+.\sincronizar_skills_en_proyecto.ps1
 ```
 
-Solo se instalan los directorios que contienen `SKILL.md`. El script no borra skills ajenas en los destinos.
+Solo se copian los directorios que contienen `SKILL.md`. El script no borra skills ajenas en los destinos.
+
+## Dónde lee cada agente (documentación oficial, consultada 2026-10-22)
+
+| Agente | Proyecto | Usuario |
+|---|---|---|
+| Claude Code | `.claude/skills/` | `~/.claude/skills/` |
+| Codex | `.agents/skills/` | `~/.agents/skills/` |
+| Gemini CLI | `.gemini/skills/` o `.agents/skills/` | `~/.gemini/skills/` o `~/.agents/skills/` |
+
+Con el mismo nombre en varios niveles, cada agente resuelve distinto (Claude Code: usuario sobre proyecto; Gemini CLI: proyecto sobre usuario; Codex: no fusiona y muestra ambas). Evita nombres repetidos.
 
 ## Agentes sin soporte de skills
 

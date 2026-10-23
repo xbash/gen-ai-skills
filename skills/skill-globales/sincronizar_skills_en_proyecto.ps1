@@ -1,12 +1,25 @@
 [CmdletBinding(SupportsShouldProcess)]
 param(
-    # Directorios de destino; cada agente lee sus skills de uno de ellos.
-    [string[]]$Destinos = @("$HOME\.claude\skills", "$HOME\.codex\skills"),
-    # Sobrescribe skills instaladas que difieren del repo.
+    # Raiz del proyecto: copia las skills a .agents\skills (Codex, Gemini CLI),
+    # .claude\skills (Claude Code) y .gemini\skills (Gemini CLI).
+    # Sin -Proyecto, instala en el perfil de usuario (~\.claude\skills y ~\.agents\skills).
+    [string]$Proyecto,
+    # Reemplaza los destinos por defecto.
+    [string[]]$Destinos,
+    # Sobrescribe skills ya instaladas que difieren del origen.
     [switch]$Force
 )
 
 $origen = $PSScriptRoot
+
+if (-not $Destinos) {
+    if ($Proyecto) {
+        if (-not (Test-Path $Proyecto -PathType Container)) { throw "No existe el proyecto: $Proyecto" }
+        $Destinos = '.agents', '.claude', '.gemini' | ForEach-Object { Join-Path (Resolve-Path $Proyecto) "$_\skills" }
+    } else {
+        $Destinos = "$HOME\.claude\skills", "$HOME\.agents\skills"
+    }
+}
 
 function Get-Huellas($dir) {
     Get-ChildItem $dir -Recurse -File | Sort-Object FullName | ForEach-Object {
@@ -24,7 +37,7 @@ foreach ($skill in Get-ChildItem $origen -Directory | Where-Object { Test-Path "
         if ($estado -eq "igual") { Write-Host "igual    $ruta"; continue }
         if ($estado -eq "difiere" -and -not $Force) { Write-Warning "difiere  $ruta (omitida; usa -Force para sobrescribir)"; continue }
 
-        if ($PSCmdlet.ShouldProcess($ruta, "Copiar desde el repo ($estado)")) {
+        if ($PSCmdlet.ShouldProcess($ruta, "Copiar desde el origen ($estado)")) {
             New-Item -ItemType Directory -Force $destino | Out-Null
             if ($estado -eq "difiere") { Remove-Item $ruta -Recurse -Force }
             Copy-Item $skill.FullName $ruta -Recurse
