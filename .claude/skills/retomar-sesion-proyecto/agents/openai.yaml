@@ -1,0 +1,6 @@
+interface:
+  display_name: "Retomar sesión de proyecto"
+  short_description: "Recupera contexto, decisiones y pendientes del proyecto"
+  default_prompt: "Usa $retomar-sesion-proyecto para recuperar y verificar el estado operativo del workspace actual, sin modificar archivos, e indicar el próximo paso recomendado."
+policy:
+  allow_implicit_invocation: false

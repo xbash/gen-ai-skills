@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auditoría de software"
+  short_description: "Revisa software con hallazgos priorizados y evidencia"
+  default_prompt: "Usa $auditoria-software para auditar este artefacto en solo lectura y reportar hallazgos con evidencia."
