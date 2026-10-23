@@ -23,8 +23,10 @@ La biblioteca permite cargar solo los archivos necesarios según la tarea, sin m
 gen-ai-skills/
 |-- docs/          # continuidad, auditorías, planes y reportes
 |-- examples/      # paquetes y ejemplos de referencia
+|-- .agents/, .claude/, .gemini/  # copias de las skills globales por agente
 |-- prompts/       # prompts de tareas y fases del workflow
 |-- skills/        # dominios reutilizables
+|   |-- skill-globales/  # skills que todo agente debe tener (fuente única)
 |   `-- <dominio>/
 |       |-- README.md
 |       |-- instrucciones_base_*.md
@@ -93,6 +95,10 @@ Los dominios principales viven en `skills/`:
 - [`ollama.md`](templates/ollama.md)
 - [`lmstudio.md`](templates/lmstudio.md)
 - [`openwebui.md`](templates/openwebui.md)
+
+## Skills globales
+
+[`skills/skill-globales/`](skills/skill-globales/) contiene las skills que todo agente debe tener para retomar, planificar, auditar y cerrar un trabajo, con independencia de la herramienta. Es la fuente única: las copias por agente (`.agents/`, `.claude/`, `.gemini/`) se generan con `sincronizar_skills_en_proyecto.ps1`. Ver [`skills/skill-globales/README.md`](skills/skill-globales/README.md).
 
 ## Ejemplos
 

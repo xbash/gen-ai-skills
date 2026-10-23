@@ -4,7 +4,15 @@ Registrar cambios públicos o cambios verificables de comportamiento o documenta
 
 ## [Unreleased]
 
+### Added
+
+- `skills/skill-globales/` como fuente única de las skills globales (8 skills, incluida `alinear-rectores-proyecto`), con el script `sincronizar_skills_en_proyecto.ps1` y copias versionadas en `.agents/`, `.claude/` y `.gemini/`.
+- `.editorconfig` y `.gitattributes` (LF y UTF-8 sin BOM) y la sección «Flujo de cierre» en `AGENTS.md`.
+
 ### Changed
+
+- Las skills globales se movieron desde `examples/` a `skills/skill-globales/`; su contenido es agnóstico a proveedores y herramientas.
+- `auditar-contratos-proyecto` incorpora contratos rectores de continuidad por nivel, nombres en inglés y criterio de terminaciones de línea; `planificar-cambios` fija `PLAN.md` como plan canónico; `retomar-sesion-proyecto`, `consolidar-sesion-proyecto` y `precheck-publica-repo` cierran huecos de fechas, historial y carpetas de agentes.
 
 - Actualización de documentación y prompts del workflow por dominio, con separación Planner → Executor → Validator.
 - Normalización de los archivos Markdown del proyecto a finales de línea LF. La ejecución documentada se encuentra en `docs/dominios/vision-computadora/normalizacion_markdown_lf_20260910.md`.

@@ -23,4 +23,4 @@ Agrega las reglas de `ingenieria-software`, `seguridad-appsec` o
 dominios.
 
 El paquete ejecutable de referencia se encuentra en
-`examples/precheck-publica-repo/`.
+`skills/skill-globales/precheck-publica-repo/`.

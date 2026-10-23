@@ -81,7 +81,7 @@ Los artefactos se crean si faltan y se actualizan si existen. No se crean otros 
 3. **Clasificar lo ocurrido** en: decisión aprobada, propuesta sin aprobar, cambio realizado, resultado verificado, hecho observado y afirmación no verificada. Sólo lo que afecta el trabajo futuro pasa a los artefactos.
 4. **Actualizar los tres artefactos** con las reglas de la sección siguiente.
 5. **Revisar coherencia.** Comprobar que cifras, nombres de archivos y referencias cruzadas coinciden entre los tres artefactos y con la evidencia; corregir las discrepancias o dejarlas declaradas como pendientes.
-6. **Detectar otros rectores afectados.** Si la sesión cambió algo que describe otro archivo rector (resultados de evaluación, fuentes de datos, modelo, riesgos, versión, estado en `README.md`, reglas de `AGENTS.md`), no editarlo: anotarlo para la sección «Salida».
+6. **Detectar otros rectores afectados.** Si la sesión cambió algo que describe otro archivo rector (resultados de evaluación, fuentes de datos, modelo, riesgos, versión, estado en `README.md`, reglas de `AGENTS.md`), no editarlo: anotarlo para la sección «Salida» y recomendar ejecutar `alinear-rectores-proyecto` antes de consolidar, para que el estado registrado sea coherente con esos rectores.
 7. **Informar** con el formato de la sección «Salida».
 
 ## Reglas de edición
@@ -97,6 +97,7 @@ Los artefactos se crean si faltan y se actualizan si existen. No se crean otros 
 
 ## Restricciones
 
+- Si el proyecto tiene componentes con documentación propia (por ejemplo, una carpeta por fase), esta skill consolida solo los artefactos de la raíz; los demás rectores se alinean con `alinear-rectores-proyecto`.
 - Se escriben **solamente** `docs/CONTEXT.md`, `docs/DECISIONS.md` y `docs/HANDOFF.md`. Los demás archivos rectores (`README.md`, `AGENTS.md`, `VERSION`, `CHANGELOG.md`, `docs/EVALUATION.md`, `docs/DATA.md`, `docs/MODEL.md`, `docs/RISKS.md`, entre otros) no se modifican: su actualización requiere autorización propia.
 - No se implementan cambios del proyecto durante la consolidación (código, datos, configuración).
 - No se hacen commits, envíos ni borrados; no se instalan paquetes.
@@ -113,7 +114,7 @@ Responder, en español y de forma breve, con:
 3. Estado resultante en una línea y la próxima acción recomendada.
 4. Pendientes de decisión de quien dirige el proyecto.
 5. Discrepancias o límites encontrados al consolidar.
-6. Rectores posiblemente desactualizados: archivo, qué cambió en la sesión y qué habría que revisar, para que quien dirige el proyecto autorice su actualización. Omitir si no hay ninguno.
+6. Rectores posiblemente desactualizados: archivo, qué cambió en la sesión y qué habría que revisar, y la recomendación de ejecutar `alinear-rectores-proyecto` para que quien dirige el proyecto autorice su actualización. Omitir si no hay ninguno.
 
 ## Criterio de finalización
 

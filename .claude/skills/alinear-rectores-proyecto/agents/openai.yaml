@@ -1,0 +1,6 @@
+interface:
+  display_name: "Alinear rectores de proyecto"
+  short_description: "Alinea README, requisitos y guías con los cambios recientes"
+  default_prompt: "Usa $alinear-rectores-proyecto en modo detectar para encontrar los archivos rectores desactualizados desde el último corte y proponer un plan, sin modificar archivos."
+policy:
+  allow_implicit_invocation: false

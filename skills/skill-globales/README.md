@@ -7,6 +7,7 @@ Skills que todo agente o LLM de trabajo debe tener disponibles, sin importar la 
 | Skill | Función |
 |---|---|
 | `retomar-sesion-proyecto` | Recupera el contexto operativo de un proyecto (solo lectura) |
+| `alinear-rectores-proyecto` | Detecta y alinea los demás archivos rectores con los cambios, antes de consolidar |
 | `consolidar-sesion-proyecto` | Deja `docs/CONTEXT.md`, `DECISIONS.md` y `HANDOFF.md` para continuar después |
 | `planificar-cambios` | Genera planes atómicos y verificables, sin implementar |
 | `ingenieria-software` | Adaptador del dominio rector `skills/ingenieria-software/` |

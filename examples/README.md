@@ -1,29 +1,15 @@
 # Ejemplos
 
 Esta carpeta contiene ejemplos y paquetes de referencia que no forman parte del
-catalogo principal de dominios bajo `skills/`.
+catálogo principal de dominios bajo `skills/`.
 
-## Paquetes canónicos de ingeniería de software
+## Contenido
 
-- [`ingenieria-software/`](ingenieria-software/) es el adaptador para tareas generales de ingeniería. Su fuente técnica rectora está en [`../skills/ingenieria-software/`](../skills/ingenieria-software/).
-- [`auditoria-software/`](auditoria-software/) es el paquete especializado en auditorías técnicas de solo lectura.
+- [`playwright/`](playwright/): paquete de referencia con la estructura propia de una skill (`SKILL.md`, `agents/`, `references/`, `scripts/`, `assets/`).
+- [`AGENTS_propuesta.md`](AGENTS_propuesta.md): propuesta de reglas operativas para agentes, a modo de referencia.
 
-Los dos paquetes anteriores son las únicas distribuciones canónicas de
-ingeniería de software en esta carpeta.
+## Skills globales
 
-## `gen-ia-codex`
+Las skills globales (`ingenieria-software`, `auditoria-software`, `planificar-cambios`, `retomar-sesion-proyecto`, `consolidar-sesion-proyecto`, `alinear-rectores-proyecto`, `auditar-contratos-proyecto` y `precheck-publica-repo`) ya no se distribuyen desde esta carpeta. Viven en [`../skills/skill-globales/`](../skills/skill-globales/) y se sincronizan con el script de ese directorio.
 
-`gen-ia-codex/` contiene paquetes nativos de Codex con la estructura propia de
-cada skill, incluyendo cuando corresponde:
-
-- `SKILL.md`;
-- `agents/openai.yaml`;
-- `references/`;
-- `scripts/`;
-- `assets/`.
-
-Estos paquetes son ejemplos de integración y no deben confundirse con los
-dominios Markdown de conocimiento ubicados directamente bajo `skills/`.
-
-No se distribuyen variantes heredadas bajo `gen-ia-codex/`; usa los paquetes
-canónicos indicados arriba.
+Los paquetes de esta carpeta son ejemplos de integración y no deben confundirse con los dominios Markdown de conocimiento ubicados directamente bajo `skills/`.

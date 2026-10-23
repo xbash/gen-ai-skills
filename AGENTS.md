@@ -94,6 +94,21 @@ Para tareas complejas:
 
 Antes de pedir razonamiento a un modelo, prefiere herramientas deterministas cuando resuelvan el problema: búsqueda, Git, validadores, linters, tests, scripts y comprobaciones de formato.
 
+## Flujo de cierre
+
+Orden para llevar un conjunto de cambios a GitHub con los archivos rectores alineados:
+
+1. Editar solo las fuentes (`skills/skill-globales/`, nunca las copias).
+2. Sincronizar las copias con `skills/skill-globales/sincronizar_skills_en_proyecto.ps1` y comprobar que una segunda ejecución no muestra diferencias.
+3. Ejecutar `alinear-rectores-proyecto`: detectar, autorizar y aplicar sobre los rectores afectados (`README.md`, `CHANGELOG.md` y los que apunten a rutas modificadas).
+4. Hacer commit del trabajo.
+5. Ejecutar `consolidar-sesion-proyecto`, citando ese commit.
+6. Hacer commit de la consolidación, por separado.
+7. Ejecutar `precheck-publica-repo` antes de publicar.
+8. Hacer push.
+
+El flujo no autoriza por sí solo las ediciones, los commits ni el push: cada uno requiere solicitud explícita.
+
 ## Calidad y validación
 
 - Mantén texto en UTF-8 sin BOM, LF (siempre, nunca CRLF), newline final y sin espacios finales, conforme a `.editorconfig` y `.gitattributes`.
