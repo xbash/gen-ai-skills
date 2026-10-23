@@ -1,7 +1,7 @@
 # CONTEXT — Estado actual del repositorio
 
 Fecha de corte: 2026-10-23 (America/Santiago)
-Repositorio: `<ruta-local>\gen-ai-skills-root\gen-ai-skills`. Commit de referencia: `234eb2a` en `main`. Los cambios posteriores (`.gitignore`, depuración de datos personales y desindexado de `docs/archivados/`) y esta consolidación se commitean aparte.
+Repositorio: `<ruta-local>\gen-ai-skills-root\gen-ai-skills`. Commit de referencia: `53341b2` en `main`. Esta consolidación se commitea aparte.
 
 ## Proyecto activo
 
@@ -11,7 +11,7 @@ Biblioteca modular de instrucciones para asistentes de IA, con dominios bajo `sk
 
 - Hay 8 skills globales en `skills/skill-globales/`: `alinear-rectores-proyecto`, `auditar-contratos-proyecto`, `auditoria-software`, `consolidar-sesion-proyecto`, `ingenieria-software`, `planificar-cambios`, `precheck-publica-repo` y `retomar-sesion-proyecto`. Son la versión validada por el usuario desde `~/.claude/skills`, con los ajustes registrados en [DECISIONS.md](DECISIONS.md) (sección «Skills globales»).
 - Hay copias por agente, versionadas, en `.agents/skills/`, `.claude/skills/` y `.gemini/skills/`, generadas con `skills/skill-globales/sincronizar_skills_en_proyecto.ps1`. Verificado el 2026-10-23: las 24 copias (8 skills por 3 carpetas) coinciden con la fuente según la comparación de hashes del script.
-- Los rectores `README.md`, `CHANGELOG.md`, `examples/README.md` y `skills/precheck-publica-repo/README.md` se alinearon con las skills globales el 2026-10-23 (commits `4f098d6` y `fdbe0a5`; el segundo agregó `skill-globales` a la lista de dominios del README).
+- Los rectores `README.md`, `CHANGELOG.md`, `examples/README.md` y `skills/precheck-publica-repo/README.md` se alinearon con las skills globales el 2026-10-23 (commits `4f098d6` y `fdbe0a5`; el segundo agregó `skill-globales` a la lista de dominios del README). `AGENTS.md`, `CHANGELOG.md` y `prompts/archivados/README.md` se alinearon con la política de `docs/archivados/` en `53341b2`.
 - La raíz tiene `.editorconfig` y `.gitattributes` (LF, UTF-8 sin BOM). Verificado el 2026-10-23: no hay CR ni BOM en `skills/skill-globales/`, `.agents/`, `.claude/` ni `.gemini/`.
 - El contenido de las skills (`SKILL.md` y referencias) no nombra proveedores ni herramientas concretas. El mapeo de rutas por herramienta está solo en `skills/skill-globales/README.md` y en el script de sincronización.
 - Perfil de usuario: `~/.claude/skills/` y `~/.agents/skills/` se resincronizaron el 2026-10-23 y coinciden con las 8 skills del repositorio (comparación de hashes del script). `~/.codex/skills/` conserva copias antiguas, ya no es destino por defecto del script y no se elimina hasta nuevo aviso (SG-09).
@@ -36,4 +36,4 @@ Biblioteca modular de instrucciones para asistentes de IA, con dominios bajo `sk
 
 ## Estado del árbol de trabajo
 
-En el commit `234eb2a` hay cambios sin commit: `.gitignore` nuevo, 103 archivos de `docs/archivados/` desindexados, rutas personales sustituidas por `<ruta-usuario>` en 10 archivos, `README.md` y los tres archivos de `docs/`. `main` está dos commits por delante de `origin/main` (falta el push). Los cambios extensos previos que existían el 2026-10-11 ya quedaron en commits.
+Limpio en el commit `53341b2`, salvo los tres archivos de `docs/` de esta consolidación. `origin/main` está en `fe6871b`; `53341b2` aún no se subió. Los cambios extensos previos que existían el 2026-10-11 ya quedaron en commits.
