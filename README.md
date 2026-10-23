@@ -21,7 +21,7 @@ La biblioteca permite cargar solo los archivos necesarios según la tarea, sin m
 
 ```text
 gen-ai-skills/
-|-- docs/          # continuidad, auditorías, planes y reportes
+|-- docs/          # continuidad (CONTEXT, DECISIONS, HANDOFF); archivados/ es local y no se versiona
 |-- examples/      # paquetes y ejemplos de referencia
 |-- .agents/, .claude/, .gemini/  # copias de las skills globales por agente
 |-- prompts/       # prompts de tareas y fases del workflow
@@ -109,7 +109,7 @@ Los dominios principales viven en `skills/`:
 
 - [`CONTRIBUTING.md`](CONTRIBUTING.md): reglas de contribución, diseño de dominios y flujo de cambios.
 - [`SECURITY.md`](SECURITY.md): límites de seguridad y tratamiento de contenido externo.
-- [`docs/`](docs/): auditorías, planes, estados y reportes por dominio. Subdirectorios: `archivos/` (auditorías iniciales), `dominios/` (seguimiento por dominio), `eliminar/` (archivos pendientes de eliminación).
+- [`docs/`](docs/): documentos de continuidad del repositorio (`CONTEXT.md`, `DECISIONS.md` y `HANDOFF.md`). El material histórico (auditorías, planes y reportes por dominio) está en `docs/archivados/`, que se ignora en `.gitignore` y no se sincroniza con GitHub: solo existe en el equipo local.
 
 ## Workflow de mantenimiento
 

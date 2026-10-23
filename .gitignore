@@ -1,0 +1,36 @@
+# Secretos y configuración local
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+settings.local.json
+
+# Artefactos generados
+__pycache__/
+*.pyc
+*.log
+*.tmp
+*.bak
+
+# Bases de datos locales
+*.sqlite
+*.db
+
+# Entornos y dependencias
+.venv/
+venv/
+node_modules/
+
+# Herramientas locales
+.playwright-mcp/
+
+# Sistema operativo
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Archivo histórico local (no se sincroniza)
+docs/archivados/
